@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biruk Tadesse | Professional Portfolio</title>
-    <!-- Font Awesome for Icons -->
+    <!-- Font Awesome Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -16,139 +16,151 @@
             --oromo-red: #FF0000;
             --oromo-white: #FFFFFF;
             --text-dark: #222;
-            --bg-color: #f4f4f4;
         }
 
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0; padding: 0;
-            background-color: var(--bg-color);
+            background-color: #f4f4f4;
             color: var(--text-dark);
             overflow-x: hidden;
         }
 
-        /* --- SNOW EFFECT (CABBI) --- */
-        .snow-container {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
-            pointer-events: none; z-index: 9999;
-        }
-        .snowflake {
-            position: absolute; top: -10px; color: #fff; font-size: 1.2em;
-            animation: fall linear infinite;
-        }
-        @keyframes fall {
-            to { transform: translateY(100vh); }
-        }
+        /* --- SNOW EFFECT --- */
+        .snow-container { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; pointer-events: none; z-index: 9999; }
+        .snowflake { position: absolute; top: -10px; color: #fff; animation: fall linear infinite; }
+        @keyframes fall { to { transform: translateY(100vh); } }
 
-        /* --- ABOUT ME BUTTON (TOP LEFT) --- */
+        /* --- ABOUT ME BUTTON --- */
         .about-me-btn {
-            position: absolute;
-            top: 25px;
-            left: 25px;
-            z-index: 1000;
-            padding: 15px 30px;
-            background-color: var(--oromo-white);
-            color: var(--oromo-black);
-            border: none;
-            border-radius: 30px;
-            font-weight: 700;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-            transition: 0.3s;
-            text-transform: uppercase;
-            font-size: 1rem;
+            position: absolute; top: 25px; left: 25px; z-index: 1000;
+            padding: 15px 30px; background-color: var(--oromo-white);
+            color: var(--oromo-black); border: none; border-radius: 30px;
+            font-weight: 700; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            transition: 0.3s; text-transform: uppercase;
         }
-        .about-me-btn:hover {
-            background-color: var(--oromo-red);
-            color: var(--oromo-white);
-            transform: scale(1.1);
-        }
+        .about-me-btn:hover { background-color: var(--oromo-red); color: #fff; transform: scale(1.1); }
 
-        /* --- MODAL (POPUP) STYLES --- */
+        /* --- MODAL (POPUP) --- */
         .modal {
-            display: none;
-            position: fixed;
-            z-index: 10001;
-            left: 0; top: 0;
-            width: 100%; height: 100%;
-            background-color: rgba(0,0,0,0.8);
-            backdrop-filter: blur(8px);
+            display: none; position: fixed; z-index: 10001; left: 0; top: 0; width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.8); backdrop-filter: blur(8px);
         }
         .modal-content {
-            background-color: #fff;
-            margin: 5% auto;
-            padding: 35px;
-            border-radius: 20px;
-            width: 85%;
-            max-width: 750px;
-            border-left: 12px solid var(--oromo-red);
-            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-            animation: zoomIn 0.3s ease-out;
+            background-color: #fff; margin: 5% auto; padding: 35px; border-radius: 20px;
+            width: 85%; max-width: 750px; border-left: 12px solid var(--oromo-red);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5); animation: zoomIn 0.3s;
         }
-        @keyframes zoomIn {
-            from { transform: scale(0.7); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
-        .close-modal {
-            float: right; font-size: 2.5rem; font-weight: bold; cursor: pointer; color: #666;
-        }
+        @keyframes zoomIn { from { transform: scale(0.7); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+        .close-modal { float: right; font-size: 2.5rem; cursor: pointer; color: #666; }
 
-        /* --- HERO SECTION (HEADER) --- */
+        /* --- HERO SECTION --- */
         header {
             background: linear-gradient(135deg, var(--oromo-black) 33%, var(--oromo-red) 33%, var(--oromo-red) 66%, var(--oromo-white) 66%);
-            color: white;
-            text-align: center;
-            padding: 120px 20px 100px;
-            position: relative;
-            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            color: white; text-align: center; padding: 120px 20px 100px;
+            position: relative; clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
         }
 
-        /* --- PROFILE IMAGE (Square Rounded) --- */
+        /* --- PROFILE IMAGE (SQUARE ROUNDED - FIXED SIZE) --- */
         .profile-container {
-            width: 320px; height: 350px;
-            margin: 0 auto 20px;
-            border-radius: 40px;
-            overflow: hidden;
-            border: 8px solid white;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            background: white;
-            position: relative;
-            z-index: 10;
+            width: 380px; height: 420px;
+            margin: 0 auto 20px; border-radius: 40px; overflow: hidden;
+            border: 8px solid white; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            background: white; position: relative; z-index: 10;
         }
-        .profile-img {
-            width: 100%; height: 100%;
-            object-fit: cover;
-            object-position: center top; /* Keeps your head visible */
-        }
+        .profile-img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
 
-        /* --- BIG SOCIAL ICONS --- */
+        /* --- INTERACTION BAR (FIXED: NO DISAPPEARING) --- */
+        .interaction-container {
+            display: flex; justify-content: center; gap: 25px; margin: 30px auto;
+            background: white; padding: 15px 30px; border-radius: 50px;
+            width: fit-content; box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-bottom: 4px solid var(--oromo-red);
+        }
+        .stat-item {
+            display: flex; align-items: center; gap: 10px;
+            font-weight: 700; font-size: 1.3rem; color: #333;
+            cursor: pointer; transition: 0.3s; user-select: none;
+        }
+        .stat-item i { font-size: 1.7rem; transition: 0.2s; }
+        .view-item { cursor: default; }
+
+        /* Halluu yeroo tuqame (Toggle Colors) */
+        .active-like { color: #2ecc71 !important; }
+        .active-dislike { color: #e74c3c !important; }
+        .active-love { color: #f368e0 !important; }
+        .stat-item:active { transform: scale(0.9); }
+
+        /* --- SOCIAL ICONS --- */
         .social-icons { margin-top: 35px; }
         .social-icons a {
             display: inline-flex; align-items: center; justify-content: center;
-            width: 70px; height: 70px; /* SIZE GUDDAA */
-            background: white; color: var(--oromo-black);
-            border-radius: 50%; margin: 0 12px;
-            font-size: 2rem; /* ICON GUDDAA */
-            transition: 0.4s;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            width: 70px; height: 70px; background: white; color: var(--oromo-black);
+            border-radius: 50%; margin: 0 12px; font-size: 2.2rem;
+            transition: 0.4s; box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
-        .social-icons a:hover {
-            background: var(--oromo-red); color: white;
-            transform: translateY(-10px) scale(1.2);
-        }
+        .social-icons a:hover { background: var(--oromo-red); color: white; transform: translateY(-10px); }
 
-        /* --- CONTENT & PROJECTS --- */
+        /* --- PROJECTS & FOOTER --- */
         .container { max-width: 1200px; margin: auto; padding: 40px 20px; }
         .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 50px; color: var(--oromo-black); position: relative; }
         .section-title::after { content: ''; display: block; width: 100px; height: 5px; background: var(--oromo-red); margin: 15px auto 0; border-radius: 5px; }
-
         .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
         .project-card { background: white; border-radius: 15px; padding: 30px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); border-top: 6px solid var(--oromo-red); transition: 0.3s; }
-        .project-card:hover { transform: translateY(-10px); }
-        
-        .btn-code { display: inline-block; width: 100%; padding: 12px 0; background: var(--oromo-black); color: white; text-align: center; border-radius: 8px; font-weight: 600; margin-top: 10px; }
+        .btn-code { display: inline-block; width: 100%; padding: 12px 0; background: var(--oromo-black); color: white; text-align: center; border-radius: 8px; font-weight: 600; margin-top: 10px; text-decoration: none; }
         .btn-code:hover { background: var(--oromo-red); }
 
+        /* --- TECH STACK SLIDER (SARARA SOCHO'U) --- */
+        .tech-slider {
+            background: var(--oromo-black); /* Sarara gurraacha sana irratti */
+            padding: 20px 0;
+            overflow: hidden;
+            border-top: 3px solid var(--oromo-red); /* Sarara diimaa xiqqoo gubbaatti */
+            position: relative;
+            display: flex;
+        }
+
+        .slider-track {
+            display: flex;
+            width: calc(200px * 16); /* Baay'ina icon-ootaa irratti hunda'a */
+            animation: scroll 25s linear infinite;
+        }
+
+        .slide {
+            width: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--oromo-white);
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .slide i {
+            font-size: 2.5rem;
+            margin-bottom: 8px;
+            transition: 0.3s;
+        }
+
+        .slide:hover { color: var(--oromo-red); transform: scale(1.1); }
+
+        /* Animation sochoosu */
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-200px * 8)); }
+        }
+
+        /* Akka harka namaa hin dhoorkineef */
+        .tech-slider::before, .tech-slider::after {
+            content: "";
+            height: 100%;
+            position: absolute;
+            width: 100px;
+            z-index: 2;
+        }
+        .tech-slider::before { left: 0; background: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0)); }
+        .tech-slider::after { right: 0; background: linear-gradient(to left, rgba(0,0,0,1), rgba(0,0,0,0)); }
         footer { background: var(--oromo-black); color: white; text-align: center; padding: 40px; margin-top: 60px; border-top: 5px solid var(--oromo-red); }
     </style>
 </head>
@@ -156,35 +168,94 @@
 
     <div class="snow-container" id="snow"></div>
 
-    <!-- ABOUT ME BUTTON -->
     <button class="about-me-btn" onclick="openAbout()">About Me</button>
 
-    <!-- ABOUT ME MODAL -->
+   <!-- ABOUT ME MODAL (ADVANCED & PROFESSIONAL) -->
     <div id="aboutModal" class="modal">
-        <div class="modal-content">
+        <div class="modal-content" style="max-height: 85vh; overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--oromo-red) var(--oromo-black);">
             <span class="close-modal" onclick="closeAbout()">&times;</span>
-            <h2 style="color: var(--oromo-red);"><i class="fas fa-user-tie"></i> Professional Profile</h2>
-            <hr>
-            <p><strong>Name:</strong> Biruk Tadesse</p>
-            <p><strong>Academic Status:</strong> Computer Science & Engineering Student at Bule Hora University (BHU)</p>
-            <p><strong>Current GPA:</strong> <span style="color: green; font-weight: bold;">3.7</span></p>
-            <p style="text-align: justify;">
-                I am a highly motivated and disciplined <strong>Software Developer</strong> with a strong academic background. With a current GPA of <strong>3.7</strong>, I excel in mastering complex technical concepts and applying them to high-impact solutions.
-            </p>
-            <p style="text-align: justify;">
-                I hold a deep respect for the engineering profession. My work is defined by clean code and innovative design. From <strong>Management Systems</strong> and <strong>Modern Websites</strong> to <strong>Mobile Apps</strong> and <strong>Telegram Automation</strong>, I deliver excellence in every project.
-            </p>
-            <h3 style="color: var(--oromo-black);">What I Do Best:</h3>
-            <ul style="columns: 2; list-style-type: none; padding-left: 0;">
-                <li><i class="fas fa-check-circle" style="color: red;"></i> Web Development (Full Stack)</li>
-                <li><i class="fas fa-check-circle" style="color: red;"></i> Android App Development</li>
-                <li><i class="fas fa-check-circle" style="color: red;"></i> Telegram Bot API Expert</li>
-                <li><i class="fas fa-check-circle" style="color: red;"></i> Java (Swing & Database)</li>
-                <li><i class="fas fa-check-circle" style="color: red;"></i> UI/UX Modern Design</li>
-                <li><i class="fas fa-check-circle" style="color: red;"></i> Python Automation</li>
-            </ul>
+            
+            <div style="text-align: center; margin-bottom: 30px;">
+                <h2 style="color: var(--oromo-red); font-size: 2.5rem; text-transform: uppercase;">🚀 Meet Biruk Tadesse</h2>
+                <p style="font-style: italic; color: #555;">Transforming Logic into Digital Reality | CSE Engineer</p>
+            </div>
+
+            <hr style="border: 1px solid #eee;">
+
+            <!-- 1. EXECUTIVE SUMMARY -->
+            <section style="margin-bottom: 30px;">
+                <h3 style="color: var(--oromo-black); border-bottom: 2px solid var(--oromo-red); display: inline-block;">🌟 Executive Summary</h3>
+                <p style="font-size: 1.1rem; line-height: 1.8; text-align: justify;">
+                    I am <span style="color: var(--oromo-red); font-weight: bold;">Biruk Tadesse</span>, a high-caliber <strong>Computer Science and Engineering</strong> student at <strong>Bule Hora University (BHU)</strong>. I am recognized for my exceptional academic performance, maintaining a stellar <span style="background: #e1f5fe; padding: 2px 8px; border-radius: 5px; color: #01579b; font-weight: bold;">GPA of 3.7</span>. 
+                    Beyond the classroom, I am a professional software architect with a deep-rooted passion for building scalable, high-performance applications. My journey in the tech world is driven by a commitment to <strong>Innovation, Discipline, and Excellence</strong>.
+                </p>
+            </section>
+
+            <!-- 2. ACADEMIC EXCELLENCE -->
+            <section style="margin-bottom: 30px; background: #fff5f5; padding: 20px; border-radius: 15px; border-right: 5px solid var(--oromo-red);">
+                <h3 style="color: var(--oromo-red);"><i class="fas fa-user-graduate"></i> Academic Prowess (GPA 3.7)</h3>
+                <p style="text-align: justify;">
+                    My academic journey is a testament to my dedication. Maintaining a <strong>3.7 GPA</strong> in the rigorous field of CSE requires not just intelligence, but strategic thinking and relentless hard work. I have mastered the core pillars of computer science, including Data Structures, Algorithms, Database Management Systems (DBMS), and Software Engineering principles. I take great pride in my ability to bridge the gap between theoretical computer science and practical software implementation.
+                </p>
+            </section>
+
+            <!-- 3. CORE TECHNICAL COMPETENCIES -->
+            <section style="margin-bottom: 30px;">
+                <h3 style="color: var(--oromo-black);"><i class="fas fa-tools"></i> Deep-Dive Technical Expertise</h3>
+                
+                <div style="margin-bottom: 15px;">
+                    <h4 style="color: var(--oromo-red); margin-bottom: 5px;">🖥️ Full-Stack Web Development</h4>
+                    <p style="margin-top: 0;">I create immersive, responsive, and data-driven web experiences. From crafting complex front-ends with HTML5, CSS3, and JavaScript to managing robust back-ends using PHP and Node.js, I ensure every website is optimized for speed, security, and SEO.</p>
+                </div>
+
+                <div style="margin-bottom: 15px;">
+                    <h4 style="color: var(--oromo-red); margin-bottom: 5px;">📱 Mobile Application Engineering</h4>
+                    <p style="margin-top: 0;">Using Java and Android Studio, I develop native Android applications that solve real-life challenges. My apps focus on <strong>User Centric Design (UI/UX)</strong>, ensuring a smooth experience across all device sizes. My flagship project, the BHU Cafeteria App, has revolutionized how students interact with campus services.</p>
+                </div>
+
+                <div style="margin-bottom: 15px;">
+                    <h4 style="color: var(--oromo-red); margin-bottom: 5px;">🤖 Telegram Ecosystem & Automation</h4>
+                    <p style="margin-top: 0;">I am a specialist in <strong>Telegram Bot API</strong>. I build advanced automation tools, including Userbots for group management, business automation bots, and notification systems. I understand the intricacies of BotFather and how to leverage the Telegram platform for maximum efficiency.</p>
+                </div>
+
+                <div style="margin-bottom: 15px;">
+                    <h4 style="color: var(--oromo-red); margin-bottom: 5px;">🏗️ Enterprise Desktop Systems</h4>
+                    <p style="margin-top: 0;">Java Swing and JDBC are my home ground. I build complex desktop management systems like the <strong>BHU Exam Management System</strong>. This includes database connectivity (MySQL/XAMPP), dynamic timer integration, automated result calculation, and professional report generation.</p>
+                </div>
+            </section>
+
+            <!-- 4. WORK ETHIC & PHILOSOPHY -->
+            <section style="margin-bottom: 30px; background: #000; color: #fff; padding: 25px; border-radius: 15px;">
+                <h3 style="color: var(--oromo-red);"><i class="fas fa-heart"></i> My Professional Philosophy</h3>
+                <p style="text-align: justify; color: #ccc;">
+                    "Software engineering is not just a job; it is a sacred craft." I hold immense respect for this profession. I believe in <strong>clean code</strong>, <strong>minimalist design</strong>, and <strong>extreme punctuality</strong>. Every project I deliver is a piece of art that reflects my name. 
+                    Whether I am working on a small bot or a massive enterprise system, my goal remains the same: <strong>Zero Bugs, Maximum Performance, and Total Client Satisfaction.</strong>
+                </p>
+                <p style="color: #fff; font-weight: bold; text-align: center;">"If it's worth doing, it's worth doing with excellence."</p>
+            </section>
+
+            <!-- 5. FUTURE ROADMAP -->
+            <section style="margin-bottom: 30px;">
+                <h3 style="color: var(--oromo-black);"><i class="fas fa-rocket"></i> Looking Ahead</h3>
+                <p style="text-align: justify;">
+                    As a lifelong learner, I am constantly exploring the frontiers of technology. Currently, I am expanding my knowledge in <strong>Spring Boot</strong> for modern enterprise back-ends and diving into <strong>Machine Learning</strong> to build smarter applications. I am always open to collaborating on innovative projects that push the boundaries of what is possible in the digital age.
+                </p>
+            </section>
+
+            <!-- 6. CALL TO ACTION -->
+            <div style="background: linear-gradient(to right, var(--oromo-black), var(--oromo-red)); color: white; padding: 30px; border-radius: 15px; text-align: center;">
+                <h3 style="margin-top: 0;">💼 Let's Build the Future Together</h3>
+                <p>Are you looking for a dedicated developer to bring your ideas to life? I am available for freelance, remote contracts, and collaborative partnerships.</p>
+                <div style="margin-top: 20px;">
+                    <a href="https://t.me/brex2217" style="background: white; color: black; padding: 10px 25px; border-radius: 30px; font-weight: bold; margin-right: 10px; text-decoration: none;">CONTACT VIA TELEGRAM</a>
+                    <a href="mailto:tadesebiruk515@gmail.com" style="background: transparent; border: 2px solid white; color: white; padding: 10px 25px; border-radius: 30px; font-weight: bold; text-decoration: none;">EMAIL ME</a>
+                </div>
+            </div>
+
+            <p style="text-align: center; color: #999; margin-top: 30px; font-size: 0.8rem;">Biruk Tadesse &copy; 2024 | All Rights Reserved.</p>
         </div>
     </div>
+    <!-- END OF MODAL -->
 
     <header>
         <div class="profile-container">
@@ -192,65 +263,161 @@
         </div>
         
         <h1 style="background: rgba(0,0,0,0.6); padding: 5px 25px; border-radius: 15px;">Biruk Tadesse</h1>
-        <p>Full Stack Developer | Java Expert | Bot Creator | CSE Engineer</p>
+        <p>Software Engineer | Full Stack Developer | Bot Creator | GPA 3.7</p>
+
+        <!-- INTERACTION BAR (FIXED ONCLICK & IDS) -->
+        <div class="interaction-container">
+            <div class="stat-item view-item">
+                <i class="fas fa-eye"></i> <span id="view-count">80,000</span>
+            </div>
+            <div class="stat-item" id="btn-like" onclick="toggleStat('likes')">
+                <i class="fas fa-thumbs-up"></i> <span id="like-count">10,000</span>
+            </div>
+            <div class="stat-item" id="btn-dislike" onclick="toggleStat('dislikes')">
+                <i class="fas fa-thumbs-down"></i> <span id="dislike-count">5</span>
+            </div>
+            <div class="stat-item" id="btn-love" onclick="toggleStat('loves')">
+                <i class="fas fa-heart"></i> <span id="love-count">30,000</span>
+            </div>
+        </div>
         
         <div class="social-icons">
-            <a href="https://github.com/birru2217" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://t.me/brex2217" target="_blank" title="Telegram"><i class="fab fa-telegram"></i></a>
-            <a href="https://www.facebook.com/profile.php?id=61564927622966" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.instagram.com/brex2217?igsh=NXljaTloMnJycWFq" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://youtube.com/@biruk-tad" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-            <a href="mailto:tadesebiruk515@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://github.com/birru2217" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://t.me/brex2217" target="_blank"><i class="fab fa-telegram"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61564927622966" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/brex2217?igsh=NXljaTloMnJycWFq" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://youtube.com/@biruk-tad" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="mailto:tadesebiruk515@gmail.com"><i class="fas fa-envelope"></i></a>
         </div>
     </header>
 
     <div class="container">
-        <h2 class="section-title">Featured Projects</h2>
+        <h2 class="section-title">My Projects</h2>
         <div class="projects-grid">
             <div class="project-card">
                 <h3>🎓 BHU Exam System</h3>
-                <p>Advanced Management System with admin controls and automated scoring.</p>
-                <a href="https://github.com/birru2217/BHU-Exam-Management-System" class="btn-code" target="_blank">View Project</a>
+                <p>Advanced Java application with admin controls, dynamic timers, and automated scoring.</p>
+                <a href="https://github.com/birru2217/BHU-Exam-Management-System" class="btn-code" target="_blank">View on GitHub</a>
             </div>
             <div class="project-card">
                 <h3>🍲 Cafeteria Website</h3>
-                <p>Complete web solution for university cafeteria services and ordering.</p>
-                <a href="https://github.com/birru2217/bhu-cafeteria-website" class="btn-code" target="_blank">View Project</a>
+                <p>Complete web solution for university cafeteria services and online ordering.</p>
+                <a href="https://github.com/birru2217/bhu-cafeteria-website" class="btn-code" target="_blank">View on GitHub</a>
             </div>
             <div class="project-card">
                 <h3>📱 Android Mobile App</h3>
-                <p>User-friendly mobile application built for cafeteria accessibility.</p>
-                <a href="https://github.com/birru2217/bhu-cafeteria-android-app" class="btn-code" target="_blank">View Project</a>
+                <p>User-friendly mobile application built for cafeteria accessibility using Java.</p>
+                <a href="https://github.com/birru2217/bhu-cafeteria-android-app" class="btn-code" target="_blank">View on GitHub</a>
             </div>
             <div class="project-card">
                 <h3>🤖 Telegram Automation</h3>
-                <p>Advanced bots for group management and user experience enhancement.</p>
+                <p>Expertly built bots for group management and workflow automation using API.</p>
                 <a href="https://t.me/BHU_info_col_9" class="btn-code" target="_blank">Join Channel</a>
             </div>
         </div>
     </div>
-
+<!-- TECH STACK SLIDER -->
+    <div class="tech-slider">
+        <div class="slider-track">
+            <!-- Mallattoolee (Double godhamaniiru akka loop ta'aniif) -->
+            <div class="slide"><i class="fab fa-java"></i><span>JAVA</span></div>
+            <div class="slide"><i class="fab fa-python"></i><span>PYTHON</span></div>
+            <div class="slide"><i class="fas fa-code"></i><span>C++</span></div>
+            <div class="slide"><i class="fas fa-terminal"></i><span>C#</span></div>
+            <div class="slide"><i class="fab fa-js"></i><span>JAVASCRIPT</span></div>
+            <div class="slide"><i class="fab fa-php"></i><span>PHP</span></div>
+            <div class="slide"><i class="fas fa-database"></i><span>MySQL</span></div>
+            <div class="slide"><i class="fab fa-android"></i><span>ANDROID</span></div>
+            
+            <!-- Irra deebii (For seamless looping) -->
+            <div class="slide"><i class="fab fa-java"></i><span>JAVA</span></div>
+            <div class="slide"><i class="fab fa-python"></i><span>PYTHON</span></div>
+            <div class="slide"><i class="fas fa-code"></i><span>C++</span></div>
+            <div class="slide"><i class="fas fa-terminal"></i><span>C#</span></div>
+            <div class="slide"><i class="fab fa-js"></i><span>JAVASCRIPT</span></div>
+            <div class="slide"><i class="fab fa-php"></i><span>PHP</span></div>
+            <div class="slide"><i class="fas fa-database"></i><span>MySQL</span></div>
+            <div class="slide"><i class="fab fa-android"></i><span>ANDROID</span></div>
+        </div>
+    </div>
     <footer>
-        <p>&copy; 2024 Biruk Tadesse. Built with <i class="fas fa-heart" style="color: red;"></i> for the Future.</p>
+        <p>&copy; 2024 Biruk Tadesse. Built with <i class="fas fa-heart" style="color: red;"></i> for Technology.</p>
     </footer>
-
     <script>
+        // Modal logic
         function openAbout() { document.getElementById("aboutModal").style.display = "block"; }
         function closeAbout() { document.getElementById("aboutModal").style.display = "none"; }
         window.onclick = function(event) { if (event.target == document.getElementById("aboutModal")) closeAbout(); }
 
+        // Snow logic
         function createSnow() {
             const snow = document.createElement('div');
             snow.classList.add('snowflake');
-            snow.innerHTML = '❄';
+            snow.innerHTML = '❄🤖';
+            snow.innerHTML = '🎈🤖🎈';
             snow.style.left = Math.random() * 100 + 'vw';
             snow.style.animationDuration = Math.random() * 3 + 2 + 's';
             snow.style.opacity = Math.random();
             document.getElementById('snow').appendChild(snow);
             setTimeout(() => { snow.remove(); }, 5000);
         }
-        setInterval(createSnow, 100);
-    </script>
 
+        // --- TOGGLE LOGIC (FIXED) ---
+        const baseStats = { views: 80000, likes: 10000, dislikes: 5, loves: 30000 };
+
+        function initStats() {
+            let v = parseInt(localStorage.getItem('v_count')) || baseStats.views;
+            let l = parseInt(localStorage.getItem('l_count')) || baseStats.likes;
+            let d = parseInt(localStorage.getItem('d_count')) || baseStats.dislikes;
+            let h = parseInt(localStorage.getItem('h_count')) || baseStats.loves;
+
+            v++; // Increment views on load
+            localStorage.setItem('v_count', v);
+
+            document.getElementById('view-count').innerText = v.toLocaleString();
+            document.getElementById('like-count').innerText = l.toLocaleString();
+            document.getElementById('dislike-count').innerText = d.toLocaleString();
+            document.getElementById('love-count').innerText = h.toLocaleString();
+
+            // Refresh ta'ullee halluu isaa eeguu
+            if(localStorage.getItem('isLiked') === 'true') document.getElementById('btn-like').classList.add('active-like');
+            if(localStorage.getItem('isDisliked') === 'true') document.getElementById('btn-dislike').classList.add('active-dislike');
+            if(localStorage.getItem('isLoved') === 'true') document.getElementById('btn-love').classList.add('active-love');
+        }
+
+        function toggleStat(type) {
+            let storageKey, statusKey, elementId, activeClass, baseVal, btnId;
+
+            if (type === 'likes') {
+                storageKey = 'l_count'; statusKey = 'isLiked'; elementId = 'like-count'; activeClass = 'active-like'; baseVal = baseStats.likes; btnId = 'btn-like';
+            } else if (type === 'dislikes') {
+                storageKey = 'd_count'; statusKey = 'isDisliked'; elementId = 'dislike-count'; activeClass = 'active-dislike'; baseVal = baseStats.dislikes; btnId = 'btn-dislike';
+            } else if (type === 'loves') {
+                storageKey = 'h_count'; statusKey = 'isLoved'; elementId = 'love-count'; activeClass = 'active-love'; baseVal = baseStats.loves; btnId = 'btn-love';
+            }
+
+            let count = parseInt(localStorage.getItem(storageKey)) || baseVal;
+            let isSet = localStorage.getItem(statusKey) === 'true';
+            let btn = document.getElementById(btnId);
+
+            if (!isSet) {
+                count++;
+                localStorage.setItem(statusKey, 'true');
+                btn.classList.add(activeClass);
+            } else {
+                count--;
+                localStorage.setItem(statusKey, 'false');
+                btn.classList.remove(activeClass);
+            }
+
+            localStorage.setItem(storageKey, count);
+            document.getElementById(elementId).innerText = count.toLocaleString();
+        }
+
+        window.onload = function() {
+            initStats();
+            setInterval(createSnow, 100);
+        };
+    </script>
 </body>
 </html>
