@@ -258,59 +258,69 @@
         }
 
         /* --- MOBILE & TABLET RESPONSIVE FIX --- */
+       /* --- ABOUT ME MODAL PORTABLE FIX (BILBILAAF) --- */
         @media screen and (max-width: 768px) {
-            /* 1. Header & Maqaa */
-            header { padding: 80px 10px 60px; }
-            header h1 { font-size: 2.2rem; padding: 5px 15px; }
-            .signature { font-size: 2.2rem; bottom: -20px; right: 0; }
-            .typing-container { font-size: 1.2rem; }
-
-            /* 2. Suuraa (Profile Image) - Size isaa hir'isneerra bilbilaaf */
-            .profile-container {
-                width: 260px; 
-                height: 300px; 
-                border-width: 5px;
-            }
-
-            /* 3. About Me Modal (Bakka ati jette sana) */
+            
+            /* 1. Saaxinii Modal-ichaa (Modal Content) */
             .modal-content {
-                width: 95% !important; /* Screen bilbilaa guutummaatti qabata */
-                margin: 10% auto;
-                padding: 20px;
-                border-left: 6px solid var(--oromo-red);
-            }
-            .modal h2 { font-size: 1.8rem; }
-            .modal p { font-size: 1rem; line-height: 1.6; }
-            .highlight-box { padding: 15px; font-size: 0.9rem; }
-
-            /* 4. Interaction Bar (Likes/Views) */
-            .interaction-container {
-                gap: 10px;
-                padding: 10px 15px;
-                flex-wrap: wrap; /* Akka wal-jala galan godha */
-                border-radius: 20px;
-            }
-            .stat-item { font-size: 0.9rem; }
-            .stat-item i { font-size: 1.2rem; }
-
-            /* 5. Social Icons */
-            .social-icons a {
-                width: 55px; height: 55px;
-                font-size: 1.8rem;
-                margin: 5px;
+                width: 92% !important; /* Screen bilbilaa harka 92% qabata */
+                margin: 5% auto !important;
+                padding: 20px !important; /* Padding ni hir'isna bakka akka qusatuuf */
+                border-radius: 15px !important;
+                border-left: 6px solid var(--oromo-red) !important;
             }
 
-            /* 6. Projects Section */
-            .section-title { font-size: 2rem; }
-            .projects-grid {
-                grid-template-columns: 1fr; /* Project tokko tokkoon gadi tarreeffama */
-                gap: 20px;
+            /* 2. Mata Duree Gurguddaa (Engineer Biruk Tadesse) */
+            .modal-content h2 {
+                font-size: 1.6rem !important; /* PC irratti 3.2 ture, amma 1.6 ta'a */
+                line-height: 1.2;
             }
-            .project-card { padding: 25px; }
 
-            /* 7. Tech Slider */
-            .slide { width: 150px; }
-            .slide i { font-size: 2.5rem; }
+            /* 3. Ibsa Gabaabaa (Software Architect...) */
+            .modal-content h4 {
+                font-size: 0.8rem !important;
+                letter-spacing: 1px !important;
+                margin-bottom: 15px !important;
+            }
+
+            /* 4. Mata Duree Section-ootaa (Executive Summary...) */
+            .modal h3 {
+                font-size: 1.2rem !important;
+                margin-top: 20px !important;
+            }
+
+            /* 5. Barreeffama Dubbisamu (Paragraphs) */
+            .modal p {
+                font-size: 0.95rem !important; /* Barreeffamni xiqqoo xiqqaatee akka wal-jala galuuf */
+                line-height: 1.6 !important;
+                text-align: left !important; /* Bilbila irratti justify irra left wayya */
+            }
+
+            /* 6. GPA Highlight Box */
+            .modal span[style*="background: var(--oromo-red)"] {
+                padding: 2px 8px !important;
+                font-size: 0.9rem !important;
+            }
+
+            /* 7. Grid (Saaxinii 4n dandeettii keetii) */
+            /* Bilbila irratti saaxiniin 4n sun wal-jala akka galan godha */
+            .modal-content div[style*="display: grid"] {
+                grid-template-columns: 1fr !important; 
+                gap: 15px !important;
+            }
+
+            /* 8. Call to Action (Buttons) */
+            .modal-content a[style*="padding: 18px 45px"] {
+                padding: 12px 20px !important;
+                font-size: 0.9rem !important;
+                width: 100%; /* Button-oonni harka guutuu akka ta'an */
+                margin-bottom: 10px;
+            }
+
+            /* 9. Icons & Emojis */
+            .modal i {
+                font-size: 1.1rem !important;
+            }
         }
 
         /* Bilbila baay'ee xiqqaaf (Extra Small) */
