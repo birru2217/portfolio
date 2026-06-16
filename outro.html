@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Biruk Tadesse</title>
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        
+       body {
+            background-color: #080808; 
+            color: #fff;
+            min-height: 100vh; /* 'height' gara 'min-height' tti jijjiirame */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-y: auto; /* Yoo screen xiqqaa ta'e scroll akka godhuuf */
+            overflow-x: hidden;
+            position: relative;
+            padding: 40px 20px; /* Gubbaa fi jalaaf padding dabalame */
+        }
+
+        /* 🪄 MAGIC BACKGROUND: Particle Effect */
+        #particles-js {
+            position: fixed; /* 'absolute' irraa gara 'fixed' tti jijjiirame */
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: 1;
+        }
+
+        .content-wrapper {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px; /* Suuraan bar jala akka hin galle gadi siqsa */
+        }
+
+        /* 🌟 GLOWING LOGO / AVATAR */
+        .avatar-box {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: url('pro.png') center/cover; 
+            border: 4px solid #FFD700;
+            box-shadow: 0 0 40px rgba(255, 215, 0, 0.6), inset 0 0 20px rgba(255, 215, 0, 0.6);
+            margin-bottom: 40px; /* Suuraa fi barreeffama gidduu iddoo dabaleera */
+            animation: floatLogo 4s ease-in-out infinite;
+        }
+        @keyframes floatLogo {
+            0%, 100% { transform: translateY(0); box-shadow: 0 0 40px rgba(255, 215, 0, 0.6); }
+            50% { transform: translateY(-15px); box-shadow: 0 0 60px rgba(255, 215, 0, 1); }
+        }
+
+        /* 📝 THANK YOU TEXT */
+        .thank-you-text {
+            font-size: 5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            background: linear-gradient(90deg, #00FF7F, #00FFFF, #FFD700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            opacity: 0;
+            transform: scale(0.8);
+            animation: popIn 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards 0.5s;
+        }
+        @keyframes popIn {
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: #cccccc;
+            font-weight: 300;
+            margin-bottom: 40px;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards 1.2s;
+        }
+
+        /* 🚀 SOCIAL MEDIA LINKS (GLOWING) */
+        .social-container {
+            display: flex;
+            gap: 25px;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards 1.8s;
+        }
+
+        .social-icon {
+            width: 60px; height: 60px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex; justify-content: center; align-items: center;
+            font-size: 28px;
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            border: 2px solid transparent;
+        }
+        
+        .social-icon.linkedin:hover { background: #0A66C2; border-color: #0A66C2; box-shadow: 0 0 20px #0A66C2; transform: translateY(-10px); }
+        .social-icon.github:hover { background: #ffffff; color: #000; border-color: #ffffff; box-shadow: 0 0 20px #ffffff; transform: translateY(-10px); }
+        .social-icon.telegram:hover { background: #229ED9; border-color: #229ED9; box-shadow: 0 0 20px #229ED9; transform: translateY(-10px); }
+        .social-icon.youtube:hover { background: #FF0000; border-color: #FF0000; box-shadow: 0 0 20px #FF0000; transform: translateY(-10px); }
+        
+        /* 🔥 THE URL DISPLAY */
+        .portfolio-url {
+            margin-top: 40px;
+            font-size: 1.5rem;
+            font-family: monospace;
+            color: #00FF7F;
+            font-weight: bold;
+            letter-spacing: 2px;
+            border: 1px dashed #00FF7F;
+            padding: 15px 30px;
+            border-radius: 15px;
+            background: rgba(0, 255, 127, 0.05);
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards 2.5s;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+
+    <div class="content-wrapper">
+        <!-- Profile Image -->
+        <!-- Suuraa kee yoo qabaatte 'profile.png' asitti fayyadami -->
+        <div class="avatar-box"></div>
+
+        <!-- Texts -->
+        <h3 class="thank-you-text">Thank You For Watching My Portfolio</h3>
+       <h3><p class="subtitle">Please Follow my TikTok account and support me</p></h3> 
+
+        <!-- Social Icons -->
+        <div class="social-container">
+            <a href="https://www.linkedin.com/in/bir-tad-7652663b6" class="social-icon linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/birru2217" class="social-icon github" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://t.me/brex2217" class="social-icon telegram" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+            <a href="https://www.youtube.com/@brex-media" class="social-icon youtube" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+
+        <!-- Portfolio Link -->
+        <div class="portfolio-url">
+            <i class="fas fa-globe"></i> www.biruk.dev
+        </div>
+    </div>
+
+    <!-- Scripts for Magic Particles -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // 🪄 Initialize Particle Background (Cybersecurity / Tech Vibe)
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": ["#00FF7F", "#00FFFF", "#FFD700"] },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.5, "random": false },
+                "size": { "value": 3, "random": true },
+                "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.2, "width": 1 },
+                "move": { "enable": true, "speed": 3, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" }, "resize": true },
+                "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 1 } }, "push": { "particles_nb": 4 } }
+            },
+            "retina_detect": true
+        });
+    </script>
+</body>
+</html>
