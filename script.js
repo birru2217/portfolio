@@ -236,14 +236,127 @@ function navigateTo(sectionId) {
 // 🚀 DYNAMIC PROJECTS GENERATOR & MINI CMS (MAGIC)
 // ========================================================
 
-// Default Projects (Kan yeroo hunda jiran, Dizaayinii isaanii eeggatanii)
-const defaultProjects = [
-    { title: "🚀 RLMS (Enterprise)", tags: ["PHP 8.x", "Vanilla JS", "MySQLi", "AJAX"], description: "A highly secure, 5-tier architecture Registration & Learning Management System. Features Military-grade 2FA, Smart Anti-Cheat Exams, Auto-grading, and a Telegram-style encrypted Chat Hub.", link: "https://github.com/birru2217/RLMS-Enterprise", btnText: "View Code", icon: "fab fa-github", themeClass: "color-card-rlms", isNew: true },
-    { title: "🎓 BHU Exam System", tags: ["Java Swing", "MySQL", "JDBC"], description: "Enterprise Java system with dynamic timers, automated scoring, and secure admin controls. Built from scratch for Bule Hora University.", link: "https://github.com/birru2217/BHU-Exam-Management-System", btnText: "View Code", icon: "fab fa-github", themeClass: "color-card-1", isNew: false },
-    { title: "🍲 Cafeteria Website", tags: ["HTML/CSS", "JS", "PHP"], description: "A modern, responsive web application for university dining. Features digital menus and a real-time ordering management interface.", link: "https://github.com/birru2217/bhu-cafeteria-website", btnText: "View Code", icon: "fab fa-github", themeClass: "color-card-2", isNew: false },
-    { title: "📱 Cafeteria App", tags: ["Java (Native)", "XML", "Firebase"], description: "Native mobile app designed for student convenience. Built with Java and seamlessly integrated with a central university database.", link: "https://github.com/birru2217/bhu-cafeteria-android-app", btnText: "View Code", icon: "fab fa-github", themeClass: "color-card-3", isNew: false },
-    { title: "🤖 Telegram Automation", tags: ["Python", "Telethon", "API"], description: "Specialized bot solutions for group administration, mass user management, and organizational workflow scaling via Userbots.", link: "https://t.me/BHU_info_col_9", btnText: "View Demo", icon: "fab fa-telegram", themeClass: "color-card-4", isNew: false }
-];
+// ========================================================
+        // 🚀 DYNAMIC PROJECTS GENERATOR & MINI CMS (MAGIC - ALL 11 PROJECTS)
+        // ========================================================
+        const defaultProjects = [
+            { 
+                title: "🚀 RLMS (Enterprise)", 
+                tags: ["PHP 8.x", "Vanilla JS", "MySQLi", "AJAX"], 
+                description: "A highly secure, 5-tier architecture Registration & Learning Management System. Features Military-grade 2FA, Smart Anti-Cheat Exams, Auto-grading, and a Telegram-style encrypted Chat Hub.", 
+                link: "https://github.com/birru2217/RLMS-Enterprise", 
+                btnText: "View Code", 
+                icon: "fab fa-github", 
+                themeClass: "color-card-rlms", 
+                createdAt: "2026-06-12" // Guyyaa uumamaa (NEW tag ni mul'ata)
+            },
+            { 
+                title: "🎓 BHU Exam System", 
+                tags: ["Java Swing", "MySQL", "JDBC"], 
+                description: "Enterprise Java system with dynamic timers, automated scoring, and secure admin controls. Built from scratch for Bule Hora University.", 
+                link: "https://github.com/birru2217/BHU-Exam-Management-System", 
+                btnText: "View Code", 
+                icon: "fab fa-github", 
+                themeClass: "color-card-1", 
+                createdAt: "2026-01-01" // Guyyaa 30 darbeera (NEW tag ofumaan haqameera)
+            },
+            { 
+                title: "🍲 Cafeteria Website", 
+                tags: ["HTML/CSS", "JS", "PHP"], 
+                description: "A modern, responsive web application for university dining. Features digital menus and a real-time ordering management interface.", 
+                link: "https://github.com/birru2217/bhu-cafeteria-website", 
+                btnText: "View Code", 
+                icon: "fab fa-github", 
+                themeClass: "color-card-2", 
+                createdAt: "2026-02-01" 
+            },
+            { 
+                title: "📱 Cafeteria App", 
+                tags: ["Java (Native)", "XML", "Firebase"], 
+                description: "Native mobile app designed for student convenience. Built with Java and seamlessly integrated with a central university database.", 
+                link: "https://github.com/birru2217/bhu-cafeteria-android-app", 
+                btnText: "View Code", 
+                icon: "fab fa-github", 
+                themeClass: "color-card-3", 
+                createdAt: "2026-03-01" 
+            },
+            { 
+                title: "🤖 Telegram Automation", 
+                tags: ["Python", "Telethon", "API"], 
+                description: "Specialized bot solutions for group administration, mass user management, and organizational workflow scaling via Userbots.", 
+                link: "https://t.me/BHU_info_col_9", 
+                btnText: "View Demo", 
+                icon: "fab fa-telegram", 
+                themeClass: "color-card-4", 
+                createdAt: "2026-04-01" 
+            },
+            { 
+                title: "🍔 FoodOrder System", 
+                tags: ["PHP", "MySQL", "Bootstrap 5", "JS"], 
+                description: "A responsive online food ordering platform. Features an interactive shopping cart, real-time order tracking, multiple payment gateways, and a secure admin dashboard for menu management.", 
+                link: "https://github.com/birru2217/online-food-ordering-system", 
+                btnText: "View Project", 
+                icon: "fab fa-github", 
+                themeClass: null, 
+                color: "#e67e22", // Deep Orange (Attractive)
+                createdAt: "2026-04-01" 
+            },
+            { 
+                title: "🛒 E-Commerce Online Shopping", 
+                tags: ["PHP", "MySQL", "Bootstrap", "JavaScript"], 
+                description: "A fully functional e-commerce web platform for online shopping. Features secure user authentication, interactive shopping cart, product catalog with categories, and a robust admin panel.", 
+                link: "https://github.com/birru2217/online-shopping-system", 
+                btnText: "View Project", 
+                icon: "fab fa-github", 
+                themeClass: null, 
+                color: "#e74c3c", // Vibrant Red
+                createdAt: "2026-05-15" 
+            },
+            { 
+                title: "🌾 Agri-Business Enterprise", 
+                tags: ["PHP PDO", "MySQL", "Bootstrap", "JS", "RBAC"], 
+                description: "An enterprise agricultural platform connecting farmers, investors, and consumers. Features secure role-based access control, a crowdfunding ledger, and interactive inventory trackers.", 
+                link: "https://github.com/birru2217/agri-business-social-enterprise", 
+                btnText: "View Project", 
+                icon: "fab fa-github", 
+                themeClass: null, 
+                color: "#2ecc71", // Emerald Green
+                createdAt: "2026-05-20" 
+            },
+            { 
+                title: "📚 PageNest Bookstore", 
+                tags: ["PHP", "MySQL", "Bootstrap", "JS", "E-Commerce"], 
+                description: "A comprehensive online bookstore platform. Features an interactive e-book catalog, paywall for digital PDF downloads, shopping cart, secure checkout, and detailed admin analytics.", 
+                link: "https://github.com/birru2217/online-bookstore-system", 
+                btnText: "View Project", 
+                icon: "fab fa-github", 
+                themeClass: null, 
+                color: "#9b59b6", // Amethyst Purple
+                createdAt: "2026-05-25" 
+            },
+            { 
+                title: "📝 BHU Student Clearance", 
+                tags: ["PHP", "MySQL", "Bootstrap", "JavaScript"], 
+                description: "An automated student clearance system designed for Bule Hora University. Digitizes clearance workflows across 5 campus offices and academic departments, generating verifiable digital certificates.", 
+                link: "https://github.com/birru2217/bhu-student-clearance-system", 
+                btnText: "View Project", 
+                icon: "fab fa-github", 
+                themeClass: null, 
+                color: "#3498db", // Sky Blue
+                createdAt: "2026-06-05" // Added within 30 days (NEW tag visible)
+            },
+            { 
+                title: "📊 Student Marks Management", 
+                tags: ["Java Swing", "JDBC", "MySQL", "Desktop"], 
+                description: "A robust desktop application for managing student academic records. Simplifies grading workflows, mark entry, and grade report generation with atomic transaction database safety.", 
+                link: "https://github.com/birru2217/student-marks-management", 
+                btnText: "View Code", 
+                icon: "fab fa-github", 
+                themeClass: null, 
+                color: "#ffffff", // Pure Elegant White (As requested)
+                createdAt: "2026-06-15" // Added 2 days ago (NEW tag visible)
+            }
+        ];
 
 // Function Kaardii uumee HTML keessa galchu
 function loadProjects() {
