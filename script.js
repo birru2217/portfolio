@@ -19,7 +19,7 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 
 
 // --- 2. POWERFUL TYPING EFFECT ---
-const wordsData = ["Software Architect.", "Java Specialist.", "Bot Developer.", "CSE Engineer."];
+const wordsData = ["Fullstack Developer.", "Frontend Developer.", "Backend Developer.", "Software Engineer.", "Website Developer.", "Android App Developer.", "Desktop App Developer."];
 let charIndex = 0;
 let wordIndex = 0;
 let isDeleting = false;
