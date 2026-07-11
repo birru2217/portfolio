@@ -347,7 +347,7 @@ section {
 
 .marquee-track {
     display: flex; width: max-content; gap: 30px;
-    animation: scroll-left 10s linear infinite; /* Saffisa yaa'uu madaalawaa */
+    animation: scroll-left 6s linear infinite; /* Saffisa yaa'uu madaalawaa */
 }
 .marquee-track:hover { animation-play-state: paused; } 
 
