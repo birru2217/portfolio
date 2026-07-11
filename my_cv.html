@@ -14,15 +14,15 @@
             padding: 0;
         }
 
-      body {
+        body {
             font-family: 'Poppins', sans-serif;
             background-color: #e5e7eb;
             color: #1f2937;
             line-height: 1.5;
-            padding: 20px 0; /* Gara olii fi gadii qofa iddoo bana */
+            padding: 20px 0; 
             display: flex;
-            flex-direction: column; /* Kun CV fi Button wal-jala (Gubbaa fi Jala) akka ta'an godha */
-            align-items: center; /* Kun ammoo gidduugaleessa (Center) akka ta'an godha */
+            flex-direction: column; 
+            align-items: center; 
         }
 
         .cv-wrapper {
@@ -53,7 +53,7 @@
             height: 150px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid #10b981; /* Red accent matching your template image */
+            border: 3px solid #10b981; 
         }
 
         .left-section {
@@ -91,8 +91,8 @@
             color: #d1d5db;
             text-decoration: none;
         }
-.contact-item a:hover {
-            color: #ef4444 !important; /* Halluu diimaa yeroo mouse irra qaban */
+        .contact-item a:hover {
+            color: #ef4444 !important; 
             text-decoration: underline;
         }
         /* 3. Key Skills */
@@ -100,7 +100,7 @@
         .skill-name { font-size: 12.5px; font-weight: 500; margin-bottom: 4px; }
         .progress-bg { width: 100%; height: 5px; background-color: #374151; border-radius: 3px; }
         .progress-fill { height: 100%; background-color: #783737; border-radius: 3px; }
-/* Magic Badge Skills */
+        /* Magic Badge Skills */
         .magic-badge {
             background: linear-gradient(135deg, #1f2937, #111827);
             color: #10b981;
@@ -240,15 +240,15 @@
             display: inline-block;
         }
 
-     @media print {
+        @media print {
             body { padding: 0; background-color: #fff; }
             .cv-wrapper { box-shadow: none; border-radius: 0; max-width: 100%; margin: 0; }
-            .no-print { display: none !important; } /* Yeroo print godhamu button ni dhokata */
+            .no-print { display: none !important; } 
             * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
         }
         /* Certification Links Styling */
         .cert-link {
-            color: #d1d5db; /* Halluu adii gara daalachaatti dabu */
+            color: #d1d5db; 
             text-decoration: none;
             font-size: 12.5px;
             display: flex;
@@ -259,11 +259,11 @@
         .cert-link i {
             margin-top: 2px;
             margin-right: 8px;
-            color: #10b981; /* Halluu magariisa */
+            color: #10b981; 
             font-size: 13px;
         }
         .cert-link:hover {
-            color: #10b981; /* Yeroo mouse irra qaban magariisa ta'a */
+            color: #10b981; 
             text-decoration: underline;
         }
     </style>
@@ -282,11 +282,12 @@
             <!-- 1. Contact Details -->
             <div class="left-section">
                 <div class="section-title-left">1. Contact Details</div>
-                <div class="contact-item"><i class="fas fa-phone contact-icon"></i> +251 947 395 224/+251715395224</div>
+                <div class="contact-item"><i class="fas fa-phone contact-icon"></i> +251 947 395 224</div>
                 <div class="contact-item"><i class="fas fa-envelope contact-icon"></i> <a href="mailto:tadesebiruk515@gmail.com">tadesebiruk515@gmail.com</a></div>
-                <div class="contact-item"><i class="fab fa-github contact-icon"></i> <a href="https://github.com/birru2217">github.com/birru2217</a></div>
-                <div class="contact-item"><i class="fas fa-globe contact-icon"></i> <a href="https://birru2217.github.io/portfolio/">Portfolio Website</a></div>
-                <div class="contact-item"><i class="fas fa-map-marker-alt contact-icon"></i> Addis Abeba , Ethiopia</div>
+                <div class="contact-item"><i class="fab fa-github contact-icon"></i> <a href="https://github.com/birru2217" target="_blank">github.com/birru2217</a></div>
+                <div class="contact-item"><i class="fas fa-globe contact-icon"></i> <a href="https://birru2217.github.io/portfolio/" target="_blank">Portfolio Website</a></div>
+                <!-- Location linkii Google Maps itti godheera akka banamuuf -->
+                <div class="contact-item"><i class="fas fa-map-marker-alt contact-icon"></i> <a href="https://www.google.com/maps/place/Addis+Ababa,+Ethiopia" target="_blank">Addis Abeba, Ethiopia</a></div>
             </div>
 
            <!-- 3. Key Skills (Magic Badges) -->
@@ -294,7 +295,7 @@
                 <div class="section-title-left">3. Key Skills</div>
                 <div style="display: flex; flex-wrap: wrap; gap: 8px;">
                     <div class="magic-badge">
-                        <i class="fas fa-robot"></i> Phyton
+                        <i class="fas fa-robot"></i> Python
                     </div>
                     <div class="magic-badge">
                         <i class="fab fa-java"></i> Java / Android
@@ -302,7 +303,6 @@
                     <div class="magic-badge">
                         <i class="fab fa-php"></i> Full-Stack (PHP/JS)
                     </div>
-                    
                     <div class="magic-badge">
                         <i class="fab fa-python"></i> Python / Telethon
                     </div>
@@ -316,10 +316,11 @@
                         <i class="fas fa-robot"></i> Bot Automation
                     </div>
                      <div class="magic-badge">
-                        <i class="fas fa-robot"></i>HTML/CSS/JS
+                        <i class="fab fa-html5"></i> HTML/CSS/JS
                     </div>
                 </div>
             </div>
+
             <!-- 5. Education -->
             <div class="left-section">
                 <div class="section-title-left">5. Education</div>
@@ -336,17 +337,17 @@
                    <li style="margin-bottom: 15px;">
                         <span class="info-subtitle" style="margin-bottom: 5px;">Certifications() 👇 click & check</span>
                         <div style="padding-left: 5px;">
-                            <!-- Link 1 -->
-                            <a href="udacity_certs.pdf" target="_blank" class="cert-link">
+                            <!-- Link 1 (Jijjiirameera) -->
+                            <a href="https://birru2217.github.io/portfolio/udacity_certs.pdf" target="_blank" class="cert-link">
                                 <i class="fas fa-file-alt"></i> udacity(4 Certifications)
                             </a>
-                            <!-- Link 2 -->
-                            <a href="eshe_certs.pdf" target="_blank" class="cert-link">
+                            <!-- Link 2 (Jijjiirameera) -->
+                            <a href="https://birru2217.github.io/portfolio/eshe_certs.pdf" target="_blank" class="cert-link">
                                 <i class="fas fa-file-alt"></i> e-SHE Portal(6 Certifications)
                             </a>
-                            <!-- Link 3 -->
-                            <a href="software_arch.pdf" target="_blank" class="cert-link">
-                                <i class="fas fa-file-alt"></i> Software Architecture & Clean Code (Online)
+                            <!-- Link 3 (Jijjiirameera) -->
+                            <a href="https://birru2217.github.io/portfolio/software_arch.pdf" target="_blank" class="cert-link">
+                                <i class="fas fa-file-alt"></i> Software Architecture & Clean Code
                             </a>
                         </div>
                     </li>
@@ -379,11 +380,11 @@
             <div>
                 <div class="section-title-right">2. Personal Statement</div>
                <p class="personal-statement">
-    I am a dedicated 4th-year Computer Science student with a deep passion for technology and extensive hands-on experience in software development. I am fully capable of handling any software project—from simple prototypes to complex, real-world enterprise systems, such as the official Cafeteria Application I developed for Bule Hora University. I hold immense respect for my profession and am 100% confident in my ability to deliver flawless, bug-free, and beautifully architected solutions. I am actively seeking remote and freelance opportunities. I respectfully invite you to consider my application, and I assure you that given the chance, I will bring exceptional value, accuracy, and unwavering dedication to your esteemed organization.
-</p>
+                    I am a dedicated 4th-year Computer Science student with a deep passion for technology and extensive hands-on experience in software development. I am fully capable of handling any software project—from simple prototypes to complex, real-world enterprise systems, such as the official Cafeteria Application I developed for Bule Hora University. I hold immense respect for my profession and am 100% confident in my ability to deliver flawless, bug-free, and beautifully architected solutions. I am actively seeking remote and freelance opportunities. I respectfully invite you to consider my application, and I assure you that given the chance, I will bring exceptional value, accuracy, and unwavering dedication to your esteemed organization.
+                </p>
             </div>
 
-            <!-- 4. Employment History (Mapped to the 11 Projects) -->
+            <!-- 4. Employment History -->
             <div>
                 <div class="section-title-right">4. Employment History</div>
                 <p class="employment-intro">Freelance Software Developer & Systems Engineer (2022 - Present)</p>
@@ -437,7 +438,7 @@
                 </div>
             </div>
 
-       <!-- 7. References -->
+            <!-- 7. References -->
             <div style="margin-top: 15px;">
                 <div class="section-title-right">7. References</div>
                 
@@ -471,7 +472,6 @@
             <!-- Signature (Mallattoo) Section -->
             <div style="margin-top: 40px; text-align: right; padding-right: 10px;">
                 <div style="font-size: 13px; color: #6b7280; margin-bottom: 5px; font-style: italic;">Best Regards,</div>
-                <!-- Qubee 'B' irraa kan eegalu mallattoo bifa bareedaan -->
                 <div style="font-family: 'Brush Script MT', 'Lucida Handwriting', cursive; font-size: 38px; color: #111827; line-height: 1; margin-bottom: -5px;">
                     Biruk T.
                 </div>
