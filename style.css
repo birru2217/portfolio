@@ -294,7 +294,7 @@ section {
 
 .marquee-track {
     display: flex; width: max-content; gap: 30px;
-    animation: scroll-left 25s linear infinite; /* Saffisa yaa'uu madaalawaa */
+    animation: scroll-left 10s linear infinite; /* Saffisa yaa'uu madaalawaa */
 }
 .marquee-track:hover { animation-play-state: paused; } 
 
@@ -382,9 +382,12 @@ section {
 
 /* --- 8. CONTACT (COLORFUL SPINNING CIRCLES) --- */
 .contact-container { 
-    text-align: center; max-width: 850px; margin: 0 auto; 
+    text-align: center; 
+    max-width: 1050px; /* Duraan 850px ture, amma bal'isneerra akka hundi keessa galaniif */ 
+    margin: 0 auto; 
     background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(0,0,0,0.6)); 
-    padding: 60px 40px; border-radius: 30px;
+    padding: 60px 30px; 
+    border-radius: 30px;
     border: 1px solid rgba(0, 255, 127, 0.2);
     box-shadow: 0 10px 40px rgba(0,0,0,0.5), inset 0 0 20px rgba(0, 255, 127, 0.05);
 }
@@ -392,8 +395,20 @@ section {
 .contact-container p { color: var(--gray); font-size: 1.15rem; line-height: 1.8; }
 
 .social-icons-contact { 
-    display: flex; justify-content: center; gap: 25px; 
+    display: flex; justify-content: center; 
+    gap: 20px; /* Duraan 25px ture, xiqqoo dhiphisne akka walitti siqaniif */
     flex-wrap: wrap; margin-top: 40px; 
+}
+
+.spin-icon {
+    width: 70px; /* Duraan 80px ture, amma 70px goone akka sarara tokko qabataniif */
+    height: 70px; 
+    border-radius: 50%; 
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2.2rem; /* Ikoonii xiqqoo hir'isne */
+    background: rgba(0,0,0,0.8);
+    text-decoration: none;
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55); 
 }
 
 .spin-icon {
@@ -412,7 +427,18 @@ section {
 .contact-facebook { color: #1877F2; border: 2px solid #1877F2; }
 .contact-instagram { color: #E1306C; border: 2px solid #E1306C; }
 .contact-email { color: #EA4335; border: 2px solid #EA4335; }
+/* --- HALLUU LINKEDIN --- */
+.contact-linkedin { color: #0077b5; border: 2px solid #0077b5; }
+.contact-linkedin:hover { background: #0077b5; color: #fff; box-shadow: 0 0 30px #0077b5; }
+/* HALLUU HAARAA (YouTube, TikTok, fi X) */
+.contact-youtube { color: #FF0000; border: 2px solid #FF0000; }
+.contact-tiktok { color: #ff0050; border: 2px solid #ff0050; }
+.contact-x { color: #e7e9ea; border: 2px solid #e7e9ea; } /* Halluu X (Twitter) */
 
+/* Yeroo Tuqaman (Hover Effects) */
+.contact-youtube:hover { background: #FF0000; color: #fff; box-shadow: 0 0 30px #FF0000; }
+.contact-tiktok:hover { background: #ff0050; color: #fff; box-shadow: 0 0 30px #ff0050; }
+.contact-x:hover { background: #e7e9ea; color: #000; box-shadow: 0 0 30px #e7e9ea; }
 /* Yeroo Tuqamu/Hover godhamu (Spin & Colorful Glow) */
 .spin-icon:hover {
     transform: rotate(360deg) scale(1.15); /* Digrii 360 Naanna'a, xiqqoos ni guddata */
