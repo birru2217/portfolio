@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biruk Tadesse | Portfolio</title>
-    <!-- Font Awesome Icons (Version Haaraa 6.5.2) -->
+    <!-- Font Awesome Icons (Version 6.5.2) -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <!-- Faayila CSS Waamuu -->
+    <!-- External CSS -->
     <link rel="stylesheet" href="style.css">
     
-    <!-- CSS Haaraa Effeektii "Electrical Particle" tiif dabalame -->
+    <!-- CSS for Electrical Particle Effect -->
     <style>
         #networkCanvas {
             position: fixed;
@@ -19,26 +19,26 @@
             left: 0;
             width: 100vw;
             height: 100vh;
-            z-index: 2; /* Viidiyoo duubaa irra akka ifuuf */
-            pointer-events: none; /* Mouse'n akka jala darbee button cuqaasuu danda'uuf (BAAY'EE BARBAACHISAA) */
+            z-index: 2; /* Ensures it stays above the background video */
+            pointer-events: none; /* Allows clicks to pass through to buttons (CRUCIAL) */
         }
     </style>
 </head>
 <body class="mode-3d">
-    <!-- CANVAS EEFFEKTII ELECTRICAL HAARAA -->
+    <!-- ELECTRICAL EFFECT CANVAS -->
     <canvas id="networkCanvas"></canvas>
 
     <div class="snow-container" id="snow"></div>
     
     <!-- NAVBAR -->
     <nav>
-        <!-- LOGO HAARAA -->
+        <!-- LOGO -->
         <a href="#home" class="logo">
             <img src="profile.png" alt="Biruk Logo" class="nav-logo-img">
             <span class="logo-text">Welcome to Biruk.dev 👋</span>
         </a>
         
-        <!-- Button 3D Toggle fi Menu -->
+        <!-- 3D Toggle Button and Menu -->
         <div style="display: flex; align-items: center; gap: 20px;">
             <div class="mode-toggle" onclick="toggle3DMode()" title="Enable 3D Mode"><i class="fas fa-cube"></i></div>
             <div class="menu-btn" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
@@ -100,14 +100,14 @@
                 My expertise spans across diverse domains. Whether I am architecting a massive <span class="color-text-4">Enterprise Desktop System</span>, crafting responsive and dynamic <span class="color-text-5">Web Platforms</span>, or automating massive organizational workflows through the <span class="color-text-6">Telegram API</span>, my ultimate goal remains the same: to deliver digital products that inspire, scale seamlessly, and perform flawlessly under pressure.
             </p>
         </div>
-    </section> <!-- (Dogoggorri </section cufee asitti sirraa'era) -->
+    </section>
 
     <!-- 3. SKILLS SECTION -->
     <section id="skills">
         <h2 class="section-title reveal">My <span>Skills</span></h2>
         <div class="marquee-wrapper reveal">
             <div class="marquee-track">
-                <!-- Tarree Dandeettii -->
+                <!-- Skills List -->
                 <div class="skill-box color-skill-1"><i class="fab fa-java"></i><h3>Java</h3></div>
                 <div class="skill-box color-skill-2"><i class="fas fa-database"></i><h3>MySQL</h3></div>
                 <div class="skill-box color-skill-3"><i class="fab fa-python"></i><h3>Python</h3></div>
@@ -122,7 +122,7 @@
                 <div class="skill-box color-skill-12"><i class="fas fa-code"></i><h3>C++</h3></div>
                 <div class="skill-box color-skill-13"><i class="fab fa-figma"></i><h3>UI/UX</h3></div>
                 
-                <!-- Dachaa (Duplicate) -->
+                <!-- Duplicate for continuous scrolling -->
                 <div class="skill-box color-skill-1"><i class="fab fa-java"></i><h3>Java</h3></div>
                 <div class="skill-box color-skill-2"><i class="fas fa-database"></i><h3>MySQL</h3></div>
                 <div class="skill-box color-skill-3"><i class="fab fa-python"></i><h3>Python</h3></div>
@@ -144,7 +144,7 @@
     <section id="projects">
         <h2 class="section-title reveal">Featured <span>Projects</span></h2>
         <div class="projects-grid" id="dynamic-projects-container">
-            <!-- Kaardiiwwan ofumaan asitti dabalantu -->
+            <!-- Dynamic project cards will be appended here -->
         </div>
     </section>
 
@@ -188,21 +188,21 @@
         <p>&copy; 2026 <span class="footer-name">Biruk Tadesse</span>. Engineered with <i class="fas fa-heart pulse-heart"></i> & Code for Technology.</p>
     </footer>
 
-    <!-- Faayila JavaScript Waamuu -->
+    <!-- Include JavaScript File -->
     <script src="script.js"></script>
 
-    <!-- JAVASCRIPT EEFFEKTII ELECTRICAL KAN HAARAA DABALAME -->
+    <!-- JAVASCRIPT FOR ELECTRICAL PARTICLE EFFECT -->
     <script>
         const canvas = document.getElementById('networkCanvas');
         const ctx = canvas.getContext('2d');
 
-        // Guddina skiriinii guutuun akka uwwisuuf
+        // Set canvas dimensions to cover the full window
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
 
         let particlesArray = [];
         
-        // Hantiitii (Mouse) hordofuuf
+        // Mouse tracking object
         const mouse = { x: null, y: null, radius: 130 };
 
         window.addEventListener('mousemove', (e) => {
@@ -210,27 +210,27 @@
             mouse.y = e.clientY;
         });
 
-        // Yeroo mouse skiriinii irraa bahu sararri akka cituuf
+        // Disconnect lines when mouse leaves the window
         window.addEventListener('mouseout', () => {
             mouse.x = null;
             mouse.y = null;
         });
 
-        // Tuqaalee (Particles) Uumuu
+        // Particle Class
         class Particle {
             constructor(x, y) {
                 this.x = x;
                 this.y = y;
-                this.size = 2; // Guddina tuqaa
-                this.speedX = (Math.random() - 0.5) * 1.5; // Saffisa X
-                this.speedY = (Math.random() - 0.5) * 1.5; // Saffisa Y
-                this.color = '#00ffaa'; // Halluu Magariisa ifaa (Neon Green) - akka portfolio ati ergitee
+                this.size = 2; // Particle size
+                this.speedX = (Math.random() - 0.5) * 1.5; // X-axis speed
+                this.speedY = (Math.random() - 0.5) * 1.5; // Y-axis speed
+                this.color = '#00ffaa'; // Neon Green color
             }
             update() {
                 this.x += this.speedX;
                 this.y += this.speedY;
 
-                // Daangaa skiriinii irra yoo ga'an akka deebi'an (bounce)
+                // Bounce off the screen borders
                 if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
                 if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
             }
@@ -242,10 +242,10 @@
             }
         }
 
-        // Jalqabsiisuu (Init)
+        // Initialize particles
         function init() {
             particlesArray = [];
-            // Baay'ina tuqaalee skiriiniif mijataa ta'e shallaguu
+            // Calculate an optimal number of particles based on screen size
             const numberOfParticles = (canvas.width * canvas.height) / 8500;
             for (let i = 0; i < numberOfParticles; i++) {
                 const x = Math.random() * canvas.width;
@@ -254,17 +254,17 @@
             }
         }
 
-        // Sarara (Network lines) wal-qabsiisuu
+        // Connect particles with network lines
         function connect() {
             for (let a = 0; a < particlesArray.length; a++) {
                 for (let b = a; b < particlesArray.length; b++) {
                     const dx = particlesArray[a].x - particlesArray[b].x;
                     const dy = particlesArray[a].y - particlesArray[b].y;
-                    const distance = Math.hypot(dx, dy); // Fageenya shallaguu
+                    const distance = Math.hypot(dx, dy); // Calculate distance
 
-                    // Tuqaalee ofii isaanii walitti qabsiisuu
+                    // Connect particles to each other
                     if (distance < 90) {
-                        ctx.strokeStyle = `rgba(0, 255, 170, ${1 - distance / 90})`; // Halluu Neon Green
+                        ctx.strokeStyle = `rgba(0, 255, 170, ${1 - distance / 90})`; // Neon Green lines
                         ctx.lineWidth = 0.5;
                         ctx.beginPath();
                         ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
@@ -273,7 +273,7 @@
                     }
                 }
 
-                // Tuqaalee Mouse (Kursorii) waliin wal qabsiisuu
+                // Connect particles to the mouse cursor
                 if(mouse.x != null && mouse.y != null) {
                     const mouseDx = particlesArray[a].x - mouse.x;
                     const mouseDy = particlesArray[a].y - mouse.y;
@@ -291,9 +291,9 @@
             }
         }
 
-        // Yeroo hunda skiriinii haaressuu (Animate)
+        // Animation loop
         function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height); // Kanaan duraa haquu
+            ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the previous frame
             for (let i = 0; i < particlesArray.length; i++) {
                 particlesArray[i].update();
                 particlesArray[i].draw();
@@ -305,7 +305,7 @@
         init();
         animate();
 
-        // Yoo skiriiniin guddate ykn xiqqate ofumaa sirreessa
+        // Adjust canvas size automatically on window resize
         window.addEventListener('resize', () => {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
