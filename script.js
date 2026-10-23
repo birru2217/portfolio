@@ -345,18 +345,32 @@ function navigateTo(sectionId) {
                 color: "#3498db", // Sky Blue
                 createdAt: "2026-06-05" // Added within 30 days (NEW tag visible)
             },
-            { 
-                title: "📊 Student Marks Management", 
-                tags: ["Java Swing", "JDBC", "MySQL", "Desktop"], 
-                description: "A robust desktop application for managing student academic records. Simplifies grading workflows, mark entry, and grade report generation with atomic transaction database safety.", 
-                link: "https://github.com/birru2217/student-marks-management", 
-                btnText: "View Code", 
-                icon: "fab fa-github", 
-                themeClass: null, 
-                color: "#ffffff", // Pure Elegant White (As requested)
-                createdAt: "2026-06-15" // Added 2 days ago (NEW tag visible)
-            }
-        ];
+            // ... Pirojektota kanaan duraa ...
+        { 
+            title: "📊 Student Marks Management", 
+            tags: ["Java Swing", "JDBC", "MySQL", "Desktop"], 
+            description: "A robust desktop application for managing student academic records. Simplifies grading workflows, mark entry, and grade report generation with atomic transaction database safety.", 
+            link: "https://github.com/birru2217/student-marks-management", 
+            btnText: "View Code", 
+            icon: "fab fa-github", 
+            themeClass: null, 
+            color: "#ffffff", 
+            createdAt: "2026-06-15" 
+        },
+        // 👇 PIROJEKTII HAARAA KANAS ITTI DABALI 👇
+        { 
+            title: "🏢 Infoplus Job Portal", 
+            tags: ["PHP 8.x", "Tailwind CSS", "AlpineJS", "MySQL"], 
+            description: "A dynamic, high-performance Job Matchmaking platform. Features dual role-based access (Employer & Candidate), auto-generated OTP security, and responsive UI built with Tailwind CSS & AlpineJS.", 
+            link: "https://infoplus.ifree.page/", // Linkii sirrii GitHub keetii bakka buusi
+            btnText: "View Project", 
+            icon: "fas fa-external-link-alt", 
+            themeClass: null, 
+            color: "#FFD700", // Halluu Warqee (Gold)
+            createdAt: "2026-10-23" 
+        }
+    ]; // Kun cufaa defaultProjects ti
+       
 
 // Function Kaardii uumee HTML keessa galchu
 function loadProjects() {
