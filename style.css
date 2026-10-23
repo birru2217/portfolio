@@ -418,9 +418,23 @@ section {
     box-sizing: border-box; 
 }
 .project-card h3 { margin-bottom: 15px; font-size: 1.5rem; transition: 0.3s; }
-.tech-tags { margin-bottom: 20px; }
-.tech-tags span { padding: 5px 12px; border-radius: 6px; font-size: 0.85rem; margin-right: 8px; font-weight: 600; background: var(--glass); }
+.tech-tags { 
+    margin-bottom: 20px; 
+    
+    /* --- KOODII HAARAA SIRREEFFAMAA --- */
+    display: flex; 
+    flex-wrap: wrap; /* Yeroo iddoon dhumu ofumaa sarara jalaatti gadi buusa */
+    gap: 10px; /* Fageenya (iddoo duwwaa) gubbaa, gadi, bitaa fi mirgaan walqixa uuma */
+}
 
+.tech-tags span { 
+    padding: 6px 12px; 
+    border-radius: 6px; 
+    font-size: 0.85rem; 
+    font-weight: 600; 
+    background: var(--glass);
+    margin: 0; /* Margin duraan ture ni balleessina, bakka isaa 'gap' fayyadamneerra */
+}
 .btn-view { 
     display: inline-block; font-weight: 700; text-decoration: none; padding: 10px 25px; border-radius: 50px; transition: 0.3s; 
     
