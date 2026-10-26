@@ -66,11 +66,20 @@ const reveal = () => {
 
 
 // --- 4. ADVANCED IMAGE SLIDESHOW (COIN FLIP & SHAPE MORPHING) ---
+// 1. Tarree Suuraawwan Kee Saglan (profile.png hanga profilee.png)
 const profileImages = [
-    "profile.png", "profile1.png", "profile2.png", "profile3.png", 
-    "profile4.png", "profile5.png", "profile6.png", "profile7.png"
+    "profile.png",   // Index 0: Gold
+    "profile1.png",  // Index 1: Neon Green
+    "profile2.png",  // Index 2: Cyan
+    "profile3.png",  // Index 3: Deep Pink
+    "profile4.png",  // Index 4: Orange Red
+    "profile5.png",  // Index 5: Deep Violet
+    "profile6.png",  // Index 6: Gold (Geengoo)
+    "profile7.png",  // Index 7: Neon Red
+    "profilee.png"   // Index 8: Electric Mint (Suuraa Haaraa!)
 ];
 
+// 2. Bocawwan Morphing (Tokkoon tokkoon suuraatiif)
 const shapes = [
     "50%",                                // profile.png (Geengoo)
     "60% 40% 30% 70% / 60% 30% 70% 40%",  // profile1.png
@@ -79,18 +88,21 @@ const shapes = [
     "40% 60% 70% 30% / 40% 50% 60% 50%",  // profile4.png
     "70% 30% 40% 60% / 50% 70% 30% 50%",  // profile5.png
     "50%",                                // profile6.png (Geengoo)
-    "30% 70% 50% 50% / 50% 30% 70% 50%"   // profile7.png
+    "30% 70% 50% 50% / 50% 30% 70% 50%",  // profile7.png
+    "55% 45% 70% 30% / 45% 65% 35% 55%"   // profilee.png (Boca ammayyaa haaraa)
 ];
 
+// 3. Halluwwan Ifaa (Neon Glow)
 const borderColors = [
-    "#FFD700", // Gold
-    "#00FF7F", // Neon Green 
-    "#00FFFF", // Cyan 
-    "#FF1493", // Deep Pink 
-    "#FF4500", // Orange Red 
-    "#9400D3", // Deep Violet 
-    "#FFD700", // Gold
-    "#FF0000"  // Neon Red
+    "#FFD700", // Gold (profile.png)
+    "#00FF7F", // Neon Green (profile1.png)
+    "#00FFFF", // Cyan (profile2.png)
+    "#FF1493", // Deep Pink (profile3.png)
+    "#FF4500", // Orange Red (profile4.png)
+    "#9400D3", // Deep Violet (profile5.png)
+    "#FFD700", // Gold (profile6.png)
+    "#FF0000", // Neon Red (profile7.png)
+    "#00FF9D"  // Electric Mint Glow (profilee.png)
 ];
 
 let imgIndex = 0;
@@ -110,7 +122,7 @@ function changeProfileImage() {
     shapeIndex = (shapeIndex + 1) % shapes.length;
     imgIndex = (imgIndex + 1) % profileImages.length;
 
-    // C. Walakkaa animation irratti (yeroo 90deg ta'u) suuraa jijjiiri
+    // C. Walakkaa animation irratti (yeroo 90deg garagalu) suuraa jijjiiri
     setTimeout(() => {
         imgElement.src = profileImages[imgIndex];
         
