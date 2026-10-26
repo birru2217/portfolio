@@ -256,8 +256,8 @@ function navigateTo(sectionId) {
                 title: "🚀 RLMS (Enterprise)", 
                 tags: ["PHP 8.x", "Vanilla JS", "MySQLi", "AJAX"], 
                 description: "A highly secure, 5-tier architecture Registration & Learning Management System. Features Military-grade 2FA, Smart Anti-Cheat Exams, Auto-grading, and a Telegram-style encrypted Chat Hub.", 
-                link: "https://github.com/birru2217/RLMS-Enterprise", 
-                btnText: "View Code", 
+                link: "https://eplms.page.gd/eplms/", 
+                btnText: "View Websit", 
                 icon: "fab fa-github", 
                 themeClass: "color-card-rlms", 
                 createdAt: "2026-06-12" // Guyyaa uumamaa (NEW tag ni mul'ata)
@@ -375,7 +375,7 @@ function navigateTo(sectionId) {
             tags: ["PHP 8.x", "Tailwind CSS", "AlpineJS", "MySQL"], 
             description: "A dynamic, high-performance Job Matchmaking platform. Features dual role-based access (Employer & Candidate), auto-generated OTP security, and responsive UI built with Tailwind CSS & AlpineJS.", 
             link: "https://infoplus.ifree.page/", // Linkii sirrii GitHub keetii bakka buusi
-            btnText: "View Project", 
+            btnText: "View Website", 
             icon: "fas fa-external-link-alt", 
             themeClass: null, 
             color: "#FFD700", // Halluu Warqee (Gold)
