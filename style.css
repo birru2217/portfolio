@@ -162,12 +162,18 @@ nav {
         display: flex !important;
     }
 
-    /* 5. Suuraa (Profile Image) Fix */
     .profile-img-box {
-        width: 260px !important;
-        height: 260px !important;
-        margin: 0 auto !important;
-    }
+    width: 420px; height: 420px; 
+    overflow: hidden;
+    --dynamic-color: #FFD700; 
+    border: 6px solid var(--dynamic-color);
+    box-shadow: 0 0 40px var(--dynamic-color), inset 0 0 30px var(--dynamic-color);
+    position: relative; z-index: 10;
+    border-radius: 50%; 
+    
+    /* SARARA KANA SIRREESSI: 1.5s irraa gara 0.8s tti jijjiirame (Equal ta'e) */
+    transition: border-radius 0.8s ease-in-out, border-color 0.8s ease-in-out, box-shadow 0.8s ease-in-out; 
+}
 
     /* 6. Marquee (Skills) Fix */
     .marquee-wrapper {
