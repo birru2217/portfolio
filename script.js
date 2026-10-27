@@ -261,7 +261,19 @@ function navigateTo(sectionId) {
                 icon: "fab fa-github", 
                 themeClass: "color-card-rlms", 
                 createdAt: "2026-06-12" // Guyyaa uumamaa (NEW tag ni mul'ata)
-            },
+            } ,
+        // 👇 PIROJEKTII HAARAA KANAS ITTI DABALI 👇
+        { 
+            title: "🏢 Infoplus Job Portal", 
+            tags: ["PHP 8.x", "Tailwind CSS", "AlpineJS", "MySQL"], 
+            description: "A dynamic, high-performance Job Matchmaking platform. Features dual role-based access (Employer & Candidate), auto-generated OTP security, and responsive UI built with Tailwind CSS & AlpineJS.", 
+            link: "https://infoplus.ifree.page/", // Linkii sirrii GitHub keetii bakka buusi
+            btnText: "View Website", 
+            icon: "fas fa-external-link-alt", 
+            themeClass: null, 
+            color: "#FFD700", // Halluu Warqee (Gold)
+            createdAt: "2026-10-23" 
+        },
             { 
                 title: "🎓 BHU Exam System", 
                 tags: ["Java Swing", "MySQL", "JDBC"], 
@@ -368,18 +380,6 @@ function navigateTo(sectionId) {
             themeClass: null, 
             color: "#ffffff", 
             createdAt: "2026-06-15" 
-        },
-        // 👇 PIROJEKTII HAARAA KANAS ITTI DABALI 👇
-        { 
-            title: "🏢 Infoplus Job Portal", 
-            tags: ["PHP 8.x", "Tailwind CSS", "AlpineJS", "MySQL"], 
-            description: "A dynamic, high-performance Job Matchmaking platform. Features dual role-based access (Employer & Candidate), auto-generated OTP security, and responsive UI built with Tailwind CSS & AlpineJS.", 
-            link: "https://infoplus.ifree.page/", // Linkii sirrii GitHub keetii bakka buusi
-            btnText: "View Website", 
-            icon: "fas fa-external-link-alt", 
-            themeClass: null, 
-            color: "#FFD700", // Halluu Warqee (Gold)
-            createdAt: "2026-10-23" 
         }
     ]; // Kun cufaa defaultProjects ti
        
