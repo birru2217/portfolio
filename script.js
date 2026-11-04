@@ -308,7 +308,7 @@ function navigateTo(sectionId) {
                 title: "🤖 Telegram Automation", 
                 tags: ["Python", "Telethon", "API"], 
                 description: "Specialized bot solutions for group administration, mass user management, and organizational workflow scaling via Userbots.", 
-                link: "https://t.me/BHU_info_col_9", 
+                link: "https://t.me/BirukBetting1_bot", 
                 btnText: "View Demo", 
                 icon: "fab fa-telegram", 
                 themeClass: "color-card-4", 
