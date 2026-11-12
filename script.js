@@ -304,16 +304,16 @@ function navigateTo(sectionId) {
                 themeClass: "color-card-3", 
                 createdAt: "2026-03-01" 
             },
-            { 
-                title: "🤖 Telegram Automation", 
-                tags: ["Python", "Telethon", "API"], 
-                description: "Specialized bot solutions for group administration, mass user management, and organizational workflow scaling via Userbots.", 
-                link: "https://t.me/BirukBetting1_bot", 
-                btnText: "View Demo", 
-                icon: "fab fa-telegram", 
-                themeClass: "color-card-4", 
-                createdAt: "2026-04-01" 
-            },
+          { 
+    title: "🤖 AI Football Predictor Bot", 
+    tags: ["Python", "Telegram API", "SQLite3", "REST API", "Data Analytics"], 
+    description: "An intelligent Telegram bot engineered with Python to deliver data-driven football match predictions, live market odds integration, synthetic risk modeling, and multi-language support.", 
+    link: "https://t.me/BirukBetting1_bot", 
+    btnText: "Launch Bot", 
+    icon: "fab fa-telegram", 
+    themeClass: "color-card-4", 
+    createdAt: "2026-11-04" 
+},
             { 
                 title: "🍔 FoodOrder System", 
                 tags: ["PHP", "MySQL", "Bootstrap 5", "JS"], 
