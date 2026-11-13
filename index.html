@@ -3,72 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biruk Tadesse | Portfolio</title>
+    <title>Biruk Tadesse | Software Architect & Fullstack Developer</title>
 
-    <!-- FAVICON: Suuraa Tab Browser Gubbaatti Mul'isu -->
+    <!-- SEO & Social Preview Meta Tags -->
+    <meta name="description" content="Portfolio of Biruk Tadesse — Computer Science & Engineering student, Software Architect, and Fullstack Developer specializing in web, mobile, desktop, and automation systems.">
+    <meta name="author" content="Biruk Tadesse">
+    <meta name="theme-color" content="#080808">
+    <meta property="og:title" content="Biruk Tadesse | Professional Portfolio">
+    <meta property="og:description" content="Software Architect & Fullstack Developer — Explore my projects, skills, and CV.">
+    <meta property="og:image" content="profilee.png">
+    <meta property="og:type" content="website">
+
+    <!-- FAVICON -->
     <link rel="icon" type="image/png" href="profilee.png">
     <link rel="apple-touch-icon" href="profilee.png">
+
     <!-- Font Awesome Icons (Version 6.5.2) -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <!-- External CSS -->
     <link rel="stylesheet" href="style.css">
-    
-    <!-- CSS for Electrical Particle Effect -->
-    <style>
-        #networkCanvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: 2; /* Ensures it stays above the background video */
-            pointer-events: none; /* Allows clicks to pass through to buttons (CRUCIAL) */
-        }
-    </style>
 </head>
 <body class="mode-3d">
     <!-- ELECTRICAL EFFECT CANVAS -->
-    <canvas id="networkCanvas"></canvas>
+    <canvas id="networkCanvas" aria-hidden="true"></canvas>
 
-    <div class="snow-container" id="snow"></div>
-    
+    <!-- SNOW CONTAINER -->
+    <div class="snow-container" id="snow" aria-hidden="true"></div>
+
     <!-- NAVBAR -->
-    <nav>
-        <!-- LOGO -->
-        <a href="#home" class="logo">
-            <img src="profile.png" alt="Biruk Logo" class="nav-logo-img">
-            <span class="logo-text">Welcome to Biruk.dev 👋</span>
+    <nav id="navbar">
+        <a href="#home" class="logo" onclick="navigateTo('home'); return false;">
+            <img src="profile.png" alt="Biruk Tadesse" class="nav-logo-img">
+            <span class="logo-text">Biruk.dev 👋</span>
         </a>
-        
-        <!-- 3D Toggle Button and Menu -->
-        <div style="display: flex; align-items: center; gap: 20px;">
-            <div class="mode-toggle" onclick="toggle3DMode()" title="Enable 3D Mode"><i class="fas fa-cube"></i></div>
-            <div class="menu-btn" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+
+        <div class="nav-actions">
+            <button type="button" class="mode-toggle" onclick="toggle3DMode()" title="Switch Background Mode" aria-label="Switch Background Mode">
+                <i class="fas fa-play-circle"></i>
+            </button>
+            <button type="button" class="menu-btn" onclick="toggleMenu()" aria-label="Toggle Navigation Menu" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
-        <ul class="nav-links">
-            <li><a onclick="navigateTo('home')">Home</a></li>
-            <li><a onclick="navigateTo('about')">About</a></li>
-            <li><a onclick="navigateTo('skills')">Skills</a></li>
-            <li><a onclick="navigateTo('projects')">Projects</a></li>
-            <li><a onclick="navigateTo('contact')">Contact</a></li>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home" class="active" onclick="navigateTo('home'); return false;">Home</a></li>
+            <li><a href="#about" onclick="navigateTo('about'); return false;">About</a></li>
+            <li><a href="#skills" onclick="navigateTo('skills'); return false;">Skills</a></li>
+            <li><a href="#projects" onclick="navigateTo('projects'); return false;">Projects</a></li>
+            <li><a href="#contact" onclick="navigateTo('contact'); return false;">Contact</a></li>
         </ul>
     </nav>
 
     <!-- 1. HOME SECTION -->
     <section id="home">
         <!-- VIDEO BACKGROUND -->
-        <div class="video-container">
-            <video id="bgVideo" autoplay loop muted playsinline>
+        <div class="video-container" aria-hidden="true">
+            <video id="bgVideo" autoplay loop muted playsinline preload="metadata">
                 <source src="bg-video.mp4" type="video/mp4">
             </video>
-            <div class="video-overlay"></div> 
+            <div class="video-overlay"></div>
         </div>
 
         <div class="home-content reveal">
             <div class="greeting">HELLO, WORLD!</div>
-            <h1 class="name">My Name Is <br><span>Biruk Tadesse</span></h1>        
+            <h1 class="name">My Name Is <br><span>Biruk Tadesse</span></h1>
             <div class="typing-container">
                 I am <span class="typing-text"></span>
             </div>
@@ -76,16 +79,16 @@
                 A dedicated <b>Software Architect</b> and <b>CSE Student</b> specialized in engineering scalable digital ecosystems. From enterprise-level systems to high-performance automation, I turn complex challenges into seamless user experiences.
             </p>
             <div class="btn-group">
-                <a href="#contact" class="btn-modern btn-green">Hire Me Now</a>
-                <a href="my_cv.html" target="_blank" class="btn-modern btn-gold">
-                    <i class="fas fa-file-pdf"></i> View & Download CV
+                <a href="#contact" class="btn-modern btn-green" onclick="navigateTo('contact'); return false;">Hire Me Now</a>
+                <a href="my_cv.html" target="_blank" rel="noopener noreferrer" class="btn-modern btn-gold">
+                    <i class="fas fa-file-pdf"></i> View &amp; Download CV
                 </a>
             </div>
         </div>
 
         <div class="home-img-container reveal">
             <div class="profile-img-box">
-                <img src="profile.png" alt="Biruk Tadesse">
+                <img src="profile.png" alt="Biruk Tadesse Portrait">
             </div>
         </div>
     </section>
@@ -95,7 +98,7 @@
         <h2 class="section-title reveal">About <span>Me</span></h2>
         <div class="about-content reveal">
             <p>
-                I am an elite <strong class="color-text-1">Computer Science and Engineering (CSE)</strong> student at <strong class="color-text-2">Bule Hora University (BHU)</strong>. My journey is defined by a relentless pursuit of excellence and a passion for engineering high-impact software solutions. 
+                I am an elite <strong class="color-text-1">Computer Science and Engineering (CSE)</strong> student at <strong class="color-text-2">Bule Hora University (BHU)</strong>. My journey is defined by a relentless pursuit of excellence and a passion for engineering high-impact software solutions.
             </p>
             <p>
                 With a prestigious <span class="highlight-gpa color-bg-1">GPA of 3.7</span>, I bridge the gap between complex theoretical computation and elegant, real-world software architecture. I am a strict follower of the <strong class="color-text-3">Zero-Bug Policy</strong> and Clean Code Principles.
@@ -111,65 +114,35 @@
         <h2 class="section-title reveal">My <span>Skills</span></h2>
         <div class="marquee-wrapper reveal">
             <div class="marquee-track">
-                <!-- Skills List -->
+                <!-- Primary Skills List -->
                 <div class="skill-box color-skill-1"><i class="fab fa-java"></i><h3>Java</h3></div>
                 <div class="skill-box color-skill-2"><i class="fas fa-database"></i><h3>MySQL</h3></div>
                 <div class="skill-box color-skill-3"><i class="fab fa-python"></i><h3>Python</h3></div>
                 <div class="skill-box color-skill-4"><i class="fab fa-android"></i><h3>Android Dev</h3></div>
-                <div class="skill-box color-skill-5"><i class="fab fa-html5"></i><h3>HTML & CSS</h3></div>
+                <div class="skill-box color-skill-5"><i class="fab fa-html5"></i><h3>HTML &amp; CSS</h3></div>
                 <div class="skill-box color-skill-6"><i class="fab fa-js"></i><h3>JavaScript</h3></div>
                 <div class="skill-box color-skill-7"><i class="fab fa-php"></i><h3>PHP</h3></div>
                 <div class="skill-box color-skill-8"><i class="fab fa-telegram"></i><h3>Bot API</h3></div>
-                <div class="skill-box color-skill-9"><i class="fab fa-git-alt"></i><h3>Git & GitHub</h3></div>
+                <div class="skill-box color-skill-9"><i class="fab fa-git-alt"></i><h3>Git &amp; GitHub</h3></div>
                 <div class="skill-box color-skill-10"><i class="fab fa-react"></i><h3>React</h3></div>
                 <div class="skill-box color-skill-11"><i class="fas fa-leaf"></i><h3>Spring Boot</h3></div>
                 <div class="skill-box color-skill-12"><i class="fas fa-code"></i><h3>C++</h3></div>
                 <div class="skill-box color-skill-13"><i class="fab fa-figma"></i><h3>UI/UX</h3></div>
 
-                 <!-- Skills List -->
-                <div class="skill-box color-skill-1"><i class="fab fa-java"></i><h3>Java</h3></div>
-                <div class="skill-box color-skill-2"><i class="fas fa-database"></i><h3>MySQL</h3></div>
-                <div class="skill-box color-skill-3"><i class="fab fa-python"></i><h3>Python</h3></div>
-                <div class="skill-box color-skill-4"><i class="fab fa-android"></i><h3>Android Dev</h3></div>
-                <div class="skill-box color-skill-5"><i class="fab fa-html5"></i><h3>HTML & CSS</h3></div>
-                <div class="skill-box color-skill-6"><i class="fab fa-js"></i><h3>JavaScript</h3></div>
-                <div class="skill-box color-skill-7"><i class="fab fa-php"></i><h3>PHP</h3></div>
-                <div class="skill-box color-skill-8"><i class="fab fa-telegram"></i><h3>Bot API</h3></div>
-                <div class="skill-box color-skill-9"><i class="fab fa-git-alt"></i><h3>Git & GitHub</h3></div>
-                <div class="skill-box color-skill-10"><i class="fab fa-react"></i><h3>React</h3></div>
-                <div class="skill-box color-skill-11"><i class="fas fa-leaf"></i><h3>Spring Boot</h3></div>
-                <div class="skill-box color-skill-12"><i class="fas fa-code"></i><h3>C++</h3></div>
-                <div class="skill-box color-skill-13"><i class="fab fa-figma"></i><h3>UI/UX</h3></div>
-
-                 <!-- Skills List -->
-                <div class="skill-box color-skill-1"><i class="fab fa-java"></i><h3>Java</h3></div>
-                <div class="skill-box color-skill-2"><i class="fas fa-database"></i><h3>MySQL</h3></div>
-                <div class="skill-box color-skill-3"><i class="fab fa-python"></i><h3>Python</h3></div>
-                <div class="skill-box color-skill-4"><i class="fab fa-android"></i><h3>Android Dev</h3></div>
-                <div class="skill-box color-skill-5"><i class="fab fa-html5"></i><h3>HTML & CSS</h3></div>
-                <div class="skill-box color-skill-6"><i class="fab fa-js"></i><h3>JavaScript</h3></div>
-                <div class="skill-box color-skill-7"><i class="fab fa-php"></i><h3>PHP</h3></div>
-                <div class="skill-box color-skill-8"><i class="fab fa-telegram"></i><h3>Bot API</h3></div>
-                <div class="skill-box color-skill-9"><i class="fab fa-git-alt"></i><h3>Git & GitHub</h3></div>
-                <div class="skill-box color-skill-10"><i class="fab fa-react"></i><h3>React</h3></div>
-                <div class="skill-box color-skill-11"><i class="fas fa-leaf"></i><h3>Spring Boot</h3></div>
-                <div class="skill-box color-skill-12"><i class="fas fa-code"></i><h3>C++</h3></div>
-                <div class="skill-box color-skill-13"><i class="fab fa-figma"></i><h3>UI/UX</h3></div>
-                
-                <!-- Duplicate for continuous scrolling -->
-                <div class="skill-box color-skill-1"><i class="fab fa-java"></i><h3>Java</h3></div>
-                <div class="skill-box color-skill-2"><i class="fas fa-database"></i><h3>MySQL</h3></div>
-                <div class="skill-box color-skill-3"><i class="fab fa-python"></i><h3>Python</h3></div>
-                <div class="skill-box color-skill-4"><i class="fab fa-android"></i><h3>Android Dev</h3></div>
-                <div class="skill-box color-skill-5"><i class="fab fa-html5"></i><h3>HTML & CSS</h3></div>
-                <div class="skill-box color-skill-6"><i class="fab fa-js"></i><h3>JavaScript</h3></div>
-                <div class="skill-box color-skill-7"><i class="fab fa-php"></i><h3>PHP</h3></div>
-                <div class="skill-box color-skill-8"><i class="fab fa-telegram"></i><h3>Bot API</h3></div>
-                <div class="skill-box color-skill-9"><i class="fab fa-git-alt"></i><h3>Git & GitHub</h3></div>
-                <div class="skill-box color-skill-10"><i class="fab fa-react"></i><h3>React</h3></div>
-                <div class="skill-box color-skill-11"><i class="fas fa-leaf"></i><h3>Spring Boot</h3></div>
-                <div class="skill-box color-skill-12"><i class="fas fa-code"></i><h3>C++</h3></div>
-                <div class="skill-box color-skill-13"><i class="fab fa-figma"></i><h3>UI/UX</h3></div>
+                <!-- Duplicate Set for Seamless Infinite Scroll -->
+                <div class="skill-box color-skill-1" aria-hidden="true"><i class="fab fa-java"></i><h3>Java</h3></div>
+                <div class="skill-box color-skill-2" aria-hidden="true"><i class="fas fa-database"></i><h3>MySQL</h3></div>
+                <div class="skill-box color-skill-3" aria-hidden="true"><i class="fab fa-python"></i><h3>Python</h3></div>
+                <div class="skill-box color-skill-4" aria-hidden="true"><i class="fab fa-android"></i><h3>Android Dev</h3></div>
+                <div class="skill-box color-skill-5" aria-hidden="true"><i class="fab fa-html5"></i><h3>HTML &amp; CSS</h3></div>
+                <div class="skill-box color-skill-6" aria-hidden="true"><i class="fab fa-js"></i><h3>JavaScript</h3></div>
+                <div class="skill-box color-skill-7" aria-hidden="true"><i class="fab fa-php"></i><h3>PHP</h3></div>
+                <div class="skill-box color-skill-8" aria-hidden="true"><i class="fab fa-telegram"></i><h3>Bot API</h3></div>
+                <div class="skill-box color-skill-9" aria-hidden="true"><i class="fab fa-git-alt"></i><h3>Git &amp; GitHub</h3></div>
+                <div class="skill-box color-skill-10" aria-hidden="true"><i class="fab fa-react"></i><h3>React</h3></div>
+                <div class="skill-box color-skill-11" aria-hidden="true"><i class="fas fa-leaf"></i><h3>Spring Boot</h3></div>
+                <div class="skill-box color-skill-12" aria-hidden="true"><i class="fas fa-code"></i><h3>C++</h3></div>
+                <div class="skill-box color-skill-13" aria-hidden="true"><i class="fab fa-figma"></i><h3>UI/UX</h3></div>
             </div>
         </div>
     </section>
@@ -188,163 +161,46 @@
         <div class="contact-container reveal">
             <p>I am currently available for freelance projects, remote engineering roles, and collaborative tech partnerships. Let's engineer the future together!</p>
             <div class="social-icons-contact">
-                <a href="https://github.com/birru2217" target="_blank" title="GitHub" class="spin-icon contact-github"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/biruktadesse1" target="_blank" title="LinkedIn" class="spin-icon contact-linkedin"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://www.youtube.com/@brex-media" target="_blank" title="YouTube" class="spin-icon contact-youtube"><i class="fab fa-youtube"></i></a>
-                <a href="https://www.tiktok.com/@birru2217" target="_blank" title="TikTok" class="spin-icon contact-tiktok"><i class="fab fa-tiktok"></i></a>
-                <a href="https://twitter.com/birru2217" target="_blank" title="X (Twitter)" class="spin-icon contact-x"><i class="fab fa-x-twitter"></i></a>
-                <a href="https://t.me/brex2217" target="_blank" title="Telegram" class="spin-icon contact-telegram"><i class="fab fa-telegram"></i></a>
-                <a href="https://wa.me/qr/BDSXDWGVVXDEC1" target="_blank" title="WhatsApp" class="spin-icon contact-whatsapp"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://www.facebook.com/profile.php?id=61564927622966" target="_blank" title="Facebook" class="spin-icon contact-facebook"><i class="fab fa-facebook"></i></a>
-                <a href="https://www.instagram.com/brex2217?igsh=NXljaTloMnJycWFq" target="_blank" title="Instagram" class="spin-icon contact-instagram"><i class="fab fa-instagram"></i></a>
-                <a href="mailto:tadesebiruk515@gmail.com" title="Email" class="spin-icon contact-email"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com/birru2217" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub" class="spin-icon contact-github"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/biruktadesse1" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn" class="spin-icon contact-linkedin"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.youtube.com/@brex-media" target="_blank" rel="noopener noreferrer" title="YouTube" aria-label="YouTube" class="spin-icon contact-youtube"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.tiktok.com/@birru2217" target="_blank" rel="noopener noreferrer" title="TikTok" aria-label="TikTok" class="spin-icon contact-tiktok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://twitter.com/birru2217" target="_blank" rel="noopener noreferrer" title="X (Twitter)" aria-label="X Twitter" class="spin-icon contact-x"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://t.me/brex2217" target="_blank" rel="noopener noreferrer" title="Telegram" aria-label="Telegram" class="spin-icon contact-telegram"><i class="fab fa-telegram"></i></a>
+                <a href="https://wa.me/qr/BDSXDWGVVXDEC1" target="_blank" rel="noopener noreferrer" title="WhatsApp" aria-label="WhatsApp" class="spin-icon contact-whatsapp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61564927622966" target="_blank" rel="noopener noreferrer" title="Facebook" aria-label="Facebook" class="spin-icon contact-facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/brex2217?igsh=NXljaTloMnJycWFq" target="_blank" rel="noopener noreferrer" title="Instagram" aria-label="Instagram" class="spin-icon contact-instagram"><i class="fab fa-instagram"></i></a>
+                <a href="mailto:tadesebiruk515@gmail.com" title="Email" aria-label="Email" class="spin-icon contact-email"><i class="fas fa-envelope"></i></a>
             </div>
         </div>
     </section>
 
-    <!-- MAGIC: ADD PROJECT MODAL -->
-    <div class="project-modal" id="addProjectModal">
+    <!-- ADD PROJECT MODAL (Developer Only) -->
+    <div class="project-modal" id="addProjectModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
         <div class="modal-box">
-            <h2><i class="fas fa-plus-circle"></i> Add New Project</h2>
+            <h2 id="modalTitle"><i class="fas fa-plus-circle"></i> Add New Project</h2>
             <input type="text" id="p_title" placeholder="Project Title (e.g. 💻 E-Commerce)" required>
             <input type="text" id="p_tags" placeholder="Tech Tags (Comma separated: PHP, JS, CSS)" required>
             <textarea id="p_desc" rows="3" placeholder="Project Description..." required></textarea>
-            <input type="text" id="p_link" placeholder="GitHub / Demo URL" required>
-            <input type="text" id="p_color" placeholder="Theme Color (e.g. #FF00FF)" required>
-            
-            <button class="btn-save" onclick="saveNewProject()">Save Project</button>
-            <button class="btn-cancel" onclick="closeProjectModal()">Cancel</button>
+            <input type="url" id="p_link" placeholder="GitHub / Demo URL (https://...)" required>
+            <input type="text" id="p_color" placeholder="Theme Color (e.g. #FF00FF or #00FF7F)" required>
+
+            <button type="button" class="btn-save" onclick="saveNewProject()">Save Project</button>
+            <button type="button" class="btn-cancel" onclick="closeProjectModal()">Cancel</button>
         </div>
     </div>
 
     <!-- FOOTER -->
     <footer class="modern-footer">
-        <p>&copy; 2026 <span class="footer-name">Biruk Tadesse</span>. Engineered with <i class="fas fa-heart pulse-heart"></i> & Code for Technology.</p>
+        <p>
+            &copy; 2026 <span class="footer-name">Biruk Tadesse</span>. Engineered with <i class="fas fa-heart pulse-heart"></i> &amp; Code for Technology.
+            <button type="button" class="admin-trigger" onclick="authenticateAndAdd()" title="Developer Admin" aria-label="Developer Admin">
+                <i class="fas fa-lock"></i>
+            </button>
+        </p>
     </footer>
 
-    <!-- Include JavaScript File -->
+    <!-- JavaScript -->
     <script src="script.js"></script>
-
-    <!-- JAVASCRIPT FOR ELECTRICAL PARTICLE EFFECT -->
-    <script>
-        const canvas = document.getElementById('networkCanvas');
-        const ctx = canvas.getContext('2d');
-
-        // Set canvas dimensions to cover the full window
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        let particlesArray = [];
-        
-        // Mouse tracking object
-        const mouse = { x: null, y: null, radius: 130 };
-
-        window.addEventListener('mousemove', (e) => {
-            mouse.x = e.clientX;
-            mouse.y = e.clientY;
-        });
-
-        // Disconnect lines when mouse leaves the window
-        window.addEventListener('mouseout', () => {
-            mouse.x = null;
-            mouse.y = null;
-        });
-
-        // Particle Class
-        class Particle {
-            constructor(x, y) {
-                this.x = x;
-                this.y = y;
-                this.size = 2; // Particle size
-                this.speedX = (Math.random() - 0.5) * 1.5; // X-axis speed
-                this.speedY = (Math.random() - 0.5) * 1.5; // Y-axis speed
-                this.color = '#00ffaa'; // Neon Green color
-            }
-            update() {
-                this.x += this.speedX;
-                this.y += this.speedY;
-
-                // Bounce off the screen borders
-                if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
-                if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
-            }
-            draw() {
-                ctx.fillStyle = this.color;
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
-            }
-        }
-
-        // Initialize particles
-        function init() {
-            particlesArray = [];
-            // Calculate an optimal number of particles based on screen size
-            const numberOfParticles = (canvas.width * canvas.height) / 8500;
-            for (let i = 0; i < numberOfParticles; i++) {
-                const x = Math.random() * canvas.width;
-                const y = Math.random() * canvas.height;
-                particlesArray.push(new Particle(x, y));
-            }
-        }
-
-        // Connect particles with network lines
-        function connect() {
-            for (let a = 0; a < particlesArray.length; a++) {
-                for (let b = a; b < particlesArray.length; b++) {
-                    const dx = particlesArray[a].x - particlesArray[b].x;
-                    const dy = particlesArray[a].y - particlesArray[b].y;
-                    const distance = Math.hypot(dx, dy); // Calculate distance
-
-                    // Connect particles to each other
-                    if (distance < 90) {
-                        ctx.strokeStyle = `rgba(0, 255, 170, ${1 - distance / 90})`; // Neon Green lines
-                        ctx.lineWidth = 0.5;
-                        ctx.beginPath();
-                        ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
-                        ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
-                        ctx.stroke();
-                    }
-                }
-
-                // Connect particles to the mouse cursor
-                if(mouse.x != null && mouse.y != null) {
-                    const mouseDx = particlesArray[a].x - mouse.x;
-                    const mouseDy = particlesArray[a].y - mouse.y;
-                    const mouseDist = Math.hypot(mouseDx, mouseDy);
-
-                    if (mouseDist < mouse.radius) {
-                        ctx.strokeStyle = `rgba(0, 255, 170, ${1 - mouseDist / mouse.radius})`;
-                        ctx.lineWidth = 1;
-                        ctx.beginPath();
-                        ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
-                        ctx.lineTo(mouse.x, mouse.y);
-                        ctx.stroke();
-                    }
-                }
-            }
-        }
-
-        // Animation loop
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the previous frame
-            for (let i = 0; i < particlesArray.length; i++) {
-                particlesArray[i].update();
-                particlesArray[i].draw();
-            }
-            connect();
-            requestAnimationFrame(animate);
-        }
-
-        init();
-        animate();
-
-        // Adjust canvas size automatically on window resize
-        window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            init();
-        });
-    </script>
 </body>
 </html>
