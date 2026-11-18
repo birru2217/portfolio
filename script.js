@@ -252,16 +252,21 @@ function navigateTo(sectionId) {
         // 🚀 DYNAMIC PROJECTS GENERATOR & MINI CMS (MAGIC - ALL 11 PROJECTS)
         // ========================================================
         const defaultProjects = [
-            { 
-                title: "🚀 RLMS (Enterprise)", 
-                tags: ["PHP 8.x", "Vanilla JS", "MySQLi", "AJAX"], 
-                description: "A highly secure, 5-tier architecture Registration & Learning Management System. Features Military-grade 2FA, Smart Anti-Cheat Exams, Auto-grading, and a Telegram-style encrypted Chat Hub.", 
-                link: "https://eplms.page.gd/eplms/", 
-                btnText: "View Websit", 
-                icon: "fab fa-github", 
-                themeClass: "color-card-rlms", 
-                createdAt: "2026-06-12" // Guyyaa uumamaa (NEW tag ni mul'ata)
-            } ,
+          {
+    title: "🚀 RLMS (Enterprise)",
+    tags: ["PHP 8.x", "Vanilla JS", "MySQLi", "AJAX"],
+
+    // RLMS project preview video
+    video: "videos/rlms-preview.mp4",
+
+    description: "A highly secure, 5-tier architecture Registration & Learning Management System. Features Military-grade 2FA, Smart Anti-Cheat Exams, Auto-grading, and a Telegram-style encrypted Chat Hub.",
+
+    link: "https://eplms.page.gd/eplms/",
+    btnText: "View Website",
+    icon: "fab fa-github",
+    themeClass: "color-card-rlms",
+    createdAt: "2026-06-12"
+},
         // 👇 PIROJEKTII HAARAA KANAS ITTI DABALI 👇
         { 
             title: "🏢 Infoplus Job Portal", 
@@ -401,8 +406,31 @@ function loadProjects() {
     let htmlContent = "";
 
     savedProjects.forEach((project) => {
-        let tagsHtml = "";
-        project.tags.forEach(tag => { tagsHtml += `<span>${tag.trim()}</span>`; });
+       let tagsHtml = "";
+
+project.tags.forEach(tag => {
+    tagsHtml += `<span>${tag.trim()}</span>`;
+});
+
+// Project video preview
+let videoHtml = "";
+
+if (project.video) {
+    videoHtml = `
+        <div class="project-video-wrapper">
+            <video
+                class="project-preview-video"
+                controls
+                muted
+                loop
+                playsinline
+                preload="metadata">
+                <source src="${project.video}" type="video/mp4">
+                Your browser does not support HTML5 video.
+            </video>
+        </div>
+    `;
+}
 
         // Badge "NEW" yoo isNew = true ta'e qofa
         let newBadge = project.isNew ? `<div style="position: absolute; top: 15px; right: -25px; background: #FFD700; color: #000; font-size: 10px; font-weight: 900; padding: 5px 30px; transform: rotate(45deg); letter-spacing: 2px; box-shadow: 0 2px 10px rgba(255,215,0,0.5); z-index: 10;">NEW</div>` : "";
@@ -423,10 +451,13 @@ function loadProjects() {
             <div class="project-card ${cardClass} reveal" style="${cardStyle}">
                 ${newBadge}
                 <h3 style="${titleStyle}">${project.title}</h3>
-                <div class="tech-tags">
-                    ${tagsHtml}
-                </div>
-                <p>${project.description}</p>
+               <div class="tech-tags">
+    ${tagsHtml}
+</div>
+
+${videoHtml}
+
+<p>${project.description}</p>
                 <a href="${project.link}" class="btn-view" target="_blank" style="${btnStyle}">
                     <i class="${project.icon}"></i> ${project.btnText}
                 </a>
