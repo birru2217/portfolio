@@ -748,3 +748,43 @@ body.mode-snow .snow-container {
 }
 .btn-save { background: var(--gold); color: #000; margin-bottom: 10px; }
 .btn-cancel { background: #333; color: #fff; }
+/* =====================================
+   RLMS PROJECT VIDEO PREVIEW
+===================================== */
+
+.project-video-wrapper {
+    width: 100%;
+    margin: 10px 0 25px;
+    overflow: hidden;
+    border-radius: 14px;
+    background: #000;
+    border: 1px solid rgba(16, 185, 129, 0.35);
+    box-shadow: 0 5px 20px rgba(16, 185, 129, 0.12);
+}
+
+.project-preview-video {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 14px;
+    background: #000;
+}
+
+.project-video-wrapper:hover {
+    border-color: #10b981;
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.25);
+}
+
+/* Mobile video responsiveness */
+@media (max-width: 768px) {
+    .project-video-wrapper {
+        width: 100%;
+        margin: 10px 0 20px;
+    }
+
+    .project-preview-video {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+    }
+}
