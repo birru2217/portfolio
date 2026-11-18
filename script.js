@@ -450,26 +450,21 @@ function loadProjects() {
                     <h3 style="${titleStyle}">${project.title}</h3>
                     <div class="tech-tags">${tagsHtml}</div>
 
-                    <!-- YOO VIDEO QABAATE: DRAWER OVERLAY TA'A -->
-                    ${project.video ? `
-                        <div class="project-desc-drawer">
-                            <p>${project.description}</p>
-                        </div>
-                        <div class="card-actions-wrapper">
-                            <a href="${project.link}" class="btn-view" target="_blank" rel="noopener noreferrer" style="${btnStyle}">
-                                <i class="${project.icon || 'fas fa-external-link-alt'}"></i> ${project.btnText || 'View Project'}
-                            </a>
-                            <button type="button" class="btn-toggle-desc" onclick="toggleCardDetails(this)">
-                                <span>Info</span> <i class="fas fa-chevron-up"></i>
-                            </button>
-                        </div>
-                    ` : `
-                        <!-- KAARDII NORMAL (VIDEO HIN QABNEEF) -->
+                    <!-- 🪄 DRAWER HAARAA KAARDIIWWAN HUNDAAF TA'U (Scroll Tokko Malee) -->
+                    <div class="project-desc-drawer">
                         <p>${project.description}</p>
+                    </div>
+
+                    <!-- BUTTONS: VISIT WEBSITE FI FLOATING INFO -->
+                    <div class="card-actions-wrapper">
                         <a href="${project.link}" class="btn-view" target="_blank" rel="noopener noreferrer" style="${btnStyle}">
-                            <i class="${project.icon || 'fas fa-external-link-alt'}"></i> ${project.btnText || 'View Project'}
+                            <i class="${project.icon || 'fas fa-external-link-alt'}"></i> 
+                            <span>${project.btnText || 'View Project'}</span>
                         </a>
-                    `}
+                        <button type="button" class="btn-toggle-desc" onclick="toggleCardDetails(this)" title="Toggle Project Details">
+                            <span>Info</span> <i class="fas fa-chevron-up"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         `;
