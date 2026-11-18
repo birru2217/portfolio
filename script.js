@@ -411,12 +411,16 @@ function loadProjects() {
 
         // Full-card background video yoo qabaate
         let videoHtml = "";
-        if (project.video) {
+       if (project.video) {
             videoHtml = `
                 <div class="project-video-wrapper">
-                    <video class="project-preview-video" autoplay muted loop playsinline preload="auto">
+                    <video class="project-preview-video" 
+                           autoplay 
+                           muted 
+                           loop 
+                           playsinline 
+                           preload="metadata"> <!-- 'auto' irraa gara 'metadata' tti jijjiiruun saffisa intarneetii qusata -->
                         <source src="${project.video}" type="video/mp4">
-                        Your browser does not support HTML5 video.
                     </video>
                 </div>
             `;
