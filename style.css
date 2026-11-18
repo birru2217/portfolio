@@ -417,11 +417,11 @@ body.mode-3d .video-container {
 .color-skill-13 { --box-color: #F24E1E; --box-color-glow: rgba(242, 78, 30, 0.5); }
 
 /* --- 7. PROJECTS SECTION (PERFECT FLEXBOX & HORIZONTAL ALIGNMENT) --- */
-/* =========================================
-   OVERLAY DRAWER & SINGLE LINE TITLE STYLES
-   ========================================= */
+/* =======================================================
+   UNIVERSAL INTERACTIVE DRAWER & FLOATING INFO BUTTON
+   ======================================================= */
 
-/* Action Button fi Info Button walbira tooru */
+/* Action Button fi Info Button Walbira Tooru */
 .card-actions-wrapper {
     display: flex;
     align-items: center;
@@ -433,88 +433,122 @@ body.mode-3d .video-container {
     gap: 12px;
 }
 
-/* Button Xiyyaa 'Info ⌃' (Glassmorphism Style) */
+/* Button Guddaa (Visit Website / View Code) - Hin Caccabu */
+.btn-view { 
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-weight: 700; 
+    text-decoration: none; 
+    padding: 12px 20px; 
+    border-radius: 50px; 
+    transition: all 0.3s ease;
+    white-space: nowrap !important; /* Akka hin caccabne to'ata */
+    flex: 1; /* Iddoo jiru hunda qulqullinaan qabata */
+    min-width: 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.btn-view:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 255, 127, 0.3);
+}
+
+/* Button "Info ⌃" Isa Danbali'u (Floating Animation) */
 .btn-toggle-desc {
-    background: rgba(255, 255, 255, 0.12);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    flex-shrink: 0;
+    background: rgba(20, 20, 20, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1.5px solid rgba(0, 255, 127, 0.5);
     color: #ffffff;
-    padding: 10px 16px;
+    padding: 11px 18px;
     border-radius: 50px;
     font-size: 0.85rem;
-    font-weight: 700;
+    font-weight: 800;
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    transition: all 0.3s ease;
     cursor: pointer;
+    box-shadow: 0 0 15px rgba(0, 255, 127, 0.2);
+    animation: floatInfoBtn 2s ease-in-out infinite; /* Asii fi ol danbali'a! */
+    transition: all 0.3s ease;
 }
 
-.btn-toggle-desc:hover {
-    background: rgba(255, 255, 255, 0.25);
-    transform: scale(1.05);
+/* Danbali'uu (Float Animation) Ija Namaa Harkisu */
+@keyframes floatInfoBtn {
+    0%, 100% {
+        transform: translateY(0);
+        box-shadow: 0 0 12px rgba(0, 255, 127, 0.25);
+    }
+    50% {
+        transform: translateY(-6px);
+        box-shadow: 0 0 25px rgba(0, 255, 127, 0.6);
+        border-color: #00FF7F;
+    }
 }
 
 .btn-toggle-desc i {
-    transition: transform 0.4s ease;
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-/* Barreeffamni Video irratti by default ni dhokata (Viidiyoon akka ifuuf) */
-.has-project-video .project-desc-drawer {
+/* Barreeffamni By Default Ni Dhokata (Video/Card akka hin uwwisne) */
+.project-desc-drawer {
     max-height: 0;
     opacity: 0;
     overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s ease, margin 0.35s ease, padding 0.35s ease;
     margin: 0;
-    padding: 0 16px;
-    border-radius: 16px;
-    background: rgba(8, 8, 8, 0.9);
-    backdrop-filter: blur(15px);
+    padding: 0 18px;
+    border-radius: 18px;
+    background: rgba(8, 8, 8, 0.94);
+    backdrop-filter: blur(20px);
     border: 1px solid transparent;
     position: relative;
     z-index: 4;
 }
 
-.has-project-video .project-desc-drawer p {
+.project-desc-drawer p {
     font-size: 0.95rem;
-    line-height: 1.6;
-    color: #e0e0e0;
+    line-height: 1.7;
+    color: #f0f0f0;
     margin: 0;
 }
 
-/* Yeroo 'Info ⌃' tuqamu: Barreeffamni bifa Frosted Glass tiin ol baha */
-.has-project-video.expanded .project-desc-drawer {
-    max-height: 220px;
+/* Yeroo Tuqamu: SCROLL TOKKO MALEE GUUTUUMMAATTI SAQQAMA */
+.project-card.expanded .project-desc-drawer {
+    max-height: 400px; /* Hamma barbaade dheeratu scroll hin fidu */
     opacity: 1;
-    padding: 16px;
-    margin-bottom: 15px;
+    padding: 18px 20px;
+    margin-bottom: 16px;
     border-color: rgba(0, 255, 127, 0.4);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
-    overflow-y: auto;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.9);
+    overflow: hidden; /* Scroll dhorkameera */
 }
 
-/* Xiyyi garagalee gara gadiitti xiyyeeffata (⌄) */
-.has-project-video.expanded .btn-toggle-desc i {
-    transform: rotate(180deg);
-}
-
-.has-project-video.expanded .btn-toggle-desc {
+/* Yeroo Saaqamee Jiru: Danbali'uu Dhaabee Garagala */
+.project-card.expanded .btn-toggle-desc {
+    animation: none;
     background: var(--green);
-    color: #000;
+    color: #000000;
     border-color: var(--green);
 }
 
+.project-card.expanded .btn-toggle-desc i {
+    transform: rotate(180deg);
+}
+
 /* =========================================
-   BILBILAAF (MOBILE FIX): TITLE SARARA TOKKO
+   BILBILAAF (MOBILE RESPONSIVE ENHANCEMENT)
    ========================================= */
 @media (max-width: 768px) {
-    /* Title akka sarara tokko qofa ta'uuf */
+    /* Title Sarara Tokko Qofa */
     .project-card h3 {
-        font-size: 1.22rem !important; 
+        font-size: 1.25rem !important; 
         white-space: nowrap !important;
         overflow: hidden !important;
         text-overflow: ellipsis !important;
-        margin-bottom: 8px !important;
+        margin-bottom: 10px !important;
     }
 
     .tech-tags {
@@ -523,12 +557,22 @@ body.mode-3d .video-container {
     }
 
     .tech-tags span {
-        padding: 4px 8px !important;
+        padding: 4px 9px !important;
         font-size: 0.75rem !important;
     }
 
-    .project-card.has-project-video {
-        min-height: 480px !important;
+    .project-card {
+        min-height: 490px !important;
+    }
+
+    .btn-view {
+        font-size: 0.88rem !important;
+        padding: 11px 14px !important;
+    }
+
+    .btn-toggle-desc {
+        padding: 10px 14px !important;
+        font-size: 0.8rem !important;
     }
 }
 .projects-grid {
