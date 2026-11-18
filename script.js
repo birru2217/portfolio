@@ -231,10 +231,11 @@ function createSnowflake() {
 // 🚀 DYNAMIC PROJECTS CATALOG (ALL 12 PROJECTS)
 // ========================================================
 const defaultProjects = [
-    {
+   {
         title: "🚀 RLMS (Enterprise)",
         tags: ["PHP 8.x", "Vanilla JS", "MySQLi", "AJAX"],
-        video: "videos/rlms-preview.mp4",
+        video: "video/rlms.mp4", 
+
         description: "A highly secure, 5-tier architecture Registration & Learning Management System. Features Military-grade 2FA, Smart Anti-Cheat Exams, Auto-grading, and a Telegram-style encrypted Chat Hub.",
         link: "https://eplms.page.gd/eplms/",
         btnText: "Visit Website",
@@ -379,13 +380,15 @@ function loadProjects() {
         localStorage.setItem("biruk_projects", JSON.stringify(defaultProjects));
     }
 
-    // Always ensure RLMS is current with live link & video preview
+  // Always ensure RLMS is current with live link & video preview
     const rlmsProject = savedProjects.find(p => p.title && p.title.includes("RLMS"));
     if (rlmsProject) {
         rlmsProject.link = "https://eplms.page.gd/eplms/";
         rlmsProject.btnText = "Visit Website";
         rlmsProject.icon = "fas fa-globe";
-        rlmsProject.video = "videos/rlms-preview.mp4";
+        
+        // 👇 SARARA KANAS ITTI DABALI 👇
+        rlmsProject.video = "video/rlms.mp4"; // Maqaa fi folder viidiyoo keetii
     }
 
     let htmlContent = "";
