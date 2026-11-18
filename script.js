@@ -247,12 +247,16 @@ const defaultProjects = [
     { 
         title: "🏢 Infoplus Job Portal", 
         tags: ["PHP 8.x", "Tailwind CSS", "AlpineJS", "MySQL"], 
+        
+        // 👇 SARARA HAARAA KANA ITTI DABALI 👇
+        video: "videos/infoplus.mp4", 
+
         description: "A dynamic, high-performance Job Matchmaking platform. Features dual role-based access (Employer & Candidate), auto-generated OTP security, and responsive UI built with Tailwind CSS & AlpineJS.", 
         link: "https://infoplus.ifree.page/",
         btnText: "Visit Website", 
         icon: "fas fa-external-link-alt", 
         themeClass: null, 
-        color: "#FFD700",
+        color: "#FFD700", // Halluu Warqee (Gold)
         createdAt: "2026-10-23",
         isNew: true
     },
@@ -378,20 +382,23 @@ function loadProjects() {
         savedProjects = defaultProjects;
     }
 
-    // RLMS yeroo hunda viidiyoo sirrii 'videos/rlms.mp4' akka qabaatu gochuu
+   // Always ensure RLMS is current with live link & video preview
     const rlmsProject = savedProjects.find(p => p.title && p.title.includes("RLMS"));
     if (rlmsProject) {
         rlmsProject.link = "https://eplms.page.gd/eplms/";
         rlmsProject.btnText = "Visit Website";
         rlmsProject.icon = "fas fa-globe";
-        
-        // ✅ QUBEE 's' ITTI DABALAMEERA (videos/rlms.mp4)
         rlmsProject.video = "videos/rlms.mp4"; 
     }
 
-    // ✅ JIJJIIRAMA KANA DEEBISEE LOCALSTORAGE-TTI SAVE GODHA
-    localStorage.setItem("biruk_projects", JSON.stringify(savedProjects));
+    // 👇 INFOPLUS TIIS AKKASUMAA ITTI DABALI 👇
+    const infoplusProject = savedProjects.find(p => p.title && p.title.includes("Infoplus"));
+    if (infoplusProject) {
+        infoplusProject.video = "videos/infoplus.mp4";
+    }
 
+    // Jijjiirama kana localStorage keessatti save godha
+    localStorage.setItem("biruk_projects", JSON.stringify(savedProjects));
     let htmlContent = "";
 
     savedProjects.forEach((project) => {
