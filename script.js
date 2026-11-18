@@ -420,11 +420,11 @@ if (project.video) {
         <div class="project-video-wrapper">
             <video
                 class="project-preview-video"
-                controls
+                autoplay
                 muted
                 loop
                 playsinline
-                preload="metadata">
+                preload="auto">
                 <source src="${project.video}" type="video/mp4">
                 Your browser does not support HTML5 video.
             </video>
@@ -447,30 +447,40 @@ if (project.video) {
             btnStyle = `background: ${project.color}; color: #000;`;
         }
 
-       htmlContent += `
-    <div class="project-card ${cardClass} reveal" style="${cardStyle}">
+      htmlContent += `
+    <div class="project-card ${cardClass} ${project.video ? 'has-project-video' : ''} reveal"
+         style="${cardStyle}">
 
         ${newBadge}
 
-        <!-- Project Video Preview -->
+        <!-- Full Card Background Video -->
         ${videoHtml}
 
-        <!-- Project Title -->
-        <h3 style="${titleStyle}">${project.title}</h3>
+        <!-- Content Overlay -->
+        <div class="project-card-content">
 
-        <!-- Technology Tags -->
-        <div class="tech-tags">
-            ${tagsHtml}
+            <h3 style="${titleStyle}">
+                ${project.title}
+            </h3>
+
+            <div class="tech-tags">
+                ${tagsHtml}
+            </div>
+
+            <p>${project.description}</p>
+
+            <a href="${project.link}"
+               class="btn-view"
+               target="_blank"
+               rel="noopener noreferrer"
+               style="${btnStyle}">
+
+                <i class="${project.icon}"></i>
+                ${project.btnText}
+
+            </a>
+
         </div>
-
-        <!-- Project Description -->
-        <p>${project.description}</p>
-
-        <!-- Project Button -->
-        <a href="${project.link}" class="btn-view" target="_blank" style="${btnStyle}">
-            <i class="${project.icon}"></i> ${project.btnText}
-        </a>
-
     </div>
 `;
     });
