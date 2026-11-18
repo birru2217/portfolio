@@ -261,9 +261,9 @@ function navigateTo(sectionId) {
 
     description: "A highly secure, 5-tier architecture Registration & Learning Management System. Features Military-grade 2FA, Smart Anti-Cheat Exams, Auto-grading, and a Telegram-style encrypted Chat Hub.",
 
-    link: "https://eplms.page.gd/eplms/",
-    btnText: "View Website",
-    icon: "fab fa-github",
+   link: "https://eplms.page.gd/eplms/",
+btnText: "Visit Website",
+icon: "fas fa-globe",
     themeClass: "color-card-rlms",
     createdAt: "2026-06-12"
 },
@@ -398,10 +398,26 @@ function loadProjects() {
     // Ragaa LocalStorage irraa fiduu, yoo hin jiraanne Default fayyadamuu
     let savedProjects = JSON.parse(localStorage.getItem('biruk_projects'));
     
-    // Yoo LocalStorage keessa hin jirre, default isaanii kenniif
     if (!savedProjects || savedProjects.length === 0) {
-        savedProjects = defaultProjects;
-    }
+    savedProjects = defaultProjects;
+}
+
+// Always update RLMS destination
+const rlmsProject = savedProjects.find(project =>
+    project.title && project.title.includes("RLMS")
+);
+
+if (rlmsProject) {
+    rlmsProject.link = "https://eplms.page.gd/eplms/";
+    rlmsProject.btnText = "Visit Website";
+    rlmsProject.icon = "fas fa-globe";
+}
+
+// Save the updated project data
+localStorage.setItem(
+    "biruk_projects",
+    JSON.stringify(savedProjects)
+);
     
     let htmlContent = "";
 
