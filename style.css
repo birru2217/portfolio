@@ -478,23 +478,21 @@ body.mode-3d .video-container {
 /* =======================================================
    CLEAN & NO-BOX DRAWER (BARREEFFAMA DALACHA GARA GADII)
    ======================================================= */
+/* 1. BARREEFFAMICHA GARA GADII DHUMAATTI DHIITHA */
 .project-desc-drawer {
     max-height: 0;
     opacity: 0;
     overflow: hidden;
     transition: max-height 0.4s ease, opacity 0.3s ease, margin 0.3s ease;
     
-    /* Gara gadii dhumaatti dhiiba (Walakkaan video akka banaa ta'uuf) */
+    /* Gara gadiitti dhiibuu */
     margin-top: auto !important; 
-    margin-bottom: 0;
+    margin-bottom: 0 !important;
     padding: 0 !important;
     
-    /* BOX GUUTUUMMAATTI BALLEESSUUF */
-    background: transparent !important;
+    background: transparent !important; 
     border: none !important;
     box-shadow: none !important;
-    backdrop-filter: none !important;
-    
     position: relative;
     z-index: 4;
 }
@@ -509,26 +507,34 @@ body.mode-3d .video-container {
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95), 0 0 4px rgba(0, 0, 0, 0.85);
 }
 
-/* Yeroo 'Info' tuqamu: Sirrii button gubbaatti bahee mul'ata */
+/* Yeroo 'Info' tuqamu: Sirrii button-icha gubbaatti maxxana */
 .project-card.expanded .project-desc-drawer {
     max-height: 350px;
     opacity: 1;
-    margin-bottom: 16px;
+    margin-top: auto !important;
+    margin-bottom: 12px !important; /* Button irraa fageenya xiqqoo qofa qabaata */
     overflow: hidden;
 }
 
-/* Action Button fi Info Button Walbira Tooru */
+/* 2. BUTTON-OOTA (IDDOO DUWWAA GIDDUU TURE BALLEESSUUF) */
 .card-actions-wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    margin-top: auto;
+    
+    /* 👇 RAKKOON ISA KANAA DHA: 'auto' irraa gara '0' tti jijjiirameera 👇 */
+    margin-top: 0 !important; 
+    
     position: relative;
     z-index: 5;
     gap: 12px;
 }
 
+/* Yeroo cufaa ta'etti button-oonni akka gadi dhumaatti taa'an */
+.project-card:not(.expanded) .card-actions-wrapper {
+    margin-top: auto !important;
+}
 /* Button Guddaa (Visit Website / View Code) - Hin Caccabu */
 .btn-view { 
     display: inline-flex;
