@@ -390,16 +390,94 @@ icon: "fas fa-globe",
     ]; // Kun cufaa defaultProjects ti
        
 
-// Function Kaardii uumee HTML keessa galchu
+// Function Kaardii uumee HTML keessa galchu (SIRRAA'EERA)
 function loadProjects() {
     const container = document.getElementById("dynamic-projects-container");
     if (!container) return;
     
-    // Ragaa LocalStorage irraa fiduu, yoo hin jiraanne Default fayyadamuu
+    // Ragaa LocalStorage irraa fiduu
     let savedProjects = JSON.parse(localStorage.getItem('biruk_projects'));
     
-    if (!savedProjects || savedProjects.length === 0) {
-    savedProjects = defaultProjects;
+    // YOO PIROJEKTII HAARAAN DABALAME LAKKOOFSI ISAANII YOO CAALE, OFUMAAN HAARESSA
+    if (!savedProjects || savedProjects.length < defaultProjects.length) {
+        savedProjects = defaultProjects;
+        localStorage.setItem("biruk_projects", JSON.stringify(defaultProjects));
+    }
+
+    // RLMS linkii isaa update gochuuf
+    const rlmsProject = savedProjects.find(project =>
+        project.title && project.title.includes("RLMS")
+    );
+    if (rlmsProject) {
+        rlmsProject.link = "https://eplms.page.gd/eplms/";
+        rlmsProject.btnText = "Visit Website";
+        rlmsProject.icon = "fas fa-globe";
+        rlmsProject.video = "videos/rlms-preview.mp4"; // Viidiyoon akka baduu hin dandeenyeef
+    }
+
+    let htmlContent = "";
+
+    savedProjects.forEach((project) => {
+        let tagsHtml = "";
+        project.tags.forEach(tag => {
+            tagsHtml += `<span>${tag.trim()}</span>`;
+        });
+
+        // Project video preview (Yoo qabaate)
+        let videoHtml = "";
+        if (project.video) {
+            videoHtml = `
+                <div class="project-video-wrapper">
+                    <video class="project-preview-video" autoplay muted loop playsinline preload="auto">
+                        <source src="${project.video}" type="video/mp4">
+                    </video>
+                </div>
+            `;
+        }
+
+        // Badge "NEW"
+        let newBadge = project.isNew ? `<div class="badge-new">NEW</div>` : "";
+
+        // Styles
+        let cardStyle = "";
+        let titleStyle = "";
+        let btnStyle = "";
+        let cardClass = project.themeClass ? project.themeClass : "custom-added-card";
+
+        if (!project.themeClass) {
+            cardStyle = `border-top-color: ${project.color || '#FFD700'};`;
+            titleStyle = `color: ${project.color || '#FFD700'};`;
+            btnStyle = `background: ${project.color || '#FFD700'}; color: #000;`;
+        }
+
+        htmlContent += `
+            <div class="project-card ${cardClass} ${project.video ? 'has-project-video' : ''} reveal" style="${cardStyle}">
+                ${newBadge}
+                ${videoHtml}
+                <div class="project-card-content">
+                    <h3 style="${titleStyle}">${project.title}</h3>
+                    <div class="tech-tags">${tagsHtml}</div>
+                    <p>${project.description}</p>
+                    <a href="${project.link}" class="btn-view" target="_blank" rel="noopener noreferrer" style="${btnStyle}">
+                        <i class="${project.icon}"></i> ${project.btnText}
+                    </a>
+                </div>
+            </div>
+        `;
+    });
+
+    // Add New Project Card
+    htmlContent += `
+        <div class="project-card add-new-card reveal" onclick="authenticateAndAdd()">
+            <div class="project-card-content" style="justify-content: center; align-items: center; text-align: center;">
+                <i class="fas fa-plus-circle"></i>
+                <h3>Add New Project</h3>
+            </div>
+        </div>
+    `;
+
+    container.innerHTML = htmlContent;
+    if (typeof reveal === "function") reveal();
 }
 
 // Always update RLMS destination
