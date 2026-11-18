@@ -783,13 +783,49 @@ body.mode-snow .snow-container {
     box-shadow: 0 5px 20px rgba(16, 185, 129, 0.12);
 }
 
+/* =====================================
+   COMPACT PROJECT VIDEO PREVIEW
+===================================== */
+
+.project-video-wrapper {
+    width: 100%;
+    height: 190px;
+
+    margin: 0 0 20px;
+
+    overflow: hidden;
+    border-radius: 14px;
+
+    background: #000;
+    border: 1px solid rgba(16, 185, 129, 0.4);
+
+    box-shadow: 0 5px 20px rgba(16, 185, 129, 0.12);
+}
+
 .project-preview-video {
     display: block;
+
     width: 100%;
-    aspect-ratio: 16 / 9;
+    height: 100%;
+
     object-fit: cover;
+    object-position: center;
+
     border-radius: 14px;
     background: #000;
+}
+
+.project-video-wrapper:hover {
+    border-color: #10b981;
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.25);
+}
+
+/* Smaller video on mobile */
+@media (max-width: 768px) {
+    .project-video-wrapper {
+        height: 170px;
+        margin-bottom: 18px;
+    }
 }
 
 .project-video-wrapper:hover {
