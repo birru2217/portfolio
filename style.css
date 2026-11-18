@@ -39,7 +39,7 @@ body {
 }
 
 /* Interactive elements pointer cursor */
-a, button, .menu-btn, .mode-toggle, .spin-icon, .btn-modern, .btn-view {
+a, button, .menu-btn, .mode-toggle, .spin-icon, .btn-modern, .btn-view, .btn-toggle-desc {
     cursor: pointer;
 }
 
@@ -416,165 +416,7 @@ body.mode-3d .video-container {
 .color-skill-12 { --box-color: #00599C; --box-color-glow: rgba(0, 89, 156, 0.5); }
 .color-skill-13 { --box-color: #F24E1E; --box-color-glow: rgba(242, 78, 30, 0.5); }
 
-/* --- 7. PROJECTS SECTION (PERFECT FLEXBOX & HORIZONTAL ALIGNMENT) --- */
-/* =======================================================
-   UNIVERSAL INTERACTIVE DRAWER & FLOATING INFO BUTTON
-   ======================================================= */
-
-/* Action Button fi Info Button Walbira Tooru */
-.card-actions-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    margin-top: auto;
-    position: relative;
-    z-index: 5;
-    gap: 12px;
-}
-
-/* Button Guddaa (Visit Website / View Code) - Hin Caccabu */
-.btn-view { 
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    font-weight: 700; 
-    text-decoration: none; 
-    padding: 12px 20px; 
-    border-radius: 50px; 
-    transition: all 0.3s ease;
-    white-space: nowrap !important; /* Akka hin caccabne to'ata */
-    flex: 1; /* Iddoo jiru hunda qulqullinaan qabata */
-    min-width: 0;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-}
-
-.btn-view:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0, 255, 127, 0.3);
-}
-
-/* Button "Info ⌃" Isa Danbali'u (Floating Animation) */
-.btn-toggle-desc {
-    flex-shrink: 0;
-    background: rgba(20, 20, 20, 0.7);
-    backdrop-filter: blur(12px);
-    border: 1.5px solid rgba(0, 255, 127, 0.5);
-    color: #ffffff;
-    padding: 11px 18px;
-    border-radius: 50px;
-    font-size: 0.85rem;
-    font-weight: 800;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    cursor: pointer;
-    box-shadow: 0 0 15px rgba(0, 255, 127, 0.2);
-    animation: floatInfoBtn 2s ease-in-out infinite; /* Asii fi ol danbali'a! */
-    transition: all 0.3s ease;
-}
-
-/* Danbali'uu (Float Animation) Ija Namaa Harkisu */
-@keyframes floatInfoBtn {
-    0%, 100% {
-        transform: translateY(0);
-        box-shadow: 0 0 12px rgba(0, 255, 127, 0.25);
-    }
-    50% {
-        transform: translateY(-6px);
-        box-shadow: 0 0 25px rgba(0, 255, 127, 0.6);
-        border-color: #00FF7F;
-    }
-}
-
-.btn-toggle-desc i {
-    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-/* Barreeffamni By Default Ni Dhokata (Video/Card akka hin uwwisne) */
-.project-desc-drawer {
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s ease, margin 0.35s ease, padding 0.35s ease;
-    margin: 0;
-    padding: 0 18px;
-    border-radius: 18px;
-    background: rgba(8, 8, 8, 0.94);
-    backdrop-filter: blur(20px);
-    border: 1px solid transparent;
-    position: relative;
-    z-index: 4;
-}
-
-.project-desc-drawer p {
-    font-size: 0.95rem;
-    line-height: 1.7;
-    color: #f0f0f0;
-    margin: 0;
-}
-
-/* Yeroo Tuqamu: SCROLL TOKKO MALEE GUUTUUMMAATTI SAQQAMA */
-.project-card.expanded .project-desc-drawer {
-    max-height: 400px; /* Hamma barbaade dheeratu scroll hin fidu */
-    opacity: 1;
-    padding: 18px 20px;
-    margin-bottom: 16px;
-    border-color: rgba(0, 255, 127, 0.4);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.9);
-    overflow: hidden; /* Scroll dhorkameera */
-}
-
-/* Yeroo Saaqamee Jiru: Danbali'uu Dhaabee Garagala */
-.project-card.expanded .btn-toggle-desc {
-    animation: none;
-    background: var(--green);
-    color: #000000;
-    border-color: var(--green);
-}
-
-.project-card.expanded .btn-toggle-desc i {
-    transform: rotate(180deg);
-}
-
-/* =========================================
-   BILBILAAF (MOBILE RESPONSIVE ENHANCEMENT)
-   ========================================= */
-@media (max-width: 768px) {
-    /* Title Sarara Tokko Qofa */
-    .project-card h3 {
-        font-size: 1.25rem !important; 
-        white-space: nowrap !important;
-        overflow: hidden !important;
-        text-overflow: ellipsis !important;
-        margin-bottom: 10px !important;
-    }
-
-    .tech-tags {
-        gap: 6px !important;
-        margin-bottom: 12px !important;
-    }
-
-    .tech-tags span {
-        padding: 4px 9px !important;
-        font-size: 0.75rem !important;
-    }
-
-    .project-card {
-        min-height: 490px !important;
-    }
-
-    .btn-view {
-        font-size: 0.88rem !important;
-        padding: 11px 14px !important;
-    }
-
-    .btn-toggle-desc {
-        padding: 10px 14px !important;
-        font-size: 0.8rem !important;
-    }
-}
+/* --- 7. PROJECTS SECTION (CLEAN & PERFECTLY ORGANIZED) --- */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -582,7 +424,7 @@ body.mode-3d .video-container {
     width: 100%;
     max-width: 1450px;
     margin: 0 auto;
-    align-items: stretch; /* Cards in each row stretch to equal height */
+    align-items: stretch;
 }
 
 .project-card {
@@ -598,7 +440,6 @@ body.mode-3d .video-container {
     padding: 0 !important;
 }
 
-/* Inner content container handling padding and button alignment */
 .project-card-content {
     display: flex;
     flex-direction: column;
@@ -634,34 +475,131 @@ body.mode-3d .video-container {
     margin: 0; 
 }
 
-/* BARREEFFAMA GARA GADII DHUMAATTI DHIITHA (Viidiyoon akka ifuuf) */
-.project-card p {
-    color: var(--gray);
-    font-size: 1rem;
-    line-height: 1.8;
-    margin-top: auto !important; /* 👈 KOODII HAARAA: Barreeffamicha gara gadii button biratti dhiiba */
-    margin-bottom: 20px;
+/* =======================================================
+   CLEAN & NO-BOX DRAWER (BARREEFFAMA DALACHA GARA GADII)
+   ======================================================= */
+.project-desc-drawer {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease, margin 0.3s ease;
+    
+    /* Gara gadii dhumaatti dhiiba (Walakkaan video akka banaa ta'uuf) */
+    margin-top: auto !important; 
+    margin-bottom: 0;
+    padding: 0 !important;
+    
+    /* BOX GUUTUUMMAATTI BALLEESSUUF */
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    
     position: relative;
-    z-index: 3;
+    z-index: 4;
 }
 
-/* BUTTON-ICHA BARREEFFAMICHA JALATTI TOORA */
+/* Barreeffama Dalacha (Gray) fi Qulqulluu Video Gubbaatti Dubbifamu */
+.project-desc-drawer p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #cccccc !important;
+    margin: 0;
+    font-weight: 400;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95), 0 0 4px rgba(0, 0, 0, 0.85);
+}
+
+/* Yeroo 'Info' tuqamu: Sirrii button gubbaatti bahee mul'ata */
+.project-card.expanded .project-desc-drawer {
+    max-height: 350px;
+    opacity: 1;
+    margin-bottom: 16px;
+    overflow: hidden;
+}
+
+/* Action Button fi Info Button Walbira Tooru */
+.card-actions-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: auto;
+    position: relative;
+    z-index: 5;
+    gap: 12px;
+}
+
+/* Button Guddaa (Visit Website / View Code) - Hin Caccabu */
 .btn-view { 
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
     font-weight: 700; 
     text-decoration: none; 
-    padding: 12px 28px; 
+    padding: 12px 22px; 
     border-radius: 50px; 
-    transition: 0.3s; 
-    margin-top: 0 !important; /* 👈 Button-ichi barreeffamatti aanee gadi taa'a */
-    align-self: flex-start; 
-    position: relative;
-    z-index: 3;
+    transition: all 0.3s ease;
+    white-space: nowrap !important;
+    flex: 1;
+    min-width: 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
-/* --- FULL CARD VIDEO BACKGROUND (RLMS) --- */
+.btn-view:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 255, 127, 0.3);
+}
+
+/* Button "Info ⌃" Isa Danbali'u (Floating Animation) */
+.btn-toggle-desc {
+    flex-shrink: 0;
+    background: rgba(20, 20, 20, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1.5px solid rgba(0, 255, 127, 0.5);
+    color: #ffffff;
+    padding: 11px 18px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0, 255, 127, 0.2);
+    animation: floatInfoBtn 2s ease-in-out infinite;
+    transition: all 0.3s ease;
+}
+
+@keyframes floatInfoBtn {
+    0%, 100% {
+        transform: translateY(0);
+        box-shadow: 0 0 12px rgba(0, 255, 127, 0.25);
+    }
+    50% {
+        transform: translateY(-6px);
+        box-shadow: 0 0 25px rgba(0, 255, 127, 0.6);
+        border-color: #00FF7F;
+    }
+}
+
+.btn-toggle-desc i {
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Yeroo Saaqamee Jiru: Danbali'uu Dhaabee Garagala */
+.project-card.expanded .btn-toggle-desc {
+    animation: none;
+    background: var(--green);
+    color: #000000;
+    border-color: var(--green);
+}
+
+.project-card.expanded .btn-toggle-desc i {
+    transform: rotate(180deg);
+}
+
+/* --- FULL CARD VIDEO BACKGROUND --- */
 .project-card.has-project-video {
     position: relative !important;
     overflow: hidden !important;
@@ -677,7 +615,7 @@ body.mode-3d .video-container {
     margin: 0;
     padding: 0;
     border: none;
-    z-index: 1; /* Viidiyoon duuba ta'a */
+    z-index: 1;
     pointer-events: none;
     overflow: hidden;
 }
@@ -685,30 +623,25 @@ body.mode-3d .video-container {
 .project-card.has-project-video .project-preview-video {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Kaardicha guutummaatti uwwisa */
+    object-fit: cover;
     object-position: center;
 }
 
 .project-card.has-project-video .project-card-content {
     position: relative;
-    z-index: 2; /* Barreeffamni viidiyoo gubbaa akka ta'uuf */
+    z-index: 2;
     background: linear-gradient(
         to bottom,
         rgba(0, 0, 0, 0.85) 0%,
-        rgba(0, 0, 0, 0.50) 40%,
-        rgba(0, 0, 0, 0.82) 80%,
+        rgba(0, 0, 0, 0.45) 40%,
+        rgba(0, 0, 0, 0.80) 80%,
         rgba(0, 0, 0, 0.95) 100%
-    ); /* Dukkana barreeffamni akka ifuuf ta'u */
+    );
 }
 
 .project-card.has-project-video h3 {
     color: #10d99a;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
-}
-
-.project-card.has-project-video p {
-    color: #ffffff;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 1);
 }
 
 /* Card Color Variants */
@@ -1163,11 +1096,40 @@ body.mode-snow .snow-container {
         gap: 25px !important;
     }
 
-    .project-card.has-project-video {
-        min-height: 500px;
+    .project-card {
+        min-height: 480px !important;
     }
 
     .project-card-content {
         padding: 25px 20px !important;
+    }
+
+    /* Single Line Title on Mobile */
+    .project-card h3 {
+        font-size: 1.25rem !important; 
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        margin-bottom: 10px !important;
+    }
+
+    .tech-tags {
+        gap: 6px !important;
+        margin-bottom: 12px !important;
+    }
+
+    .tech-tags span {
+        padding: 4px 9px !important;
+        font-size: 0.75rem !important;
+    }
+
+    .btn-view {
+        font-size: 0.88rem !important;
+        padding: 11px 14px !important;
+    }
+
+    .btn-toggle-desc {
+        padding: 10px 14px !important;
+        font-size: 0.8rem !important;
     }
 }
