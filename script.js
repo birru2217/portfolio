@@ -447,22 +447,32 @@ if (project.video) {
             btnStyle = `background: ${project.color}; color: #000;`;
         }
 
-        htmlContent += `
-            <div class="project-card ${cardClass} reveal" style="${cardStyle}">
-                ${newBadge}
-                <h3 style="${titleStyle}">${project.title}</h3>
-               <div class="tech-tags">
-    ${tagsHtml}
-</div>
+       htmlContent += `
+    <div class="project-card ${cardClass} reveal" style="${cardStyle}">
 
-${videoHtml}
+        ${newBadge}
 
-<p>${project.description}</p>
-                <a href="${project.link}" class="btn-view" target="_blank" style="${btnStyle}">
-                    <i class="${project.icon}"></i> ${project.btnText}
-                </a>
-            </div>
-        `;
+        <!-- Project Video Preview -->
+        ${videoHtml}
+
+        <!-- Project Title -->
+        <h3 style="${titleStyle}">${project.title}</h3>
+
+        <!-- Technology Tags -->
+        <div class="tech-tags">
+            ${tagsHtml}
+        </div>
+
+        <!-- Project Description -->
+        <p>${project.description}</p>
+
+        <!-- Project Button -->
+        <a href="${project.link}" class="btn-view" target="_blank" style="${btnStyle}">
+            <i class="${project.icon}"></i> ${project.btnText}
+        </a>
+
+    </div>
+`;
     });
 
     // 🪄 ADD NEW PROJECT CARD (Kan si qofaaf hojjetu)
