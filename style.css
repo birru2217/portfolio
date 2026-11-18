@@ -476,15 +476,18 @@ body.mode-3d .video-container {
     margin: 0; 
 }
 
+/* BARREEFFAMA GARA GADII DHUMAATTI DHIITHA (Viidiyoon akka ifuuf) */
 .project-card p {
     color: var(--gray);
     font-size: 1rem;
     line-height: 1.8;
-    margin-top: 0;
-    margin-bottom: 25px;
+    margin-top: auto !important; /* 👈 KOODII HAARAA: Barreeffamicha gara gadii button biratti dhiiba */
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 3;
 }
 
-/* STICK BUTTON HORIZONTALLY LEVEL AT THE BOTTOM */
+/* BUTTON-ICHA BARREEFFAMICHA JALATTI TOORA */
 .btn-view { 
     display: inline-flex;
     align-items: center;
@@ -494,8 +497,10 @@ body.mode-3d .video-container {
     padding: 12px 28px; 
     border-radius: 50px; 
     transition: 0.3s; 
-    margin-top: auto !important; /* Pushes button to bottom */
+    margin-top: 0 !important; /* 👈 Button-ichi barreeffamatti aanee gadi taa'a */
     align-self: flex-start; 
+    position: relative;
+    z-index: 3;
 }
 
 /* --- FULL CARD VIDEO BACKGROUND (RLMS) --- */
