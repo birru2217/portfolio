@@ -234,7 +234,7 @@ const defaultProjects = [
    {
         title: "🚀 RLMS (Enterprise)",
         tags: ["PHP 8.x", "Vanilla JS", "MySQLi", "AJAX"],
-        video: "video/rlms.mp4", 
+        video: "video/rlms.MP4", 
 
         description: "A highly secure, 5-tier architecture Registration & Learning Management System. Features Military-grade 2FA, Smart Anti-Cheat Exams, Auto-grading, and a Telegram-style encrypted Chat Hub.",
         link: "https://eplms.page.gd/eplms/",
