@@ -404,17 +404,25 @@ section {
 .color-skill-12 { --box-color: #00599C; --box-color-glow: rgba(0, 89, 156, 0.5); } /* C++ */
 .color-skill-13 { --box-color: #F24E1E; --box-color-glow: rgba(242, 78, 30, 0.5); } /* Figma */
 
-/* --- 7. PROJECTS (CLEAN & FIXED) --- */
+/* --- 7. PROJECTS (COLORFUL CARDS) --- */
+/* =====================================
+   PROJECT GRID - TWO CARDS ON DESKTOP
+===================================== */
+
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 30px;
+
     width: 100%;
     max-width: 1450px;
+
     margin: 0 auto;
-    align-items: stretch; /* Kaardiiwwan toora tokko irra jiran hojjaa walqixa akka qabaatan godha */
+    align-items: start;
+    grid-auto-rows: auto;
 }
 
+/* Tablet and mobile: one card per row */
 @media (max-width: 991px) {
     .projects-grid {
         grid-template-columns: 1fr;
@@ -425,40 +433,31 @@ section {
 .project-card {
     background: var(--bg-darker);
     text-align: left;
+
+    padding: 28px;
     border-radius: 25px;
+
     transition: var(--transition);
     border-top: 4px solid transparent;
+
     display: flex;
     flex-direction: column;
+
+    height: auto;
+    min-height: 0;
+
     box-sizing: border-box;
+    align-self: start;
     overflow: hidden;
-    position: relative;
-    padding: 0 !important; /* Padding gara .project-card-content ti dabarsine */
 }
-
-/* Waan card keessa jiru hundaaf Flexbox fi Alignment sirrii */
-.project-card-content {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-    padding: 30px;
-    box-sizing: border-box;
-    position: relative;
-    z-index: 2;
-}
-
-.project-card h3 { 
-    margin-bottom: 15px; 
-    font-size: 1.5rem; 
-    transition: 0.3s; 
-}
-
+.project-card h3 { margin-bottom: 15px; font-size: 1.5rem; transition: 0.3s; }
 .tech-tags { 
     margin-bottom: 20px; 
+    
+    /* --- KOODII HAARAA SIRREEFFAMAA --- */
     display: flex; 
-    flex-wrap: wrap; 
-    gap: 10px; 
+    flex-wrap: wrap; /* Yeroo iddoon dhumu ofumaa sarara jalaatti gadi buusa */
+    gap: 10px; /* Fageenya (iddoo duwwaa) gubbaa, gadi, bitaa fi mirgaan walqixa uuma */
 }
 
 .tech-tags span { 
@@ -467,85 +466,44 @@ section {
     font-size: 0.85rem; 
     font-weight: 600; 
     background: var(--glass);
-    margin: 0; 
+    margin: 0; /* Margin duraan ture ni balleessina, bakka isaa 'gap' fayyadamneerra */
 }
-
-.project-card p {
-    color: var(--gray);
-    font-size: 1rem;
-    line-height: 1.7;
-    margin-bottom: 25px;
-}
-
-/* BUTTON BUTTONS HUNDA GADI DHUMAATTI WALQIXA TOORU */
 .btn-view { 
-    display: inline-block; 
-    font-weight: 700; 
-    text-decoration: none; 
-    padding: 10px 25px; 
-    border-radius: 50px; 
-    transition: 0.3s; 
-    margin-top: auto !important; /* HUNDA DURAA GADI DHUMAATTI DHIITHA */
-    align-self: flex-start; 
+    display: inline-block; font-weight: 700; text-decoration: none; padding: 10px 25px; border-radius: 50px; transition: 0.3s; 
+    
+    /* --- KOODII HAARAA BUTTON WALQIXA GOCHUUF DABALAME --- */
+    margin-top: auto; /* Iddoo duwwaa uumuun Button gara gadii dhumaatti dhiiba */
+    align-self: flex-start; /* Button gara bitaatti akka qabatu godha */
 }
 
-/* --- VIDEO CARD STYLES (RLMS) --- */
-.project-card.has-project-video {
-    min-height: 520px;
-}
+/* Card 1: Cyan/Blue */
+.color-card-1 { border-top-color: #00FFFF; } 
+.color-card-1 h3 { color: #00FFFF; } 
+.color-card-1 .tech-tags span { color: #00FFFF; border: 1px solid rgba(0,255,255,0.2); }
+.color-card-1 .btn-view { background: #00FFFF; color: #000; } 
+.color-card-1:hover { box-shadow: 0 15px 40px rgba(0, 255, 255, 0.2); transform: translateY(-10px); }
 
-.project-card.has-project-video .project-video-wrapper {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    z-index: 0;
-    pointer-events: none;
-}
+/* Card 2: Orange */
+.color-card-2 { border-top-color: #FF4500; } 
+.color-card-2 h3 { color: #FF4500; } 
+.color-card-2 .tech-tags span { color: #FF4500; border: 1px solid rgba(255,69,0,0.2); }
+.color-card-2 .btn-view { background: #FF4500; color: #fff; } 
+.color-card-2:hover { box-shadow: 0 15px 40px rgba(255, 69, 0, 0.2); transform: translateY(-10px); }
 
-.project-card.has-project-video .project-preview-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-}
+/* Card 3: Green */
+.color-card-3 { border-top-color: #3DDC84; } 
+.color-card-3 h3 { color: #3DDC84; } 
+.color-card-3 .tech-tags span { color: #3DDC84; border: 1px solid rgba(61,220,132,0.2); }
+.color-card-3 .btn-view { background: #3DDC84; color: #000; } 
+.color-card-3:hover { box-shadow: 0 15px 40px rgba(61, 220, 132, 0.2); transform: translateY(-10px); }
 
-.project-card.has-project-video .project-card-content {
-    background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.85) 0%,
-        rgba(0, 0, 0, 0.55) 40%,
-        rgba(0, 0, 0, 0.85) 85%,
-        rgba(0, 0, 0, 0.95) 100%
-    );
-}
+/* Card 4: Purple */
+.color-card-4 { border-top-color: #9400D3; } 
+.color-card-4 h3 { color: #9400D3; } 
+.color-card-4 .tech-tags span { color: #9400D3; border: 1px solid rgba(148,0,211,0.2); }
+.color-card-4 .btn-view { background: #9400D3; color: #fff; } 
+.color-card-4:hover { box-shadow: 0 15px 40px rgba(148, 0, 211, 0.2); transform: translateY(-10px); }
 
-.project-card.has-project-video h3 {
-    color: #10d99a;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
-}
-
-.project-card.has-project-video p {
-    color: #ffffff;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 1);
-}
-
-.badge-new {
-    position: absolute;
-    top: 15px;
-    right: -25px;
-    background: #FFD700;
-    color: #000;
-    font-size: 10px;
-    font-weight: 900;
-    padding: 5px 30px;
-    transform: rotate(45deg);
-    letter-spacing: 2px;
-    box-shadow: 0 2px 10px rgba(255,215,0,0.5);
-    z-index: 10;
-}
 /* --- 8. CONTACT (COLORFUL SPINNING CIRCLES) --- */
 .contact-container { 
     text-align: center; 
