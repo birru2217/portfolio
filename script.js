@@ -232,7 +232,7 @@ function createSnowflake() {
 // ========================================================
 const defaultProjects = [
    {
-        title: "🚀 RLMS (Enterprise)",
+        title: "🚀 RLMS Web",
         tags: ["PHP 8.x", "Vanilla JS", "MySQLi", "AJAX"],
         video: "video/rlms.mp4", 
 
