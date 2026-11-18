@@ -4,49 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biruk Tadesse | Portfolio</title>
-
-    <!-- FAVICON: Suuraa Tab Browser Gubbaatti Mul'isu -->
-    <link rel="icon" type="image/png" href="profilee.png">
-    <link rel="apple-touch-icon" href="profilee.png">
-    <!-- Font Awesome Icons (Version 6.5.2) -->
+    <!-- Font Awesome Icons (Version Haaraa 6.5.2) -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <!-- External CSS -->
+    <!-- Faayila CSS Waamuu -->
     <link rel="stylesheet" href="style.css">
-    
-    <!-- CSS for Electrical Particle Effect -->
-    <style>
-        #networkCanvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: 2; /* Ensures it stays above the background video */
-            pointer-events: none; /* Allows clicks to pass through to buttons (CRUCIAL) */
-        }
-    </style>
 </head>
 <body class="mode-3d">
-    <!-- ELECTRICAL EFFECT CANVAS -->
-    <canvas id="networkCanvas"></canvas>
-
-    <div class="snow-container" id="snow"></div>
     
-    <!-- NAVBAR -->
+    <!-- Snow Container -->
+    <div class="snow-container" id="snow"></div>
+
+    <!-- NAVIGATION BAR -->
     <nav>
-        <!-- LOGO -->
+        <!-- LOGO HAARAA (Suuraa fi Barreeffama Professional) -->
         <a href="#home" class="logo">
             <img src="profile.png" alt="Biruk Logo" class="nav-logo-img">
             <span class="logo-text">Welcome to Biruk.dev 👋</span>
         </a>
         
-        <!-- 3D Toggle Button and Menu -->
+        <!-- Button 3D Toggle fi Menu -->
         <div style="display: flex; align-items: center; gap: 20px;">
             <div class="mode-toggle" onclick="toggle3DMode()" title="Enable 3D Mode"><i class="fas fa-cube"></i></div>
             <div class="menu-btn" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
         </div>
+
         <ul class="nav-links">
             <li><a onclick="navigateTo('home')">Home</a></li>
             <li><a onclick="navigateTo('about')">About</a></li>
@@ -58,25 +41,33 @@
 
     <!-- 1. HOME SECTION -->
     <section id="home">
-        <!-- VIDEO BACKGROUND -->
+        <!-- VIDEO BACKGROUND HAARAA -->
         <div class="video-container">
+            <!-- Viidiyoon sagalee malee (muted) ofumaan irra deebi'a (loop) -->
             <video id="bgVideo" autoplay loop muted playsinline>
                 <source src="bg-video.mp4" type="video/mp4">
             </video>
+            <!-- Dukkana Viidiyoo irra bu'u (Akka barreeffamni ifuuf) -->
             <div class="video-overlay"></div> 
         </div>
 
         <div class="home-content reveal">
             <div class="greeting">HELLO, WORLD!</div>
             <h1 class="name">My Name Is <br><span>Biruk Tadesse</span></h1>        
+            
             <div class="typing-container">
                 I am <span class="typing-text"></span>
             </div>
+            
             <p class="home-description">
-                A dedicated <b>Software Architect</b> and <b>CSE Student</b> specialized in engineering scalable digital ecosystems. From enterprise-level systems to high-performance automation, I turn complex challenges into seamless user experiences.
+                A <b>Software Engineer</b> who enjoys solving real problems through code. I like taking on hard challenges, cleaning up messy systems, and building things that actually work well for the people using them.
             </p>
+            
             <div class="btn-group">
-                <a href="#contact" class="btn-modern btn-green">Hire Me Now</a>
+                <!-- Hire Me Now buttonis 'onclick' fayyadama akka Smooth ta'uuf -->
+                <a onclick="navigateTo('contact')" class="btn-modern btn-green">Hire Me Now</a>
+                
+                <!-- Button CV Haaraa Sirraa'e -->
                 <a href="my_cv.html" target="_blank" class="btn-modern btn-gold">
                     <i class="fas fa-file-pdf"></i> View & Download CV
                 </a>
@@ -95,53 +86,28 @@
         <h2 class="section-title reveal">About <span>Me</span></h2>
         <div class="about-content reveal">
             <p>
-                I am an elite <strong class="color-text-1">Computer Science and Engineering (CSE)</strong> student at <strong class="color-text-2">Bule Hora University (BHU)</strong>. My journey is defined by a relentless pursuit of excellence and a passion for engineering high-impact software solutions. 
+                I'm a Computer Science and Engineering (CSE) student at <strong class="color-text-2">Bule Hora University (BHU)</strong>, currently holding a <span class="highlight-gpa color-bg-1">GPA of 3.8</span>. Over the past few years, I've focused on building software that actually works well — not just code that runs, but systems that are clean, reliable, and easy to maintain.
             </p>
             <p>
-                With a prestigious <span class="highlight-gpa color-bg-1">GPA of 3.7</span>, I bridge the gap between complex theoretical computation and elegant, real-world software architecture. I am a strict follower of the <strong class="color-text-3">Zero-Bug Policy</strong> and Clean Code Principles.
+                I've worked across a few different areas: building an <span class="color-text-4">Enterprise Desktop System</span>, developing responsive <span class="color-text-5">Web Platforms</span>, and automating workflows using the <span class="color-text-6">Telegram API</span>. Each project taught me something different, but the goal has always stayed the same — build something that solves a real problem, not just something that looks good on paper.
             </p>
             <p>
-                My expertise spans across diverse domains. Whether I am architecting a massive <span class="color-text-4">Enterprise Desktop System</span>, crafting responsive and dynamic <span class="color-text-5">Web Platforms</span>, or automating massive organizational workflows through the <span class="color-text-6">Telegram API</span>, my ultimate goal remains the same: to deliver digital products that inspire, scale seamlessly, and perform flawlessly under pressure.
+                What actually drives me is seeing everyday problems around me and thinking, "this could be solved with a bit of code." That's where most of my ideas come from. I don't see technology as something separate from real life; I see it as a tool that can make ordinary processes faster, simpler, and less frustrating for the people who deal with them.
+            </p>
+            <p>
+                I also believe showing up consistently matters more than being naturally talented. I'm still learning, still improving, and I plan to keep building projects that push me to get better — one at a time.
             </p>
         </div>
     </section>
 
-    <!-- 3. SKILLS SECTION -->
+    <!-- 3. SKILLS SECTION (COLORFUL & EXPANDED MARQUEE) -->
     <section id="skills">
         <h2 class="section-title reveal">My <span>Skills</span></h2>
+        
+        <!-- Marquee Container -->
         <div class="marquee-wrapper reveal">
             <div class="marquee-track">
-                <!-- Skills List -->
-                <div class="skill-box color-skill-1"><i class="fab fa-java"></i><h3>Java</h3></div>
-                <div class="skill-box color-skill-2"><i class="fas fa-database"></i><h3>MySQL</h3></div>
-                <div class="skill-box color-skill-3"><i class="fab fa-python"></i><h3>Python</h3></div>
-                <div class="skill-box color-skill-4"><i class="fab fa-android"></i><h3>Android Dev</h3></div>
-                <div class="skill-box color-skill-5"><i class="fab fa-html5"></i><h3>HTML & CSS</h3></div>
-                <div class="skill-box color-skill-6"><i class="fab fa-js"></i><h3>JavaScript</h3></div>
-                <div class="skill-box color-skill-7"><i class="fab fa-php"></i><h3>PHP</h3></div>
-                <div class="skill-box color-skill-8"><i class="fab fa-telegram"></i><h3>Bot API</h3></div>
-                <div class="skill-box color-skill-9"><i class="fab fa-git-alt"></i><h3>Git & GitHub</h3></div>
-                <div class="skill-box color-skill-10"><i class="fab fa-react"></i><h3>React</h3></div>
-                <div class="skill-box color-skill-11"><i class="fas fa-leaf"></i><h3>Spring Boot</h3></div>
-                <div class="skill-box color-skill-12"><i class="fas fa-code"></i><h3>C++</h3></div>
-                <div class="skill-box color-skill-13"><i class="fab fa-figma"></i><h3>UI/UX</h3></div>
-
-                 <!-- Skills List -->
-                <div class="skill-box color-skill-1"><i class="fab fa-java"></i><h3>Java</h3></div>
-                <div class="skill-box color-skill-2"><i class="fas fa-database"></i><h3>MySQL</h3></div>
-                <div class="skill-box color-skill-3"><i class="fab fa-python"></i><h3>Python</h3></div>
-                <div class="skill-box color-skill-4"><i class="fab fa-android"></i><h3>Android Dev</h3></div>
-                <div class="skill-box color-skill-5"><i class="fab fa-html5"></i><h3>HTML & CSS</h3></div>
-                <div class="skill-box color-skill-6"><i class="fab fa-js"></i><h3>JavaScript</h3></div>
-                <div class="skill-box color-skill-7"><i class="fab fa-php"></i><h3>PHP</h3></div>
-                <div class="skill-box color-skill-8"><i class="fab fa-telegram"></i><h3>Bot API</h3></div>
-                <div class="skill-box color-skill-9"><i class="fab fa-git-alt"></i><h3>Git & GitHub</h3></div>
-                <div class="skill-box color-skill-10"><i class="fab fa-react"></i><h3>React</h3></div>
-                <div class="skill-box color-skill-11"><i class="fas fa-leaf"></i><h3>Spring Boot</h3></div>
-                <div class="skill-box color-skill-12"><i class="fas fa-code"></i><h3>C++</h3></div>
-                <div class="skill-box color-skill-13"><i class="fab fa-figma"></i><h3>UI/UX</h3></div>
-
-                 <!-- Skills List -->
+                <!-- Tarree Dandeettii 1ffaa (13 Skills) -->
                 <div class="skill-box color-skill-1"><i class="fab fa-java"></i><h3>Java</h3></div>
                 <div class="skill-box color-skill-2"><i class="fas fa-database"></i><h3>MySQL</h3></div>
                 <div class="skill-box color-skill-3"><i class="fab fa-python"></i><h3>Python</h3></div>
@@ -156,7 +122,7 @@
                 <div class="skill-box color-skill-12"><i class="fas fa-code"></i><h3>C++</h3></div>
                 <div class="skill-box color-skill-13"><i class="fab fa-figma"></i><h3>UI/UX</h3></div>
                 
-                <!-- Duplicate for continuous scrolling -->
+                <!-- Dachaa (Duplicate) Yaa'uun akka hin cufamneef (13 Skills) -->
                 <div class="skill-box color-skill-1"><i class="fab fa-java"></i><h3>Java</h3></div>
                 <div class="skill-box color-skill-2"><i class="fas fa-database"></i><h3>MySQL</h3></div>
                 <div class="skill-box color-skill-3"><i class="fab fa-python"></i><h3>Python</h3></div>
@@ -174,22 +140,25 @@
         </div>
     </section>
 
-    <!-- 4. PROJECTS SECTION -->
+    <!-- 4. PROJECTS SECTION (DYNAMICALLY GENERATED) -->
     <section id="projects">
         <h2 class="section-title reveal">Featured <span>Projects</span></h2>
+        <!-- Javascript tu kaardii hunda as keessatti uuma 👇 -->
         <div class="projects-grid" id="dynamic-projects-container">
-            <!-- Dynamic project cards will be appended here -->
+            <!-- Kaardiiwwan ofumaan asitti dabalantu -->
         </div>
     </section>
 
-    <!-- 5. CONTACT SECTION -->
+    <!-- 5. CONTACT SECTION (3D FLIP STYLE) -->
     <section id="contact">
         <h2 class="section-title reveal">Get In <span>Touch</span></h2>
         <div class="contact-container reveal">
             <p>I am currently available for freelance projects, remote engineering roles, and collaborative tech partnerships. Let's engineer the future together!</p>
             <div class="social-icons-contact">
                 <a href="https://github.com/birru2217" target="_blank" title="GitHub" class="spin-icon contact-github"><i class="fab fa-github"></i></a>
+                <!-- HAARAA: LinkedIn -->
                 <a href="https://www.linkedin.com/in/biruktadesse1" target="_blank" title="LinkedIn" class="spin-icon contact-linkedin"><i class="fab fa-linkedin-in"></i></a>
+                <!-- YouTube, TikTok, fi X (Twitter) -->
                 <a href="https://www.youtube.com/@brex-media" target="_blank" title="YouTube" class="spin-icon contact-youtube"><i class="fab fa-youtube"></i></a>
                 <a href="https://www.tiktok.com/@birru2217" target="_blank" title="TikTok" class="spin-icon contact-tiktok"><i class="fab fa-tiktok"></i></a>
                 <a href="https://twitter.com/birru2217" target="_blank" title="X (Twitter)" class="spin-icon contact-x"><i class="fab fa-x-twitter"></i></a>
@@ -202,7 +171,7 @@
         </div>
     </section>
 
-    <!-- MAGIC: ADD PROJECT MODAL -->
+    <!-- 🪄 MAGIC: ADD PROJECT MODAL -->
     <div class="project-modal" id="addProjectModal">
         <div class="modal-box">
             <h2><i class="fas fa-plus-circle"></i> Add New Project</h2>
@@ -217,134 +186,12 @@
         </div>
     </div>
 
-    <!-- FOOTER -->
+    <!-- FOOTER (2026, CENTERED & BEAUTIFUL) -->
     <footer class="modern-footer">
         <p>&copy; 2026 <span class="footer-name">Biruk Tadesse</span>. Engineered with <i class="fas fa-heart pulse-heart"></i> & Code for Technology.</p>
     </footer>
 
-    <!-- Include JavaScript File -->
+    <!-- Faayila JavaScript Waamuu -->
     <script src="script.js"></script>
-
-    <!-- JAVASCRIPT FOR ELECTRICAL PARTICLE EFFECT -->
-    <script>
-        const canvas = document.getElementById('networkCanvas');
-        const ctx = canvas.getContext('2d');
-
-        // Set canvas dimensions to cover the full window
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        let particlesArray = [];
-        
-        // Mouse tracking object
-        const mouse = { x: null, y: null, radius: 130 };
-
-        window.addEventListener('mousemove', (e) => {
-            mouse.x = e.clientX;
-            mouse.y = e.clientY;
-        });
-
-        // Disconnect lines when mouse leaves the window
-        window.addEventListener('mouseout', () => {
-            mouse.x = null;
-            mouse.y = null;
-        });
-
-        // Particle Class
-        class Particle {
-            constructor(x, y) {
-                this.x = x;
-                this.y = y;
-                this.size = 2; // Particle size
-                this.speedX = (Math.random() - 0.5) * 1.5; // X-axis speed
-                this.speedY = (Math.random() - 0.5) * 1.5; // Y-axis speed
-                this.color = '#00ffaa'; // Neon Green color
-            }
-            update() {
-                this.x += this.speedX;
-                this.y += this.speedY;
-
-                // Bounce off the screen borders
-                if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
-                if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
-            }
-            draw() {
-                ctx.fillStyle = this.color;
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
-            }
-        }
-
-        // Initialize particles
-        function init() {
-            particlesArray = [];
-            // Calculate an optimal number of particles based on screen size
-            const numberOfParticles = (canvas.width * canvas.height) / 8500;
-            for (let i = 0; i < numberOfParticles; i++) {
-                const x = Math.random() * canvas.width;
-                const y = Math.random() * canvas.height;
-                particlesArray.push(new Particle(x, y));
-            }
-        }
-
-        // Connect particles with network lines
-        function connect() {
-            for (let a = 0; a < particlesArray.length; a++) {
-                for (let b = a; b < particlesArray.length; b++) {
-                    const dx = particlesArray[a].x - particlesArray[b].x;
-                    const dy = particlesArray[a].y - particlesArray[b].y;
-                    const distance = Math.hypot(dx, dy); // Calculate distance
-
-                    // Connect particles to each other
-                    if (distance < 90) {
-                        ctx.strokeStyle = `rgba(0, 255, 170, ${1 - distance / 90})`; // Neon Green lines
-                        ctx.lineWidth = 0.5;
-                        ctx.beginPath();
-                        ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
-                        ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
-                        ctx.stroke();
-                    }
-                }
-
-                // Connect particles to the mouse cursor
-                if(mouse.x != null && mouse.y != null) {
-                    const mouseDx = particlesArray[a].x - mouse.x;
-                    const mouseDy = particlesArray[a].y - mouse.y;
-                    const mouseDist = Math.hypot(mouseDx, mouseDy);
-
-                    if (mouseDist < mouse.radius) {
-                        ctx.strokeStyle = `rgba(0, 255, 170, ${1 - mouseDist / mouse.radius})`;
-                        ctx.lineWidth = 1;
-                        ctx.beginPath();
-                        ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
-                        ctx.lineTo(mouse.x, mouse.y);
-                        ctx.stroke();
-                    }
-                }
-            }
-        }
-
-        // Animation loop
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the previous frame
-            for (let i = 0; i < particlesArray.length; i++) {
-                particlesArray[i].update();
-                particlesArray[i].draw();
-            }
-            connect();
-            requestAnimationFrame(animate);
-        }
-
-        init();
-        animate();
-
-        // Adjust canvas size automatically on window resize
-        window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            init();
-        });
-    </script>
 </body>
 </html>
