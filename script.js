@@ -234,7 +234,7 @@ const defaultProjects = [
    {
         title: "🚀 RLMS (Enterprise)",
         tags: ["PHP 8.x", "Vanilla JS", "MySQLi", "AJAX"],
-        video: "video/rlms.MP4", 
+        video: "video/rlms.mp4", 
 
         description: "A highly secure, 5-tier architecture Registration & Learning Management System. Features Military-grade 2FA, Smart Anti-Cheat Exams, Auto-grading, and a Telegram-style encrypted Chat Hub.",
         link: "https://eplms.page.gd/eplms/",
@@ -366,7 +366,7 @@ const defaultProjects = [
 ];
 
 
-// --- 6. LOAD PROJECTS & SYNC LOCALSTORAGE ---
+// --- 6. LOAD PROJECTS & SYNC LOCALSTORAGE (SIRRAA'EERA) ---
 function loadProjects() {
     const container = document.getElementById("dynamic-projects-container");
     if (!container) return;
@@ -374,22 +374,23 @@ function loadProjects() {
     // Ragaa LocalStorage irraa fiduu
     let savedProjects = JSON.parse(localStorage.getItem('biruk_projects'));
     
-    // YOO PIROJEKTII HAARAAN DABALAME, OFUMAAN SYNC GODHA
     if (!savedProjects || savedProjects.length < defaultProjects.length) {
         savedProjects = defaultProjects;
-        localStorage.setItem("biruk_projects", JSON.stringify(defaultProjects));
     }
 
-  // Always ensure RLMS is current with live link & video preview
+    // RLMS yeroo hunda viidiyoo sirrii 'videos/rlms.mp4' akka qabaatu gochuu
     const rlmsProject = savedProjects.find(p => p.title && p.title.includes("RLMS"));
     if (rlmsProject) {
         rlmsProject.link = "https://eplms.page.gd/eplms/";
         rlmsProject.btnText = "Visit Website";
         rlmsProject.icon = "fas fa-globe";
         
-        // 👇 SARARA KANAS ITTI DABALI 👇
-        rlmsProject.video = "video/rlms.mp4"; // Maqaa fi folder viidiyoo keetii
+        // ✅ QUBEE 's' ITTI DABALAMEERA (videos/rlms.mp4)
+        rlmsProject.video = "videos/rlms.mp4"; 
     }
+
+    // ✅ JIJJIIRAMA KANA DEEBISEE LOCALSTORAGE-TTI SAVE GODHA
+    localStorage.setItem("biruk_projects", JSON.stringify(savedProjects));
 
     let htmlContent = "";
 
@@ -408,6 +409,7 @@ function loadProjects() {
                 <div class="project-video-wrapper">
                     <video class="project-preview-video" autoplay muted loop playsinline preload="auto">
                         <source src="${project.video}" type="video/mp4">
+                        Your browser does not support HTML5 video.
                     </video>
                 </div>
             `;
@@ -445,7 +447,7 @@ function loadProjects() {
         `;
     });
 
-    // Add New Project Card (Developer Admin Showcase)
+    // Add New Project Card
     htmlContent += `
         <div class="project-card add-new-card reveal" onclick="authenticateAndAdd()">
             <div class="project-card-content" style="justify-content: center; align-items: center; text-align: center;">
@@ -457,10 +459,8 @@ function loadProjects() {
 
     container.innerHTML = htmlContent;
     
-    // Trigger scroll reveal
     if (typeof reveal === "function") reveal();
 }
-
 
 // --- 7. SECURITY & ADD PROJECT MODAL ---
 function authenticateAndAdd() {
