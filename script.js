@@ -442,17 +442,34 @@ function loadProjects() {
             btnStyle = `background: ${cardColor}; color: #000;`;
         }
 
-        htmlContent += `
+      htmlContent += `
             <div class="project-card ${cardClass} ${project.video ? 'has-project-video' : ''} reveal" style="${cardStyle}">
                 ${newBadge}
                 ${videoHtml}
                 <div class="project-card-content">
                     <h3 style="${titleStyle}">${project.title}</h3>
                     <div class="tech-tags">${tagsHtml}</div>
-                    <p>${project.description}</p>
-                    <a href="${project.link}" class="btn-view" target="_blank" rel="noopener noreferrer" style="${btnStyle}">
-                        <i class="${project.icon || 'fas fa-external-link-alt'}"></i> ${project.btnText || 'View Project'}
-                    </a>
+
+                    <!-- YOO VIDEO QABAATE: DRAWER OVERLAY TA'A -->
+                    ${project.video ? `
+                        <div class="project-desc-drawer">
+                            <p>${project.description}</p>
+                        </div>
+                        <div class="card-actions-wrapper">
+                            <a href="${project.link}" class="btn-view" target="_blank" rel="noopener noreferrer" style="${btnStyle}">
+                                <i class="${project.icon || 'fas fa-external-link-alt'}"></i> ${project.btnText || 'View Project'}
+                            </a>
+                            <button type="button" class="btn-toggle-desc" onclick="toggleCardDetails(this)">
+                                <span>Info</span> <i class="fas fa-chevron-up"></i>
+                            </button>
+                        </div>
+                    ` : `
+                        <!-- KAARDII NORMAL (VIDEO HIN QABNEEF) -->
+                        <p>${project.description}</p>
+                        <a href="${project.link}" class="btn-view" target="_blank" rel="noopener noreferrer" style="${btnStyle}">
+                            <i class="${project.icon || 'fas fa-external-link-alt'}"></i> ${project.btnText || 'View Project'}
+                        </a>
+                    `}
                 </div>
             </div>
         `;
@@ -553,3 +570,10 @@ window.addEventListener('DOMContentLoaded', () => {
     // 5. Morphing profile slideshow every 4s
     setInterval(changeProfileImage, 4000);
 });
+// --- CARD INFO DRAWER TOGGLE (BILBILAA FI VIDEO-F) ---
+function toggleCardDetails(button) {
+    const card = button.closest('.project-card');
+    if (card) {
+        card.classList.toggle('expanded');
+    }
+}
