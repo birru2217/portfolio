@@ -235,7 +235,7 @@ const defaultProjects = [
         title: "🚀 RLMS Web",
         tags: ["PHP 8.x", "Vanilla JS", "MySQLi", "AJAX"],
         video: "video/rlms.mp4", 
-
+        poster: "videos/rlms-poster.jpg", 
         description: "A highly secure, 5-tier architecture Registration & Learning Management System. Features Military-grade 2FA, Smart Anti-Cheat Exams, Auto-grading, and a Telegram-style encrypted Chat Hub.",
         link: "https://eplms.page.gd/eplms/",
         btnText: "Visit Website",
@@ -250,7 +250,7 @@ const defaultProjects = [
         
         // 👇 SARARA HAARAA KANA ITTI DABALI 👇
         video: "videos/infoplus.mp4", 
-
+        poster: "videos/infoplus-poster.jpg", 
         description: "A dynamic, high-performance Job Matchmaking platform. Features dual role-based access (Employer & Candidate), auto-generated OTP security, and responsive UI built with Tailwind CSS & AlpineJS.", 
         link: "https://infoplus.ifree.page/",
         btnText: "Visit Website", 
@@ -389,12 +389,16 @@ function loadProjects() {
         rlmsProject.btnText = "Visit Website";
         rlmsProject.icon = "fas fa-globe";
         rlmsProject.video = "videos/rlms.mp4"; 
+        rlmsProject.poster = "videos/rlms-poster.jpg"; // 👈 Asittis dabali
+
     }
 
     // 👇 INFOPLUS TIIS AKKASUMAA ITTI DABALI 👇
     const infoplusProject = savedProjects.find(p => p.title && p.title.includes("Infoplus"));
     if (infoplusProject) {
         infoplusProject.video = "videos/infoplus.mp4";
+        infoplusProject.poster = "videos/infoplus-poster.jpg"; // 👈 Asittis dabali
+
     }
 
     // Jijjiirama kana localStorage keessatti save godha
@@ -410,8 +414,12 @@ function loadProjects() {
         }
 
         // Full-card background video yoo qabaate
+       // Full-card background video yoo qabaate
         let videoHtml = "";
-       if (project.video) {
+        if (project.video) {
+            // Poster yoo qabaate attribute poster="..." itti dabala
+            let posterAttr = project.poster ? `poster="${project.poster}"` : "";
+
             videoHtml = `
                 <div class="project-video-wrapper">
                     <video class="project-preview-video" 
@@ -419,7 +427,8 @@ function loadProjects() {
                            muted 
                            loop 
                            playsinline 
-                           preload="metadata"> <!-- 'auto' irraa gara 'metadata' tti jijjiiruun saffisa intarneetii qusata -->
+                           preload="auto"
+                           ${posterAttr}> <!-- 👈 SUURICHA BATTALUMATTI AKKA FIDUUF -->
                         <source src="${project.video}" type="video/mp4">
                     </video>
                 </div>
