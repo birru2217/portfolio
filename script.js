@@ -273,13 +273,13 @@ const defaultProjects = [
     },
     { 
         title: "🎓 BHU Exam System", 
-        tags: ["Java Swing", "MySQL", "JDBC"], 
-        description: "Enterprise Java system with dynamic timers, automated scoring, and secure admin controls. Built from scratch for Bule Hora University.", 
-        link: "https://github.com/birru2217/BHU-Exam-Management-System", 
-        btnText: "View Code", 
-        icon: "fab fa-github", 
+        tags: ["Java Swing", "MySQL", "JDBC", "Desktop App"], 
+        description: "Enterprise Java system with dynamic timers, automated scoring, and secure admin controls. Built from scratch for Bule Hora University. (Standalone Executable Package).", 
+        link: "downloads/BHU-Exam-System.zip", // YKN Linkii GitHub Releases
+        btnText: "Download App (.zip)", 
+        icon: "fas fa-download", 
         themeClass: "color-card-1", 
-        createdAt: "2026-01-01"
+        createdAt: "2026-01-01" 
     },
     { 
         title: "🍲 Cafeteria Website", 
@@ -414,7 +414,13 @@ function loadProjects() {
         cafeAppProject.video = "videos/cafeteria.mp4";
         cafeAppProject.poster = "videos/cafeteria-poster.jpg";
     }
-
+// Always ensure BHU Exam System has the latest Download link
+    const examProject = savedProjects.find(p => p.title && p.title.includes("BHU Exam System"));
+    if (examProject) {
+        examProject.link = "downloads/BHU-Exam-System.zip"; // YKN Linkii GitHub Releases keetii
+        examProject.btnText = "Download App (.zip)";
+        examProject.icon = "fas fa-download";
+    }
     // 🔒 INFOPLUS YEROO HUNDA KAARDII 2FFAA (INDEX 1) AKKA TA'U DIRQISIISUU
     const infoIndex = savedProjects.findIndex(p => p.title && p.title.includes("Infoplus"));
     if (infoIndex > -1 && infoIndex !== 1) {
