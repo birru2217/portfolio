@@ -390,11 +390,18 @@ function loadProjects() {
         rlmsProject.poster = "videos/rlms-poster.jpg";
     }
 
-    // Always ensure Infoplus is current with live link & video preview
+   // Always ensure Infoplus is current with live link & video preview
     const infoplusProject = savedProjects.find(p => p.title && p.title.includes("Infoplus"));
     if (infoplusProject) {
         infoplusProject.video = "videos/infoplus.mp4";
         infoplusProject.poster = "videos/infoplus-poster.jpg";
+    }
+
+    // 🔒 INFOPLUS YEROO HUNDA KAARDII 2FFAA (INDEX 1) AKKA TA'U DIRQISIISUU
+    const infoIndex = savedProjects.findIndex(p => p.title && p.title.includes("Infoplus"));
+    if (infoIndex > -1 && infoIndex !== 1) {
+        const [targetInfoplus] = savedProjects.splice(infoIndex, 1);
+        savedProjects.splice(1, 0, targetInfoplus);
     }
 
     // Save updated data to localStorage
@@ -402,7 +409,10 @@ function loadProjects() {
     
     let htmlContent = "";
 
-    savedProjects.forEach((project) => {
+    // LAKKOOFSA (#01, #02...) ITTI DABALUUN TOORU
+    savedProjects.forEach((project, index) => {
+        const projectNum = String(index + 1).padStart(2, '0'); // Fakkeenyaaf: 01, 02, 03...
+
         let tagsHtml = "";
         if (Array.isArray(project.tags)) {
             project.tags.forEach(tag => {
@@ -453,6 +463,9 @@ function loadProjects() {
                 ${newBadge}
                 ${videoHtml}
                 <div class="project-card-content">
+                    <!-- LAKKOOFSA MIIDHAGAA (#01, #02...) GUBBAA KAARDICHAATTI -->
+                    <div class="card-num-badge">#${projectNum}</div>
+                    
                     <h3 style="${titleStyle}">${project.title}</h3>
                     <div class="tech-tags">${tagsHtml}</div>
 
