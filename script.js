@@ -404,6 +404,15 @@ function loadProjects() {
         savedProjects.splice(1, 0, targetInfoplus);
     }
 
+    // 🔒 TELEGRAM / AI FOOTBALL BOT YEROO HUNDA KAARDII 3FFAA (INDEX 2) AKKA TA'U DIRQISIISUU
+    const botIndex = savedProjects.findIndex(p => 
+        p.title && (p.title.includes("Predictor Bot") || p.title.includes("Telegram"))
+    );
+    if (botIndex > -1 && botIndex !== 2) {
+        const [targetBot] = savedProjects.splice(botIndex, 1);
+        savedProjects.splice(2, 0, targetBot);
+    }
+
     // Save updated data to localStorage
     localStorage.setItem("biruk_projects", JSON.stringify(savedProjects));
     
