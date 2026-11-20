@@ -261,6 +261,8 @@ const defaultProjects = [
     { 
         title: "🤖 AI Football Predictor Bot", 
         tags: ["Python", "Telegram API", "SQLite3", "REST API", "Data Analytics"], 
+        video: "videos/predictor.mp4", 
+        poster: "videos/predictor_poster.jpg", 
         description: "An intelligent Telegram bot engineered with Python to deliver data-driven football match predictions, live market odds integration, synthetic risk modeling, and multi-language support.", 
         link: "https://t.me/BirukBetting1_bot", 
         btnText: "Launch Bot", 
@@ -395,6 +397,13 @@ function loadProjects() {
     if (infoplusProject) {
         infoplusProject.video = "videos/infoplus.mp4";
         infoplusProject.poster = "videos/infoplus-poster.jpg";
+    }
+
+    // Always ensure Football Predictor Bot is current with video preview
+    const botProject = savedProjects.find(p => p.title && (p.title.includes("Predictor Bot") || p.title.includes("Telegram")));
+    if (botProject) {
+        botProject.video = "videos/predictor.mp4";
+        botProject.poster = "videos/predictor_poster.jpg";
     }
 
     // 🔒 INFOPLUS YEROO HUNDA KAARDII 2FFAA (INDEX 1) AKKA TA'U DIRQISIISUU
