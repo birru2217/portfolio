@@ -463,10 +463,11 @@ function loadProjects() {
                 ${newBadge}
                 ${videoHtml}
                 <div class="project-card-content">
-                    <!-- LAKKOOFSA MIIDHAGAA (#01, #02...) GUBBAA KAARDICHAATTI -->
-                    <div class="card-num-badge">#${projectNum}</div>
-                    
-                    <h3 style="${titleStyle}">${project.title}</h3>
+                    <!-- SARARA TOKKORRA WALBIRA: #01 TITLE WALIIN -->
+                    <div class="card-title-row">
+                        <span class="card-num-badge">#${projectNum}</span>
+                        <h3 style="${titleStyle}">${project.title}</h3>
+                    </div>
                     <div class="tech-tags">${tagsHtml}</div>
 
                     <!-- DRAWER HAARAA KAARDIIWWAN HUNDAAF TA'U -->
