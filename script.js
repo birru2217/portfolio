@@ -294,6 +294,8 @@ const defaultProjects = [
     { 
         title: "📱 Cafeteria App", 
         tags: ["Java (Native)", "XML", "Firebase"], 
+        video: "videos/cafeteria.mp4", 
+        poster: "videos/cafeteria-poster.jpg", 
         description: "Native mobile app designed for student convenience. Built with Java and seamlessly integrated with a central university database.", 
         link: "https://github.com/birru2217/bhu-cafeteria-android-app", 
         btnText: "View Code", 
@@ -404,6 +406,13 @@ function loadProjects() {
     if (botProject) {
         botProject.video = "videos/predictor.mp4";
         botProject.poster = "videos/predictor_poster.jpg";
+    }
+
+    // Always ensure Cafeteria App is current with video preview
+    const cafeAppProject = savedProjects.find(p => p.title && p.title.includes("Cafeteria App"));
+    if (cafeAppProject) {
+        cafeAppProject.video = "videos/cafeteria.mp4";
+        cafeAppProject.poster = "videos/cafeteria-poster.jpg";
     }
 
     // 🔒 INFOPLUS YEROO HUNDA KAARDII 2FFAA (INDEX 1) AKKA TA'U DIRQISIISUU
