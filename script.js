@@ -275,8 +275,8 @@ const defaultProjects = [
         title: "🎓 BHU Exam System", 
         tags: ["Java Swing", "MySQL", "JDBC", "Desktop App"], 
         description: "Enterprise Java system with dynamic timers, automated scoring, and secure admin controls. Built from scratch for Bule Hora University. (Standalone Executable Package).", 
-        link: "downloads/BHU-Exam-System.zip", // YKN Linkii GitHub Releases
-        btnText: "Download App (.zip)", 
+        link: "https://github.com/birru2217/BHU-Exam-Management-System/releases/download/v1.0.0/BHU-Exam-System.rar", 
+        btnText: "Download App", 
         icon: "fas fa-download", 
         themeClass: "color-card-1", 
         createdAt: "2026-01-01" 
@@ -414,11 +414,11 @@ function loadProjects() {
         cafeAppProject.video = "videos/cafeteria.mp4";
         cafeAppProject.poster = "videos/cafeteria-poster.jpg";
     }
-// Always ensure BHU Exam System has the latest Download link
+// Always ensure BHU Exam System is current with Download Link
     const examProject = savedProjects.find(p => p.title && p.title.includes("BHU Exam System"));
     if (examProject) {
-        examProject.link = "downloads/BHU-Exam-System.zip"; // YKN Linkii GitHub Releases keetii
-        examProject.btnText = "Download App (.zip)";
+        examProject.link = "https://github.com/birru2217/BHU-Exam-Management-System/releases/download/v1.0.0/BHU-Exam-System.rar";
+        examProject.btnText = "Download App";
         examProject.icon = "fas fa-download";
     }
     // 🔒 INFOPLUS YEROO HUNDA KAARDII 2FFAA (INDEX 1) AKKA TA'U DIRQISIISUU
