@@ -451,31 +451,41 @@ body.mode-3d .video-container {
     z-index: 2;
 }
 
-/* LAKKOOFSA MIIDHAGAA GUBBAA KAARDII (#01, #02...) */
+/* SARARA TOKKORRA TITLE FI LAKKOOFSA WALBIRA TOORU */
+.card-title-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 3;
+    width: 100%;
+}
+
 .card-num-badge {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0; /* Lakkoofsi akka hin dhiphanne */
     font-family: 'Poppins', sans-serif;
     font-size: 0.82rem;
     font-weight: 800;
     color: var(--gold);
     background: rgba(255, 215, 0, 0.12);
     border: 1px solid rgba(255, 215, 0, 0.35);
-    padding: 3px 10px;
+    padding: 3px 9px;
     border-radius: 8px;
-    letter-spacing: 1.5px;
-    margin-bottom: 10px;
-    width: fit-content;
+    letter-spacing: 1px;
     box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
-    position: relative;
-    z-index: 3;
+    margin: 0;
 }
 
 .project-card h3 { 
-    margin-top: 0;
-    margin-bottom: 15px; 
+    margin: 0; 
     font-size: 1.55rem; 
     font-weight: 700;
     transition: 0.3s; 
+    min-width: 0;
 }
 
 .tech-tags { 
