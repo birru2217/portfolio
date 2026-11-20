@@ -14,14 +14,6 @@ function toggleMenu() {
     }
 }
 
-// Menu-n ofumaan akka cufamu yeroo liinkiin tuqamu (Bilbilaaf)
-document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-        const navLinks = document.querySelector('.nav-links');
-        if (navLinks) navLinks.classList.remove('show');
-    });
-});
-
 // Smooth scroll to section
 function navigateTo(sectionId) {
     const element = document.getElementById(sectionId);
@@ -59,7 +51,7 @@ const typeEffect = () => {
 
     if (!isDeleting && charIndex === currentWord.length + 1) {
         isDeleting = true;
-        setTimeout(typeEffect, 2000); // Boqonnaa yeroo barreeffamni xumuramu
+        setTimeout(typeEffect, 2000); 
     } else if (isDeleting && charIndex === 0) {
         isDeleting = false;
         wordIndex = (wordIndex + 1) % wordsData.length;
@@ -88,15 +80,15 @@ const reveal = () => {
 
 // --- 4. ADVANCED IMAGE SLIDESHOW (COIN FLIP & SHAPE MORPHING) ---
 const profileImages = [
-    "profile.png",   // Index 0: Gold
-    "profile1.png",  // Index 1: Neon Green
-    "profile2.png",  // Index 2: Cyan
-    "profile3.png",  // Index 3: Deep Pink
-    "profile4.png",  // Index 4: Orange Red
-    "profile5.png",  // Index 5: Deep Violet
-    "profile6.png",  // Index 6: Gold (Geengoo)
-    "profile7.png",  // Index 7: Neon Red
-    "profilee.png"   // Index 8: Electric Mint (Suuraa Haaraa)
+    "profile.png",   
+    "profile1.png",  
+    "profile2.png",  
+    "profile3.png",  
+    "profile4.png",  
+    "profile5.png",  
+    "profile6.png",  
+    "profile7.png",  
+    "profilee.png"   
 ];
 
 const shapes = [
@@ -152,7 +144,7 @@ function changeProfileImage() {
 
 
 // --- 5. 3D VIDEO & SNOW MODES ---
-let currentMode = 0; // 0: Off, 1: Video, 2: Snow
+let currentMode = 0; 
 let snowTimer = null;
 
 function toggle3DMode() {
@@ -174,7 +166,6 @@ function toggle3DMode() {
     if (snowContainer) snowContainer.innerHTML = "";
 
     if (currentMode === 1) {
-        // Mode 1: Video Background
         body.classList.add('mode-3d');
         if (video) {
             video.play();
@@ -186,7 +177,6 @@ function toggle3DMode() {
         }
     } 
     else if (currentMode === 2) {
-        // Mode 2: Snow Effect
         body.classList.add('mode-snow');
         if (toggleIcon) {
             toggleIcon.className = "fas fa-snowflake";
@@ -195,7 +185,6 @@ function toggle3DMode() {
         snowTimer = setInterval(createSnowflake, 200);
     } 
     else {
-        // Mode 0: Default
         if (toggleIcon) {
             toggleIcon.className = "fas fa-cube";
             toggleIcon.style.color = "#FFD700";
@@ -275,7 +264,8 @@ const defaultProjects = [
         title: "🎓 BHU Exam System", 
         tags: ["Java Swing", "MySQL", "JDBC", "Desktop App"], 
         description: "Enterprise Java system with dynamic timers, automated scoring, and secure admin controls. Built from scratch for Bule Hora University. (Standalone Executable Package).", 
-        link: "https://github.com/birru2217/BHU-Exam-Management-System/releases/download/v1.0.0/BHU-Exam-System.rar", 
+        // 👇 LINKII ISA SIRRII (.rar.zip) 👇
+        link: "https://github.com/birru2217/BHU-Exam-Management-System/releases/download/v1.0.0/BHU-Exam-System.rar.zip", 
         btnText: "Download App", 
         icon: "fas fa-download", 
         themeClass: "color-card-1", 
@@ -394,7 +384,7 @@ function loadProjects() {
         rlmsProject.poster = "videos/rlms-poster.jpg";
     }
 
-   // Always ensure Infoplus is current with live link & video preview
+    // Always ensure Infoplus is current with live link & video preview
     const infoplusProject = savedProjects.find(p => p.title && p.title.includes("Infoplus"));
     if (infoplusProject) {
         infoplusProject.video = "videos/infoplus.mp4";
@@ -414,13 +404,16 @@ function loadProjects() {
         cafeAppProject.video = "videos/cafeteria.mp4";
         cafeAppProject.poster = "videos/cafeteria-poster.jpg";
     }
-// Always ensure BHU Exam System is current with Download Link
+
+    // Always ensure BHU Exam System is current with latest Download Link
     const examProject = savedProjects.find(p => p.title && p.title.includes("BHU Exam System"));
     if (examProject) {
-        examProject.link = "https://github.com/birru2217/BHU-Exam-Management-System/releases/download/v1.0.0/BHU-Exam-System.rar";
+        // 👇 LINKII ISA SIRRII (.rar.zip) 👇
+        examProject.link = "https://github.com/birru2217/BHU-Exam-Management-System/releases/download/v1.0.0/BHU-Exam-System.rar.zip";
         examProject.btnText = "Download App";
         examProject.icon = "fas fa-download";
     }
+
     // 🔒 INFOPLUS YEROO HUNDA KAARDII 2FFAA (INDEX 1) AKKA TA'U DIRQISIISUU
     const infoIndex = savedProjects.findIndex(p => p.title && p.title.includes("Infoplus"));
     if (infoIndex > -1 && infoIndex !== 1) {
@@ -444,7 +437,7 @@ function loadProjects() {
 
     // LAKKOOFSA (#01, #02...) ITTI DABALUUN TOORU
     savedProjects.forEach((project, index) => {
-        const projectNum = String(index + 1).padStart(2, '0'); // Fakkeenyaaf: 01, 02, 03...
+        const projectNum = String(index + 1).padStart(2, '0');
 
         let tagsHtml = "";
         if (Array.isArray(project.tags)) {
@@ -496,19 +489,16 @@ function loadProjects() {
                 ${newBadge}
                 ${videoHtml}
                 <div class="project-card-content">
-                    <!-- SARARA TOKKORRA WALBIRA: #01 TITLE WALIIN -->
                     <div class="card-title-row">
                         <span class="card-num-badge">#${projectNum}</span>
                         <h3 style="${titleStyle}">${project.title}</h3>
                     </div>
                     <div class="tech-tags">${tagsHtml}</div>
 
-                    <!-- DRAWER HAARAA KAARDIIWWAN HUNDAAF TA'U -->
                     <div class="project-desc-drawer">
                         <p>${project.description}</p>
                     </div>
 
-                    <!-- BUTTONS: VISIT WEBSITE FI FLOATING INFO -->
                     <div class="card-actions-wrapper">
                         <a href="${project.link}" class="btn-view" target="_blank" rel="noopener noreferrer" style="${btnStyle}">
                             <i class="${project.icon || 'fas fa-external-link-alt'}"></i> 
@@ -535,18 +525,16 @@ function loadProjects() {
 
     container.innerHTML = htmlContent;
 
-    // 👇 VIIDIYOON MATUMAA AKKA HIN DHAABBANNE GOCHUUF (INFINITE RECYCLE LOOP) 👇
+    // Viidiyoon matumaa akka hin dhaabbanne gochuuf
     container.querySelectorAll('.project-preview-video').forEach(video => {
         video.muted = true;
         video.loop = true;
         
-        // Yeroo dhumu battalumatti deebisee akka jalqabu
         video.addEventListener('ended', function() {
             this.currentTime = 0;
             this.play();
         });
 
-        // Tasa browser-riin yoo pause godhe deebisee akka taphatu
         video.addEventListener('pause', function() {
             this.play();
         });
@@ -599,7 +587,7 @@ function saveNewProject() {
         isNew: true
     };
 
-    let currentProjects = JSON.parse(localStorage.getItem('biruk_projects')) || defaultProjects;
+    let currentProjects = JSON.parse(localStorage.getItem('biruk_projects')) || [...defaultProjects];
     currentProjects.push(newProj);
     localStorage.setItem('biruk_projects', JSON.stringify(currentProjects));
 
@@ -620,24 +608,32 @@ function saveNewProject() {
 window.addEventListener('scroll', reveal);
 
 window.addEventListener('DOMContentLoaded', () => {
-    // 1. Load dynamic projects
+    // 1. Mobile menu link listener (Amma 100% amansiisaadha)
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            const navLinks = document.querySelector('.nav-links');
+            if (navLinks) navLinks.classList.remove('show');
+        });
+    });
+
+    // 2. Load dynamic projects
     loadProjects();
 
-    // 2. Start typing effect
+    // 3. Start typing effect
     typeEffect();
 
-    // 3. Initial scroll check
+    // 4. Initial scroll check
     reveal();
 
-    // 4. Floating profile effect
+    // 5. Floating profile effect
     const imgBox = document.querySelector(".profile-img-box");
     if (imgBox) imgBox.classList.add("levitate");
 
-    // 5. Morphing profile slideshow every 4s
+    // 6. Morphing profile slideshow every 4s
     setInterval(changeProfileImage, 4000);
 });
 
-// --- CARD INFO DRAWER TOGGLE (BILBILAA FI VIDEO-F) ---
+// --- CARD INFO DRAWER TOGGLE ---
 function toggleCardDetails(button) {
     const card = button.closest('.project-card');
     if (card) {
