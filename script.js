@@ -2,7 +2,7 @@
  * ==========================================================================
  * Biruk Tadesse - Professional Portfolio Script (Clean & Complete)
  * Features: Mobile Nav, Dynamic Typing, Morphing Slideshow, 3D/Snow Modes,
- * Dynamic Projects System, LocalStorage Sync & Video Previews.
+ * Dynamic Projects System, LocalStorage Sync, Posters & Infinite Loop Videos.
  * ==========================================================================
  */
 
@@ -234,7 +234,7 @@ const defaultProjects = [
    {
         title: "🚀 RLMS Web",
         tags: ["PHP 8.x", "Vanilla JS", "MySQLi", "AJAX"],
-        video: "video/rlms.mp4", 
+        video: "videos/rlms.mp4", 
         poster: "videos/rlms-poster.jpg", 
         description: "A highly secure, 5-tier architecture Registration & Learning Management System. Features Military-grade 2FA, Smart Anti-Cheat Exams, Auto-grading, and a Telegram-style encrypted Chat Hub.",
         link: "https://eplms.page.gd/eplms/",
@@ -247,8 +247,6 @@ const defaultProjects = [
     { 
         title: "🏢 Infoplus Job Portal", 
         tags: ["PHP 8.x", "Tailwind CSS", "AlpineJS", "MySQL"], 
-        
-        // 👇 SARARA HAARAA KANA ITTI DABALI 👇
         video: "videos/infoplus.mp4", 
         poster: "videos/infoplus-poster.jpg", 
         description: "A dynamic, high-performance Job Matchmaking platform. Features dual role-based access (Employer & Candidate), auto-generated OTP security, and responsive UI built with Tailwind CSS & AlpineJS.", 
@@ -256,7 +254,7 @@ const defaultProjects = [
         btnText: "Visit Website", 
         icon: "fas fa-external-link-alt", 
         themeClass: null, 
-        color: "#FFD700", // Halluu Warqee (Gold)
+        color: "#FFD700", 
         createdAt: "2026-10-23",
         isNew: true
     },
@@ -370,7 +368,7 @@ const defaultProjects = [
 ];
 
 
-// --- 6. LOAD PROJECTS & SYNC LOCALSTORAGE (SIRRAA'EERA) ---
+// --- 6. LOAD PROJECTS & SYNC LOCALSTORAGE ---
 function loadProjects() {
     const container = document.getElementById("dynamic-projects-container");
     if (!container) return;
@@ -382,27 +380,26 @@ function loadProjects() {
         savedProjects = defaultProjects;
     }
 
-   // Always ensure RLMS is current with live link & video preview
+    // Always ensure RLMS is current with live link & video preview
     const rlmsProject = savedProjects.find(p => p.title && p.title.includes("RLMS"));
     if (rlmsProject) {
         rlmsProject.link = "https://eplms.page.gd/eplms/";
         rlmsProject.btnText = "Visit Website";
         rlmsProject.icon = "fas fa-globe";
         rlmsProject.video = "videos/rlms.mp4"; 
-        rlmsProject.poster = "videos/rlms-poster.jpg"; // 👈 Asittis dabali
-
+        rlmsProject.poster = "videos/rlms-poster.jpg";
     }
 
-    // 👇 INFOPLUS TIIS AKKASUMAA ITTI DABALI 👇
+    // Always ensure Infoplus is current with live link & video preview
     const infoplusProject = savedProjects.find(p => p.title && p.title.includes("Infoplus"));
     if (infoplusProject) {
         infoplusProject.video = "videos/infoplus.mp4";
-        infoplusProject.poster = "videos/infoplus-poster.jpg"; // 👈 Asittis dabali
-
+        infoplusProject.poster = "videos/infoplus-poster.jpg";
     }
 
-    // Jijjiirama kana localStorage keessatti save godha
+    // Save updated data to localStorage
     localStorage.setItem("biruk_projects", JSON.stringify(savedProjects));
+    
     let htmlContent = "";
 
     savedProjects.forEach((project) => {
@@ -413,11 +410,9 @@ function loadProjects() {
             });
         }
 
-        // Full-card background video yoo qabaate
-       // Full-card background video yoo qabaate
+        // Full-card background video yoo qabaate (INFINITE LOOP GUARANTEED)
         let videoHtml = "";
         if (project.video) {
-            // Poster yoo qabaate attribute poster="..." itti dabala
             let posterAttr = project.poster ? `poster="${project.poster}"` : "";
 
             videoHtml = `
@@ -428,8 +423,10 @@ function loadProjects() {
                            loop 
                            playsinline 
                            preload="auto"
-                           ${posterAttr}> <!-- 👈 SUURICHA BATTALUMATTI AKKA FIDUUF -->
+                           onended="this.currentTime = 0; this.play();" 
+                           ${posterAttr}>
                         <source src="${project.video}" type="video/mp4">
+                        Your browser does not support HTML5 video.
                     </video>
                 </div>
             `;
@@ -451,7 +448,7 @@ function loadProjects() {
             btnStyle = `background: ${cardColor}; color: #000;`;
         }
 
-      htmlContent += `
+        htmlContent += `
             <div class="project-card ${cardClass} ${project.video ? 'has-project-video' : ''} reveal" style="${cardStyle}">
                 ${newBadge}
                 ${videoHtml}
@@ -459,7 +456,7 @@ function loadProjects() {
                     <h3 style="${titleStyle}">${project.title}</h3>
                     <div class="tech-tags">${tagsHtml}</div>
 
-                    <!-- 🪄 DRAWER HAARAA KAARDIIWWAN HUNDAAF TA'U (Scroll Tokko Malee) -->
+                    <!-- DRAWER HAARAA KAARDIIWWAN HUNDAAF TA'U -->
                     <div class="project-desc-drawer">
                         <p>${project.description}</p>
                     </div>
@@ -490,9 +487,27 @@ function loadProjects() {
     `;
 
     container.innerHTML = htmlContent;
+
+    // 👇 VIIDIYOON MATUMAA AKKA HIN DHAABBANNE GOCHUUF (INFINITE RECYCLE LOOP) 👇
+    container.querySelectorAll('.project-preview-video').forEach(video => {
+        video.muted = true;
+        video.loop = true;
+        
+        // Yeroo dhumu battalumatti deebisee akka jalqabu
+        video.addEventListener('ended', function() {
+            this.currentTime = 0;
+            this.play();
+        });
+
+        // Tasa browser-riin yoo pause godhe deebisee akka taphatu
+        video.addEventListener('pause', function() {
+            this.play();
+        });
+    });
     
     if (typeof reveal === "function") reveal();
 }
+
 
 // --- 7. SECURITY & ADD PROJECT MODAL ---
 function authenticateAndAdd() {
@@ -554,7 +569,7 @@ function saveNewProject() {
 }
 
 
-// --- 8. INITIALIZATION ---
+// --- 8. INITIALIZATION & EVENT LISTENERS ---
 window.addEventListener('scroll', reveal);
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -574,6 +589,7 @@ window.addEventListener('DOMContentLoaded', () => {
     // 5. Morphing profile slideshow every 4s
     setInterval(changeProfileImage, 4000);
 });
+
 // --- CARD INFO DRAWER TOGGLE (BILBILAA FI VIDEO-F) ---
 function toggleCardDetails(button) {
     const card = button.closest('.project-card');
