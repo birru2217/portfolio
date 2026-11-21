@@ -1189,16 +1189,29 @@ body.mode-snow .snow-container {
         margin-bottom: 14px !important;
     }
 
+   /* ✅ NEW CODE: */
     /* 4. Bilbila irratti button-oonni lamaan walbira tooru */
     .card-actions-wrapper {
+        display: flex !important;
+        align-items: center !important;
         justify-content: space-between !important;
-        gap: 10px !important;
+        gap: 8px !important;
+        width: 100% !important;
     }
 
     .btn-view {
         width: auto !important;
-        flex: 1 !important;
-        font-size: 0.88rem !important;
-        padding: 11px 14px !important;
+        flex: 1 1 auto !important;
+        min-width: 0 !important;
+        font-size: 0.85rem !important;
+        padding: 11px 12px !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+    }
+
+    .btn-github-code {
+        width: 42px !important;
+        height: 42px !important;
+        flex-shrink: 0 !important;
     }
 }
