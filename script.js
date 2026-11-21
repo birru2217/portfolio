@@ -278,7 +278,7 @@ const defaultProjects = [
         poster: "videos/bhu-exam-poster.jpg",   // (Maqaa poster keetii yoo qabaate akkuma jirutti dhiisi)
         description: "Enterprise Java system with dynamic timers, automated scoring, and secure admin controls. Built from scratch for Bule Hora University.", 
         
-        // ✅ NEW CODE:
+        
         link: "https://github.com/birru2217/BHU-Exam-Management-System", 
         downloadLink: "https://github.com/birru2217/BHU-Exam-Management-System/releases/download/v1.0.0/BHU-Exam-System.rar.zip", 
         btnText: "Download App",
@@ -423,8 +423,7 @@ function loadProjects() {
         cafeteriaAppProject.icon = "fas fa-download";
     }
 
-    // 👇 BHU EXAM SYSTEM (DESKTOP APP) TIIS GITHUB FI DOWNLOAD SYNC GODHA 👇
-   // ✅ NEW CODE:
+
     // Ensure BHU Exam System has correct direct download, github link and preview video
     const examProject = savedProjects.find(p => p.title && p.title.includes("BHU Exam System"));
     if (examProject) {
@@ -522,7 +521,7 @@ function loadProjects() {
                         <p>${project.description}</p>
                     </div>
 
-                  // ✅ NEW CODE:
+                  
                   <!-- BUTTONS: DOWNLOAD (APK / DESKTOP) + GITHUB CODE + FLOATING INFO -->
                     <div class="card-actions-wrapper">
                         <a href="${(project.downloadLink || project.apkLink) ? (project.downloadLink || project.apkLink) : project.link}" 
