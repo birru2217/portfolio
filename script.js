@@ -313,11 +313,11 @@ const defaultProjects = [
     },
     { 
         title: "🍔 FoodOrder System", 
-        tags: ["PHP", "MySQL", "Bootstrap 5", "JS"], 
+        tags: ["PHP", "MySQL", "Bootstrap 5", "AJAX"], 
         description: "A responsive online food ordering platform. Features an interactive shopping cart, real-time order tracking, multiple payment gateways, and a secure admin dashboard for menu management.", 
-        link: "https://github.com/birru2217/online-food-ordering-system", 
-        btnText: "View Project", 
-        icon: "fab fa-github", 
+        link: "http://biruk-foodorder.site.je", 
+        btnText: "Order Now", 
+        icon: "fas fa-utensils", 
         themeClass: null, 
         color: "#e67e22", 
         createdAt: "2026-04-01" 
@@ -446,6 +446,13 @@ function loadProjects() {
         cafeWebProject.icon = "fas fa-globe";
         cafeWebProject.video = "videos/cafe-web.mp4";
         cafeWebProject.poster = "videos/cafe-web-poster.jpg";
+    }
+    // Always ensure FoodOrder System has the Live Website Link
+    const foodOrderProject = savedProjects.find(p => p.title && p.title.includes("FoodOrder System"));
+    if (foodOrderProject) {
+        foodOrderProject.link = "http://biruk-foodorder.site.je";
+        foodOrderProject.btnText = "Order Now";
+        foodOrderProject.icon = "fas fa-utensils";
     }
     // 🔒 INFOPLUS YEROO HUNDA KAARDII 2FFAA (INDEX 1) AKKA TA'U DIRQISIISUU
     const infoIndex = savedProjects.findIndex(p => p.title && p.title.includes("Infoplus"));
