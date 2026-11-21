@@ -288,11 +288,13 @@ const defaultProjects = [
     },
     { 
         title: "🍲 Cafeteria Website", 
-        tags: ["HTML/CSS", "JS", "PHP"], 
+        tags: ["HTML/CSS", "JS", "Offline-First"], 
+        video: "videos/cafe-web.mp4", 
+        poster: "videos/cafe-web-poster.jpg", 
         description: "A modern, responsive web application for university dining. Features digital menus and a real-time ordering management interface.", 
-        link: "https://github.com/birru2217/bhu-cafeteria-website", 
-        btnText: "View Code", 
-        icon: "fab fa-github", 
+        link: "http://bhu-cafeteria.free.je", 
+        btnText: "Visit Website", 
+        icon: "fas fa-globe", 
         themeClass: "color-card-2", 
         createdAt: "2026-02-01" 
     },
@@ -433,6 +435,15 @@ function loadProjects() {
         examProject.icon = "fas fa-download";
         examProject.video = "videos/bhu-exam.mp4";
         examProject.poster = "videos/bhu-exam-poster.jpg";
+    }
+    // Always ensure Cafeteria Website has the Live Website Link & Video
+    const cafeWebProject = savedProjects.find(p => p.title && p.title.includes("Cafeteria Website"));
+    if (cafeWebProject) {
+        cafeWebProject.link = "http://bhu-cafeteria.free.je";
+        cafeWebProject.btnText = "Visit Website";
+        cafeWebProject.icon = "fas fa-globe";
+        cafeWebProject.video = "videos/cafe-web.mp4";
+        cafeWebProject.poster = "videos/cafe-web-poster.jpg";
     }
     // 🔒 INFOPLUS YEROO HUNDA KAARDII 2FFAA (INDEX 1) AKKA TA'U DIRQISIISUU
     const infoIndex = savedProjects.findIndex(p => p.title && p.title.includes("Infoplus"));
