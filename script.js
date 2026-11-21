@@ -273,21 +273,15 @@ const defaultProjects = [
     },
     { 
         title: "🎓 BHU Exam System", 
-        tags: ["Java Swing", "MySQL", "JDBC"], 
-        video: "videos/bhu-exam.mp4",           // (Maqaa viidiyoo keetii yoo qabaate akkuma jirutti dhiisi)
-        poster: "videos/bhu-exam-poster.jpg",   // (Maqaa poster keetii yoo qabaate akkuma jirutti dhiisi)
-        description: "Enterprise Java system with dynamic timers, automated scoring, and secure admin controls. Built from scratch for Bule Hora University.", 
-        
-        // 👇 LINKII KOODII GITHUB 👇
-        link: "https://github.com/birru2217/BHU-Exam-Management-System", 
-        
-        // 👇 LINKII DOWNLOAD DESKTOP APP (EXE / ZIP / JAR) ASITTI GALCHI 👇
-        downloadLink: "LINKII_DOWNLOAD_DESKTOP_APP_KEETII_ASITTI_GALCHI", 
-
+        tags: ["Java Swing", "MySQL", "JDBC", "Desktop App"], 
+        video: "videos/bhu-exam.mp4", 
+        poster: "videos/bhu-exam-poster.jpg", 
+        description: "Enterprise Java system with dynamic timers, automated scoring, and secure admin controls. Built from scratch for Bule Hora University. (Standalone Executable Package).", 
+        link: "https://github.com/birru2217/BHU-Exam-Management-System/releases/download/v1.0.0/BHU-Exam-System.rar.zip", 
         btnText: "Download App", 
         icon: "fas fa-download", 
         themeClass: "color-card-1", 
-        createdAt: "2026-01-01"
+        createdAt: "2026-01-01" 
     },
     { 
         title: "🍲 Cafeteria Website", 
