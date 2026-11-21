@@ -278,13 +278,10 @@ const defaultProjects = [
         poster: "videos/bhu-exam-poster.jpg",   // (Maqaa poster keetii yoo qabaate akkuma jirutti dhiisi)
         description: "Enterprise Java system with dynamic timers, automated scoring, and secure admin controls. Built from scratch for Bule Hora University.", 
         
-        // 👇 LINKII KOODII GITHUB 👇
+        // ✅ NEW CODE:
         link: "https://github.com/birru2217/BHU-Exam-Management-System", 
-        
-        // 👇 LINKII DOWNLOAD DESKTOP APP (EXE / ZIP / JAR) ASITTI GALCHI 👇
-        downloadLink: "LINKII_DOWNLOAD_DESKTOP_APP_KEETII_ASITTI_GALCHI", 
-
-        btnText: "Download App", 
+        downloadLink: "https://github.com/birru2217/BHU-Exam-Management-System/releases/download/v1.0.0/BHU-Exam-System.rar.zip", 
+        btnText: "Download App",
         icon: "fas fa-download", 
         themeClass: "color-card-1", 
         createdAt: "2026-01-01"
@@ -427,17 +424,12 @@ function loadProjects() {
     }
 
     // 👇 BHU EXAM SYSTEM (DESKTOP APP) TIIS GITHUB FI DOWNLOAD SYNC GODHA 👇
-    const bhuExamProject = savedProjects.find(p => p.title && p.title.includes("BHU Exam System"));
-    if (bhuExamProject) {
-        bhuExamProject.link = "https://github.com/birru2217/BHU-Exam-Management-System";
-        bhuExamProject.downloadLink = "LINKII_DOWNLOAD_DESKTOP_APP_KEETII_ASITTI_GALCHI"; // 👈 Linkii download app sana bakka buusi!
-        bhuExamProject.btnText = "Download App";
-        bhuExamProject.icon = "fas fa-download";
-    }
-// Always ensure BHU Exam System is current with latest Download Link & Video
+   // ✅ NEW CODE:
+    // Ensure BHU Exam System has correct direct download, github link and preview video
     const examProject = savedProjects.find(p => p.title && p.title.includes("BHU Exam System"));
     if (examProject) {
-        examProject.link = "https://github.com/birru2217/BHU-Exam-Management-System/releases/download/v1.0.0/BHU-Exam-System.rar.zip";
+        examProject.link = "https://github.com/birru2217/BHU-Exam-Management-System";
+        examProject.downloadLink = "https://github.com/birru2217/BHU-Exam-Management-System/releases/download/v1.0.0/BHU-Exam-System.rar.zip";
         examProject.btnText = "Download App";
         examProject.icon = "fas fa-download";
         examProject.video = "videos/bhu-exam.mp4";
@@ -530,11 +522,12 @@ function loadProjects() {
                         <p>${project.description}</p>
                     </div>
 
+                  // ✅ NEW CODE:
                   <!-- BUTTONS: DOWNLOAD (APK / DESKTOP) + GITHUB CODE + FLOATING INFO -->
                     <div class="card-actions-wrapper">
                         <a href="${(project.downloadLink || project.apkLink) ? (project.downloadLink || project.apkLink) : project.link}" 
                            class="btn-view" 
-                           ${(project.downloadLink || project.apkLink) ? 'download' : 'target="_blank" rel="noopener noreferrer"'} 
+                           ${(project.downloadLink || project.apkLink) ? 'target="_blank" rel="noopener noreferrer" download' : 'target="_blank" rel="noopener noreferrer"'} 
                            style="${btnStyle}">
                             <i class="${project.icon || 'fas fa-external-link-alt'}"></i> 
                             <span>${project.btnText || 'View Project'}</span>
@@ -546,7 +539,7 @@ function loadProjects() {
                             </a>
                         ` : ''}
 
-                        <button type="button" class="btn-toggle-desc" onclick="toggleCardDetails(this)" title="Toggle Project Details">
+                        <button type="button" class="btn-toggle-desc" onclick="toggleCardDetails(this)" aria-label="Toggle Project Details" title="Toggle Project Details">
                             <span>Info</span> <i class="fas fa-chevron-up"></i>
                         </button>
                     </div>
