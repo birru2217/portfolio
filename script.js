@@ -296,19 +296,19 @@ const defaultProjects = [
         themeClass: "color-card-2", 
         createdAt: "2026-02-01" 
     },
-    { 
-    title: "📱 Cafeteria App", 
-    tags: ["Java (Native)", "XML", "Firebase"], 
-    video: "videos/cafeteria-app.mp4",        // 👈 Maqaa GitHub irra jiruun tokko haa ta'u
-    poster: "videos/cafeteria-app-poster.jpg", // 👈 Extension isaa (.jpg moo .png) mirkaneessi
-    description: "Native mobile app designed for student convenience. Built with Java and seamlessly integrated with a central university database.", 
-    link: "https://github.com/birru2217/bhu-cafeteria-android-app", 
-    apkLink: "https://github.com/birru2217/bhu-cafeteria-android-app/releases/download/v1.0.0/app-release.apk",
-    btnText: "Download APK", 
-    icon: "fas fa-download", 
-    themeClass: "color-card-3", 
-    createdAt: "2026-03-01" 
-},
+   { 
+        title: "📱 Cafeteria App", 
+        tags: ["Java (Native)", "XML", "Firebase"], 
+        video: "videos/cafeteria.mp4",            // 👈 '-app' isa jedhu haqneerra
+        poster: "videos/cafeteria-poster.jpg",    // 👈 '-app' isa jedhu haqneerra
+        description: "Native mobile app designed for student convenience. Built with Java and seamlessly integrated with a central university database.", 
+        link: "https://github.com/birru2217/bhu-cafeteria-android-app", 
+        apkLink: "https://github.com/birru2217/bhu-cafeteria-android-app/releases/download/v1.0.0/app-release.apk",
+        btnText: "Download APK", 
+        icon: "fas fa-download", 
+        themeClass: "color-card-3", 
+        createdAt: "2026-03-01" 
+    },
     { 
         title: "🍔 FoodOrder System", 
         tags: ["PHP", "MySQL", "Bootstrap 5", "JS"], 
@@ -414,14 +414,14 @@ function loadProjects() {
         botProject.poster = "videos/predictor_poster.jpg";
     }
 
-   const cafeteriaAppProject = savedProjects.find(p => p.title && p.title.includes("Cafeteria App"));
-if (cafeteriaAppProject) {
-    cafeteriaAppProject.video = "videos/cafeteria-app.mp4";
-    cafeteriaAppProject.poster = "videos/cafeteria-app-poster.jpg";
-    cafeteriaAppProject.apkLink = "https://github.com/birru2217/bhu-cafeteria-android-app/releases/download/v1.0.0/app-release.apk";
-    cafeteriaAppProject.btnText = "Download APK";
-    cafeteriaAppProject.icon = "fas fa-download";
-}
+  const cafeteriaAppProject = savedProjects.find(p => p.title && p.title.includes("Cafeteria App"));
+    if (cafeteriaAppProject) {
+        cafeteriaAppProject.video = "videos/cafeteria.mp4";         // 👈 '-app' haqameera
+        cafeteriaAppProject.poster = "videos/cafeteria-poster.jpg"; // 👈 '-app' haqameera
+        cafeteriaAppProject.apkLink = "https://github.com/birru2217/bhu-cafeteria-android-app/releases/download/v1.0.0/app-release.apk";
+        cafeteriaAppProject.btnText = "Download APK";
+        cafeteriaAppProject.icon = "fas fa-download";
+    }
 
 
     // Ensure BHU Exam System has correct direct download, github link and preview video
