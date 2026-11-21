@@ -584,6 +584,8 @@ body.mode-3d .video-container {
 .card-actions-wrapper {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    gap: 10px; /* Button Download fi GitHub gidduu fageenya uuma */
     width: 100%;
     margin-top: 0;
     position: relative;
@@ -597,17 +599,42 @@ body.mode-3d .video-container {
     gap: 8px;
     font-weight: 700; 
     text-decoration: none; 
-    padding: 13px 28px; 
+    padding: 13px 20px; 
     border-radius: 50px; 
     transition: all 0.3s ease;
     white-space: nowrap !important;
-    width: 100%; /* Desktop irratti bal'atee bifa qulqulluu qabaata */
+    flex: 1; /* Iddoo jiru guutummaatti qabata, GitHub icon waliinis wal hin dhiibu */
+    min-width: 0;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
 .btn-view:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(0, 255, 127, 0.3);
+}
+
+/* Button Xiqqaa GitHub Code Ilaaluuf (Download APK Bukkee) */
+.btn-github-code {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1.5px solid rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    font-size: 1.25rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-github-code:hover {
+    background: #ffffff;
+    color: #000000;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
 }
 
 /* --- FULL CARD VIDEO BACKGROUND --- */
