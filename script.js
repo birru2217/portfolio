@@ -273,15 +273,21 @@ const defaultProjects = [
     },
     { 
         title: "🎓 BHU Exam System", 
-        tags: ["Java Swing", "MySQL", "JDBC", "Desktop App"], 
-        video: "videos/bhu-exam.mp4", 
-        poster: "videos/bhu-exam-poster.jpg", 
-        description: "Enterprise Java system with dynamic timers, automated scoring, and secure admin controls. Built from scratch for Bule Hora University. (Standalone Executable Package).", 
-        link: "https://github.com/birru2217/BHU-Exam-Management-System/releases/download/v1.0.0/BHU-Exam-System.rar.zip", 
+        tags: ["Java Swing", "MySQL", "JDBC"], 
+        video: "videos/bhu-exam.mp4",           // (Maqaa viidiyoo keetii yoo qabaate akkuma jirutti dhiisi)
+        poster: "videos/bhu-exam-poster.jpg",   // (Maqaa poster keetii yoo qabaate akkuma jirutti dhiisi)
+        description: "Enterprise Java system with dynamic timers, automated scoring, and secure admin controls. Built from scratch for Bule Hora University.", 
+        
+        // 👇 LINKII KOODII GITHUB 👇
+        link: "https://github.com/birru2217/BHU-Exam-Management-System", 
+        
+        // 👇 LINKII DOWNLOAD DESKTOP APP (EXE / ZIP / JAR) ASITTI GALCHI 👇
+        downloadLink: "LINKII_DOWNLOAD_DESKTOP_APP_KEETII_ASITTI_GALCHI", 
+
         btnText: "Download App", 
         icon: "fas fa-download", 
         themeClass: "color-card-1", 
-        createdAt: "2026-01-01" 
+        createdAt: "2026-01-01"
     },
     { 
         title: "🍲 Cafeteria Website", 
@@ -418,6 +424,15 @@ function loadProjects() {
         cafeteriaAppProject.apkLink = "https://github.com/birru2217/bhu-cafeteria-android-app/releases/download/v1.0.0/app-release.apk";
         cafeteriaAppProject.btnText = "Download APK";
         cafeteriaAppProject.icon = "fas fa-download";
+    }
+
+    // 👇 BHU EXAM SYSTEM (DESKTOP APP) TIIS GITHUB FI DOWNLOAD SYNC GODHA 👇
+    const bhuExamProject = savedProjects.find(p => p.title && p.title.includes("BHU Exam System"));
+    if (bhuExamProject) {
+        bhuExamProject.link = "https://github.com/birru2217/BHU-Exam-Management-System";
+        bhuExamProject.downloadLink = "LINKII_DOWNLOAD_DESKTOP_APP_KEETII_ASITTI_GALCHI"; // 👈 Linkii download app sana bakka buusi!
+        bhuExamProject.btnText = "Download App";
+        bhuExamProject.icon = "fas fa-download";
     }
 // Always ensure BHU Exam System is current with latest Download Link & Video
     const examProject = savedProjects.find(p => p.title && p.title.includes("BHU Exam System"));
