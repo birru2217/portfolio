@@ -425,15 +425,6 @@ function loadProjects() {
         cafeteriaAppProject.btnText = "Download APK";
         cafeteriaAppProject.icon = "fas fa-download";
     }
-
-    // 👇 BHU EXAM SYSTEM (DESKTOP APP) TIIS GITHUB FI DOWNLOAD SYNC GODHA 👇
-    const bhuExamProject = savedProjects.find(p => p.title && p.title.includes("BHU Exam System"));
-    if (bhuExamProject) {
-        bhuExamProject.link = "https://github.com/birru2217/BHU-Exam-Management-System";
-        bhuExamProject.downloadLink = "LINKII_DOWNLOAD_DESKTOP_APP_KEETII_ASITTI_GALCHI"; // 👈 Linkii download app sana bakka buusi!
-        bhuExamProject.btnText = "Download App";
-        bhuExamProject.icon = "fas fa-download";
-    }
 // Always ensure BHU Exam System is current with latest Download Link & Video
     const examProject = savedProjects.find(p => p.title && p.title.includes("BHU Exam System"));
     if (examProject) {
