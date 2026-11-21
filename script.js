@@ -296,12 +296,13 @@ const defaultProjects = [
     { 
         title: "📱 Cafeteria App", 
         tags: ["Java (Native)", "XML", "Firebase"], 
-        video: "videos/cafeteria.mp4", 
-        poster: "videos/cafeteria-poster.jpg", 
+        video: "videos/cafeteria-app.mp4",
+        poster: "videos/cafeteria-app-poster.jpg",
         description: "Native mobile app designed for student convenience. Built with Java and seamlessly integrated with a central university database.", 
         link: "https://github.com/birru2217/bhu-cafeteria-android-app", 
-        btnText: "View Code", 
-        icon: "fab fa-github", 
+        apkLink: "https://github.com/birru2217/bhu-cafeteria-android-app/releases/download/v1.0.0/app-release.apk",
+        btnText: "Download APK", 
+        icon: "fas fa-download", 
         themeClass: "color-card-3", 
         createdAt: "2026-03-01" 
     },
@@ -410,11 +411,13 @@ function loadProjects() {
         botProject.poster = "videos/predictor_poster.jpg";
     }
 
-    // Always ensure Cafeteria App is current with video preview
-    const cafeAppProject = savedProjects.find(p => p.title && p.title.includes("Cafeteria App"));
-    if (cafeAppProject) {
-        cafeAppProject.video = "videos/cafeteria.mp4";
-        cafeAppProject.poster = "videos/cafeteria-poster.jpg";
+   const cafeteriaAppProject = savedProjects.find(p => p.title && p.title.includes("Cafeteria App"));
+    if (cafeteriaAppProject) {
+        cafeteriaAppProject.video = "videos/cafeteria-app.mp4";
+        cafeteriaAppProject.poster = "videos/cafeteria-app-poster.jpg";
+        cafeteriaAppProject.apkLink = "https://github.com/birru2217/bhu-cafeteria-android-app/releases/download/v1.0.0/app-release.apk";
+        cafeteriaAppProject.btnText = "Download APK";
+        cafeteriaAppProject.icon = "fas fa-download";
     }
 // Always ensure BHU Exam System is current with latest Download Link & Video
     const examProject = savedProjects.find(p => p.title && p.title.includes("BHU Exam System"));
@@ -512,12 +515,22 @@ function loadProjects() {
                         <p>${project.description}</p>
                     </div>
 
-                    <!-- BUTTONS: VISIT WEBSITE FI FLOATING INFO -->
+                   <!-- BUTTONS: DOWNLOAD APK / VISIT WEBSITE + GITHUB CODE + FLOATING INFO -->
                     <div class="card-actions-wrapper">
-                        <a href="${project.link}" class="btn-view" target="_blank" rel="noopener noreferrer" style="${btnStyle}">
+                        <a href="${project.apkLink ? project.apkLink : project.link}" 
+                           class="btn-view" 
+                           ${project.apkLink ? 'download' : 'target="_blank" rel="noopener noreferrer"'} 
+                           style="${btnStyle}">
                             <i class="${project.icon || 'fas fa-external-link-alt'}"></i> 
                             <span>${project.btnText || 'View Project'}</span>
                         </a>
+
+                        ${project.apkLink ? `
+                            <a href="${project.link}" class="btn-github-code" target="_blank" rel="noopener noreferrer" title="View Source Code on GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        ` : ''}
+
                         <button type="button" class="btn-toggle-desc" onclick="toggleCardDetails(this)" title="Toggle Project Details">
                             <span>Info</span> <i class="fas fa-chevron-up"></i>
                         </button>
