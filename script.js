@@ -273,10 +273,10 @@ const defaultProjects = [
     },
     { 
         title: "🎓 BHU Exam System", 
-        tags: ["Java Swing", "MySQL", "JDBC"], 
+        tags: ["Java Swing", "Cloud MySQL", "JDBC", "Desktop App", "RBAC", "Auto-Grading"], 
         video: "videos/bhu-exam.mp4",           // (Maqaa viidiyoo keetii yoo qabaate akkuma jirutti dhiisi)
         poster: "videos/bhu-exam-poster.jpg",   // (Maqaa poster keetii yoo qabaate akkuma jirutti dhiisi)
-        description: "Enterprise Java system with dynamic timers, automated scoring, and secure admin controls. Built from scratch for Bule Hora University.", 
+        description: "A high-performance standalone Desktop Examination System engineered with Java Swing and Remote Cloud MySQL. Features dual role-based access (Admin Portal & Student Exam Mode), dynamic countdown timers, instant automated scoring, and question bank management. Integrated with cloud database for plug-and-play desktop execution without requiring local servers.", 
         
         
         link: "https://github.com/birru2217/BHU-Exam-Management-System", 
@@ -427,8 +427,10 @@ function loadProjects() {
 
 
     // Ensure BHU Exam System has correct direct download, github link and preview video
-    const examProject = savedProjects.find(p => p.title && p.title.includes("BHU Exam System"));
+   const examProject = savedProjects.find(p => p.title && p.title.includes("BHU Exam System"));
     if (examProject) {
+        examProject.tags = ["Java Swing", "Cloud MySQL", "JDBC", "Desktop App", "RBAC", "Auto-Grading"];
+        examProject.description = "A high-performance standalone Desktop Examination System engineered with Java Swing and Remote Cloud MySQL. Features dual role-based access (Admin Portal & Student Exam Mode), dynamic countdown timers, instant automated scoring, and question bank management. Integrated with cloud database for plug-and-play desktop execution without requiring local servers.";
         examProject.link = "https://github.com/birru2217/BHU-Exam-Management-System";
         examProject.downloadLink = "https://github.com/birru2217/BHU-Exam-Management-System/releases/download/v1.0.0/BHU-Exam-System.rar.zip";
         examProject.btnText = "Download App";
